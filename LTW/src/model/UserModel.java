@@ -1,16 +1,16 @@
 package model;
 
-public class User {
+public class UserModel {
 	private String username;
 	private String password;
 	private String fullname;
 	private int age;
 	private String address;
 	
-	public User() {
+	public UserModel() {
 		
 	}
-	public User(String username, String password, String fullname, int age, String address) {
+	public UserModel(String username, String password, String fullname, int age, String address) {
 		super();
 		this.username = username;
 		this.password = password;

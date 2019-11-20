@@ -96,8 +96,13 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.jsp">Home</a></li>
-						<a href="nokia.jsp"><img src="img/brand1.png" alt="a"
+		<li class="active"><a href="index.jsp">Home</a></li>
+						<a href="nokia.jsp"><img src="img/brand1.png" alt="a">
+
+					<li class="active"><a href="index.html" style="font-family: sans-serif;font-size: 15px;
+					padding-left: 48px;padding-right: 48px;"><b>Home<b></b></b></a></li>	
+						<a href="nokia.html"><img src="img/brand1.png" alt="a"
+
 							class="product-thumb"></a>
 						<a href="samsung.jsp"><img src="img/brand3.png" alt=""
 							class="product-thumb"></a>

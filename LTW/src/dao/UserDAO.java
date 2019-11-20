@@ -13,35 +13,44 @@ public class UserDAO {
 
 	public boolean register(String username, String password) {
 		boolean bl = false;
+		Connection conn = DbUtils.getConnection();
 		try {
-			Connection conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into user (username, password) values (?,?)");
+			String sql = "insert into user (username, password) values (?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ps.setString(2, password);
-		   if( ps.executeUpdate() >0) {
-			bl = true;
-			conn.commit();
-		   }
+			if (ps.executeUpdate() > 0) {
+				bl = true;
+				conn.commit();
+			}
 		} catch (SQLException ex) {
-			ex.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
 		}
 		return bl;
 	}
 
 	public boolean login(String username, String password) {
 		boolean bl = false;
+		Connection conn = DbUtils.getConnection();
 		try {
-			Connection conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("select username, password from user where username = ? and password = ?");
+			PreparedStatement ps = conn
+					.prepareStatement("select username, password from user where username = ? and password = ?");
 			ps.setString(1, username);
 			ps.setString(2, password);
 			ResultSet rss = ps.executeQuery();
-			
 			if (rss.next()) {
 				bl = true;
 			}
 		} catch (SQLException ex) {
+
 			ex.printStackTrace();
+
 		}
 		return bl;
 

@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
@@ -114,7 +109,6 @@
 							class="product-thumb"></a>
 						<a href="lg.html"><img src="img/brand6.png" alt=""
 							class="product-thumb"></a>
-
 					</ul>
 				</div>
 			</div>

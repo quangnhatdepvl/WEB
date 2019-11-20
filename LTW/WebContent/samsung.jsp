@@ -24,10 +24,10 @@
     <link rel="stylesheet" href="css/responsive.css">
 	    <link rel="stylesheet" href="css/login.css">
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/jsp5shiv/3.7.2/jsp5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
@@ -66,9 +66,9 @@
                 <div class="col-md-8" style="float: right;">
                     <div class="user-menu">
                         <ul style="float: right;">
-                            <li><a href="index.html	"><i class="fa fa-user"></i> Home</a></li>                         
-                            <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-							<li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
+                            <li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>                         
+                            <li><a href="cart.jsp"><i class="fa fa-user"></i> My Cart</a></li>
+							<li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -110,12 +110,12 @@
                 </div> 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                      <li class=""><a href="index.html" style="font-family: sans-serif;font-size: 15px;padding-left: 48px;padding-right: 48px;"><b>Home<b></b></b></a></li>
-                       <a href="nokia.html"><img src="img/brand1.png" alt="a" class="product-thumb"></a>
-                       <a href="samsung.html"><img src="img/brand3.png" alt="" class="product-active"></a>
-                        <a href="apple.html"><img src="img/brand4.png" alt="" class="product-thumb"></a>
-                        <a href="htc.html"><img src="img/brand5.png" alt="" class="product-thumb"></a>
-                        <a href="lg.html"><img src="img/brand6.png" alt="" class="product-thumb"></a>
+                      <li class=""><a href="index.jsp" style="font-family: sans-serif;font-size: 15px;padding-left: 48px;padding-right: 48px;"><b>Home<b></b></b></a></li>
+                       <a href="nokia.jsp"><img src="img/brand1.png" alt="a" class="product-thumb"></a>
+                       <a href="samsung.jsp"><img src="img/brand3.png" alt="" class="product-active"></a>
+                        <a href="apple.jsp"><img src="img/brand4.png" alt="" class="product-thumb"></a>
+                        <a href="htc.jsp"><img src="img/brand5.png" alt="" class="product-thumb"></a>
+                        <a href="lg.jsp"><img src="img/brand6.png" alt="" class="product-thumb"></a>
                         
                     </ul>
                 </div>  
@@ -139,11 +139,11 @@
                                     <img src="img/product-1.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><a href="single-product.jsp">Samsung Galaxy s5- 2015</a></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
@@ -156,7 +156,7 @@
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -171,7 +171,7 @@
                                     <img src="img/product-3.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -187,11 +187,11 @@
                                     <img src="img/product-4.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Sony microsoft</a></h2>
+                                <h2><a href="single-product.jsp">Sony microsoft</a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$200.00</ins> <del>$225.00</del>
@@ -203,7 +203,7 @@
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -220,11 +220,11 @@
                                     <img src="img/product-1.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><a href="single-product.jsp">Samsung Galaxy s5- 2015</a></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
@@ -236,7 +236,7 @@
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -251,7 +251,7 @@
                                     <img src="img/product-3.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -267,11 +267,11 @@
                                     <img src="img/product-4.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Sony microsoft</a></h2>
+                                <h2><a href="single-product.jsp">Sony microsoft</a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$200.00</ins> <del>$225.00</del>
@@ -284,7 +284,7 @@
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -308,11 +308,11 @@
                                     <img src="img/product-1.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><a href="single-product.jsp">Samsung Galaxy s5- 2015</a></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
@@ -325,7 +325,7 @@
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -340,7 +340,7 @@
                                     <img src="img/product-3.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -356,11 +356,11 @@
                                     <img src="img/product-4.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Sony microsoft</a></h2>
+                                <h2><a href="single-product.jsp">Sony microsoft</a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$200.00</ins> <del>$225.00</del>
@@ -372,7 +372,7 @@
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -389,11 +389,11 @@
                                     <img src="img/product-1.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Samsung Galaxy s5- 2015</a></h2>
+                                <h2><a href="single-product.jsp">Samsung Galaxy s5- 2015</a></h2>
                                 
                                 <div class="product-carousel-price">
                                     <ins>$700.00</ins> <del>$100.00</del>
@@ -405,7 +405,7 @@
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -420,7 +420,7 @@
                                     <img src="img/product-3.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -436,11 +436,11 @@
                                     <img src="img/product-4.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
-                                <h2><a href="single-product.html">Sony microsoft</a></h2>
+                                <h2><a href="single-product.jsp">Sony microsoft</a></h2>
 
                                 <div class="product-carousel-price">
                                     <ins>$200.00</ins> <del>$225.00</del>
@@ -453,7 +453,7 @@
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
                                         <a href="#" class="add-to-cart-link"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                                        <a href="single-product.html" class="view-details-link"><i class="fa fa-link"></i> See details</a>
+                                        <a href="single-product.jsp" class="view-details-link"><i class="fa fa-link"></i> See details</a>
                                     </div>
                                 </div>
                                 
@@ -475,3 +475,6 @@
             </div>
         </div>
     </div>
+    </body>
+    </html>
+    

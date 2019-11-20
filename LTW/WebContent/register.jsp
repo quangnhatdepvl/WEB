@@ -4,7 +4,7 @@
 	Twitter: https://twitter.com/freshdesignweb
 	URL: https://www.freshdesignweb.com/ustora/
 -->
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
@@ -35,10 +35,10 @@
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/login.css">
 
-<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/jsp5shiv/3.7.2/jsp5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 </head>
@@ -51,13 +51,11 @@
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">
 						<ul style="float: right;">
-							<li><a href="index.html	"><i class="fa fa-user"></i>
+							<li><a href="index.jsp	"><i class="fa fa-user"></i>
 									Home</a></li>
-							<li><a href="cart.html"><i class="fa fa-user"></i> My
+							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
 									Cart</a></li>
-							<li><a href="checkout.html"><i class="fa fa-user"></i>
-									Checkout</a></li>
-							<li style="background-color: #ffce93;"><a href="login.jsp"><i
+									<li style="background-color: #ffce93;"><a href="login.jsp"><i
 									class="fa fa-user"></i> Login</a></li>
 						</ul>
 					</div>
@@ -80,7 +78,7 @@
 				<div class="col-sm-6">
 					<div class="logo">
 						<h1>
-							<a href="index.html"><img src="img/logo.png"></a>
+							<a href="index.jsp"><img src="img/logo.png"></a>
 						</h1>
 					</div>
 				</div>
@@ -104,16 +102,16 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="index.html">Home</a></li>
-						<a href="nokia.html"><img src="img/brand1.png" alt="a"
+						<li class=""><a href="index.jsp">Home</a></li>
+						<a href="nokia.jsp"><img src="img/brand1.png" alt="a"
 							class="product-thumb"></a>
-						<a href="samsung.html"><img src="img/brand3.png" alt=""
+						<a href="samsung.jsp"><img src="img/brand3.png" alt=""
 							class="product-thumb"></a>
-						<a href="apple.html"><img src="img/brand4.png" alt=""
+						<a href="apple.jsp"><img src="img/brand4.png" alt=""
 							class="product-thumb"></a>
-						<a href="htc.html"><img src="img/brand5.png" alt=""
+						<a href="htc.jsp"><img src="img/brand5.png" alt=""
 							class="product-thumb"></a>
-						<a href="lg.html"><img src="img/brand6.png" alt=""
+						<a href="lg.jsp"><img src="img/brand6.png" alt=""
 							class="product-thumb"></a>
 
 					</ul>

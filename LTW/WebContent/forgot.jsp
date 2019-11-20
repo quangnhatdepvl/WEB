@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
+
+  <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
 <html lang="en">
   <head>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+
+    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ustora Demo</title>
@@ -45,9 +44,9 @@
                 <div class="col-md-8" style="float: right;">
                     <div class="user-menu">
                         <ul style="float: right;">
-                            <li><a href="index.html	"><i class="fa fa-user"></i> Home</a></li>                         
-                            <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-               				<li><a href="login.html"><i class="fa fa-user"></i> Login</a></li>
+                            <li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>                         
+                            <li><a href="cart.jsp"><i class="fa fa-user"></i> My Cart</a></li>
+               				<li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -108,11 +107,11 @@
 				<div class="loginbox">		
 			
 		<div style="/* margin-left:20px */padding-top: 30%;">
-			<br><h2 style="color: black;">QUÃN Máº¬T KHáº¨U</h2><br>
-			<input type="text" class="form-control border border-success" placeholder="TÃªn ÄÄng nháº­p" autofocus="true " style="width: 250px; hight: 30px; border: 2px solid black;"> <br>				
+			<br><h2 style="color: black;">QUÊN MẬT KHẨU</h2><br>
+			<input type="text" class="form-control border border-success" placeholder="Tên đăng nhập" autofocus="true " style="width: 250px; hight: 30px; border: 2px solid black;"> <br>				
 																	
 		</div>
-		 <button type="button" class="btn10" style="width:200px;height:50px;color: white;background-color: #ffce93;"> Tiáº¿p tá»¥c </button><br>
+		 <button type="button" class="btn10" style="width:200px;height:50px;color: white;background-color: #ffce93;"> Tiếp tục </button><br>
 
 				
                 </div>	

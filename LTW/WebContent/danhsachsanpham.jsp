@@ -81,7 +81,7 @@
 				
                         <div class="product-carousel owl-carousel owl-theme owl-responsive-1000 owl-loaded">                           
                         <div class="owl-stage-outer"><div class="owl-stage">
-						<div class="owl-item cloned" style="width: 212px; margin-right: 20px;">
+						<div class="owl-item cloned"><div class="single-product">
 						<div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-1.jpg" alt="">
@@ -98,8 +98,9 @@
                                 </div> 
                             </div>
 							</div>
+							</div>
 						
-						<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+						<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-2.jpg" alt="">
                                     <div class="product-hover">
@@ -114,7 +115,7 @@
                                 </div> 
                             </div></div>
 							
-							<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+							<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-3.jpg" alt="">
                                     <div class="product-hover">
@@ -130,7 +131,7 @@
                                 </div>                                 
                             </div></div>
 							
-							<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+							<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-4.jpg" alt="">
                                     <div class="product-hover">
@@ -146,7 +147,7 @@
                                 </div>                            
                             </div></div>
 							
-							<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+							<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
@@ -162,7 +163,7 @@
                                 </div>                                 
                             </div></div>
 							
-							<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+							<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">
@@ -177,7 +178,7 @@
                                     <ins>$1200.00</ins> <del>$1355.00</del>
                                 </div>                                 
                             </div></div>
-							<div class="owl-item cloned" style="width: 212px; margin-right: 20px;"><div class="single-product">
+							<div class="owl-item cloned"><div class="single-product">
                                 <div class="product-f-image">
                                     <img src="img/product-5.jpg" alt="">
                                     <div class="product-hover">

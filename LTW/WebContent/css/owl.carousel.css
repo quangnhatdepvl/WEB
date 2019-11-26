@@ -61,7 +61,14 @@
 }
 .owl-carousel .owl-stage {
   position: relative;
-  -ms-touch-action: pan-Y;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    margin-bottom: 15px;
+    width: 1200px;
+
 }
 .owl-carousel .owl-stage:after {
   content: ".";

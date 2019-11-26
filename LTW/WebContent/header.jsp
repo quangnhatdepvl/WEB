@@ -105,18 +105,18 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.jsp"
+						<li class=""><a href="index.jsp"
 							style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home<b></b></b></a></li>
-						<a href="<c:out value="${nokia}"/>"><img src="img/brand1.png"
-							alt="a" class="product-thumb"></a>
-						<a href="<c:out value="${samsung}"/>"><img
-							src="img/brand3.png" alt="" class="product-thumb"></a>
-						<a href="<c:out value="${apple}"/>"><img src="img/brand4.png"
-							alt="" class="product-thumb"></a>
-						<a href="<c:out value="${htc}"/>"><img src="img/brand5.png"
-							alt="" class="product-thumb"></a>
-						<a href="<c:out value="${lg}"/>"><img src="img/brand6.png"
-							alt="" class="product-thumb"></a>
+						<li class=""><a href="<c:out value="${nokia}"/>"><img
+								src="img/brand1.png" alt="a" class="product-thumb"></a></li>
+						<li class=""><a href="<c:out value="${samsung}"/>"><img
+								src="img/brand3.png" alt="" class="product-thumb"></a></li>
+						<li class=""><a href="<c:out value="${apple}"/>"><img
+								src="img/brand4.png" alt="" class="product-thumb"></a></li>
+						<li class=""><a href="<c:out value="${htc}"/>"><img
+								src="img/brand5.png" alt="" class="product-thumb"></a></li>
+						<li class=""><a href="<c:out value="${lg}"/>"><img
+								src="img/brand6.png" alt="" class="product-thumb"></a></li>
 
 					</ul>
 				</div>

@@ -39,7 +39,7 @@
 </head>
 <div id="id01" class="modal">
 
-	<form class="modal-content animate" action="/action_page.php"
+	<form class="modal-content animate" action=""
 		method="post" style="width: auto">
 		<div class="imgcontainer">
 			<span onclick="document.getElementById('id01').style.display='none'"

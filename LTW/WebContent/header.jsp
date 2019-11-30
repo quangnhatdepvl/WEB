@@ -42,46 +42,50 @@
                             <li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>                         
                             <li><a href="cart.jsp"><i class="fa fa-user"></i> My Cart</a></li>
 							<li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
-                        </ul>
-                    </div>
-                </div>
-				                
-                <div class="col-md-4">
-                    <div class="header-right">
-                        <ul class="list-unstyled list-inline">
-                                                    </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> <!-- End header area -->
-    
-    <div class="site-branding-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <div class="logo">
-                        <h1><a href="./"><img src="img/logo.png"></a></h1>
-                    </div>
-                </div>
-                
-                
-            </div>
-        </div>
-    </div> <!-- End site branding area -->
-    
-    <div class="mainmenu-area">
-        <div class="container">
-            <div class="row">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                </div> 
-				
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-md-4">
+					<div class="header-right">
+						<ul class="list-unstyled list-inline">
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- End header area -->
+
+	<div class="site-branding-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<div class="logo">
+						<h1>
+							<a href="index.jsp"><img src="img/logo.png"></a>
+						</h1>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+	</div>
+	<!-- End site branding area -->
+
+	<div class="mainmenu-area">
+		<div class="container">
+			<div class="row">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle" data-toggle="collapse"
+						data-target=".navbar-collapse">
+						<span class="sr-only">Toggle navigation</span> <span
+							class="icon-bar"></span> <span class="icon-bar"></span> <span
+							class="icon-bar"></span>
+					</button>
+				</div>
+			
 				<c:url value="ListPhoneController" var="nokia">
 					<c:param name="model" value="nokia" />
 				</c:url>

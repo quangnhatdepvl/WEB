@@ -13,16 +13,12 @@ public class DbUtils {
 	            //"jdbc:sqlserver://localhost;databaseName=EMPDB;user=sa;password=sa";
 	            Class.forName("com.mysql.cj.jdbc.Driver");
 	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ltw", "root", "root");
+	            conn.setAutoCommit(false);
 	        } catch (SQLException ex) {
 	            Logger.getLogger(DbUtils.class.getName()).log(Level.SEVERE, null, ex);
 	        } catch (ClassNotFoundException ex) {
 	            Logger.getLogger(DbUtils.class.getName()).log(Level.SEVERE, null, ex);
 	        }
-	        try {
-				conn.setAutoCommit(false);
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
 	        return conn;
 	    }
 

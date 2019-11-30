@@ -37,13 +37,13 @@ public class PhoneDAO {
 		return listPhone;
 	}
 
-	public PhoneModel getPhone(int id) {
+	public PhoneModel getPhone(String nhaSanXuat) {
 		PhoneModel phone = new PhoneModel();
 		try {
 			Connection conn = DbUtils.getConnection();
-			String sql = "select * from phone where id= ?";
+			String sql = "select * from phone where nhaSanXuat= ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, id);
+			ps.setString(1, nhaSanXuat);
 			ResultSet rss = ps.executeQuery();
 			if (rss.next()) {
 				phone.setId(rss.getInt("id"));
@@ -62,7 +62,7 @@ public class PhoneDAO {
 		}
 		return phone;
 	}
-	
+
 	public ArrayList<PhoneModel> getAll(String nhaSanXuat) {
 		ArrayList<PhoneModel> listPhone = new ArrayList<>();
 		try {

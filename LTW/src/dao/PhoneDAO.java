@@ -62,6 +62,32 @@ public class PhoneDAO {
 		}
 		return phone;
 	}
+	
+	public PhoneModel getPhone(int id) {
+		PhoneModel phone = new PhoneModel();
+		try {
+			Connection conn = DbUtils.getConnection();
+			String sql = "select * from phone where id= ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rss = ps.executeQuery();
+			if (rss.next()) {
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setUrl_img(rss.getString("img_url"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				phone.setDescription(rss.getString("des"));
+				phone.setId(rss.getInt("luotTruyCap"));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return phone;
+	}
 
 	public ArrayList<PhoneModel> getAll(String nhaSanXuat) {
 		ArrayList<PhoneModel> listPhone = new ArrayList<>();
@@ -89,4 +115,46 @@ public class PhoneDAO {
 		}
 		return listPhone;
 	}
+
+	public boolean savePhone(PhoneModel phone) {
+		boolean bl = false;
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?) ");
+			ps.setInt(1, phone.getId());
+			ps.setString(2, phone.getName());
+			ps.setString(3, phone.getTypeTel());
+			ps.setDouble(4, phone.getPrice());
+			ps.setString(5, phone.getNhaSanXuat());
+			ps.setString(6, phone.getUrl_img());
+			ps.setDate(7, phone.getNgaySanXuat());
+			int kq = ps.executeUpdate();
+			if (kq > 0) {
+				bl = true;
+				conn.commit();
+			}
+
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return bl;
+	}
+	
+	public boolean deletePhone(PhoneModel phone) {
+		boolean bl = false;
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("delete from phone where id = ?");
+			ps.setInt(1, phone.getId());
+			int kq = ps.executeUpdate();
+			if (kq > 0) {
+				bl = true;
+				conn.commit();
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return bl;
+	}
+
 }

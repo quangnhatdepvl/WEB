@@ -86,6 +86,7 @@
 							class="icon-bar"></span>
 					</button>
 				</div>
+			
 				<c:url value="ListPhoneController" var="nokia">
 					<c:param name="model" value="nokia" />
 				</c:url>

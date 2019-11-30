@@ -41,7 +41,7 @@
 
 <body>
 
-	<jsp:include page="header.jsp/">
+	<jsp:include page="header.jsp"/> 
 		<div class="maincontent-area">
 			<div class="zigzag-bottom"></div>
 			<div class="container">
@@ -90,6 +90,7 @@
 					</div>
 				</div>
 			</div>
-		</div></body>
+		</div>
+		</body>
 
 </html>

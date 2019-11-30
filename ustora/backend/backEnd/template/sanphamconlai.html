@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-   <!-- Required meta tags -->
+  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>BackEnd</title>
@@ -18,15 +18,15 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="logo.png" />
 </head>
-
 <body>
   <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
-<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
           <a class="navbar-brand brand-logo" href="index.html"><img src="logo.png" alt="logo"/></a>
-           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+
+          <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
         </div>  
@@ -91,8 +91,8 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_sidebar.html -->
-  <nav class="sidebar sidebar-offcanvas" id="sidebar">
+      <!-- partial:partials/_sidebar.html -->
+			  <nav class="sidebar sidebar-offcanvas" id="sidebar">
 			<ul class="nav">
 			  <li class="nav-item">
 				<a class="nav-link" href="index.html">
@@ -101,68 +101,107 @@
 				</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" data-toggle="collapse" href="#" aria-expanded="false" aria-controls="ui-basic">
+				<a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
 				  <i class="mdi mdi-circle-outline menu-icon"></i>
-				  <span class="menu-title">Quản lý Phim </span>
+				  <span class="menu-title">Quản lý Kho </span>
 				  <i class="menu-arrow"></i>
 				</a>
 				<div class="collapse" id="ui-basic">
 				  <ul class="nav flex-column sub-menu">
-					<li class="nav-item"> <a class="nav-link" href="phimdangPhat.html">Phim đang phát</a></li>
-					<li class="nav-item"> <a class="nav-link" href="phimsapRa.html">Phim sắp ra mắt</a></li>
+					<li class="nav-item"> <a class="nav-link" href="sanphamdaban.html">Sản phẩm đã bán</a></li>
+					<li class="nav-item"> <a class="nav-link" href="sanphamconlai.html">Sản phẩm còn lại</a></li>
 				  </ul>
 				</div>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="quanlytintuc.html">
+				<a class="nav-link" href="quanlydienthoai.html">
 				  <i class="mdi mdi-view-headline menu-icon"></i>
-				  <span class="menu-title">Quản lý tin tức</span>
+				  <span class="menu-title">Quản lý điện thoại</span>
 				</a>
 			  </li>
 			  <li class="nav-item">
-				<a class="nav-link" href="thongketruycap.html">
+				<a class="nav-link" href="quanlydonhang.html">
 				  <i class="mdi mdi-chart-pie menu-icon"></i>
-				  <span class="menu-title">Thống kê truy cập</span>
+				  <span class="menu-title">Quản lý đơn hàng</span>
 				</a>
 			  </li>
-			   <li class="nav-item active">
-				<a class="nav-link" href="topPhim.html">
+			  <li class="nav-item">
+				<a class="nav-link" href="quanlykhachhang.html">
 				  <i class="mdi mdi-grid-large menu-icon"></i>
-				  <span class="menu-title">Top Phim</span>
+				  <span class="menu-title">Quản lý khách hàng</span>
 				</a>
 			  </li>
 			  
 			  
 			</ul>
 		  </nav>
+	        <div class="col-lg-12 stretch-card" style = "width :14%">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Bảng thống kê điện thoại còn lại</h4>
+                  <div class="table-responsive pt-3" >
+                    <table class="table table-bordered" >
+                      <thead>
+                        <tr>
+                         
+                          <th>
+							ID điện thoại
+                          </th>
+                          <th>
+                            Tên điện thoại
+                          </th>
+						  <th>
+							Kiểu điện thoại
+                          </th>
+                          <th>
+							Nhà sản xuất 
+                          </th>
+                          <th>
+                          Giá cả
+                          </th>
+						      <th>
+                         Số lượng
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr class="table-info" >
+                        
+                          <td>
+                            01
+                          </td>
+                          <td>
+							Iphone 11 pro max
+                          </td>
+                          <td>
+                          Smart Phone
+                          </td>
+                          <td>
+                            Apple
+                          </td>
+						   <td>
+                           30,990,000 Vnđ
+                          </td>
+				   <td>
+                           10 cái
+                          </td>
+						 
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
+          </div>
+        </div>
+		  
       <!-- partial -->
-      <div class="main-panel">
-       <div class="content-wrapper" style="
-    padding-left: 12%;">
-          <div class="row">
-           <div class="col-lg-6 grid-margin stretch-card" style="flex: 100;max-width: 90%;">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Bảng xếp hạng lượt xem</h4>
-                  <canvas id="barChart1"></canvas>
-                </div>
-              </div>
-            </div>          
-          </div>
-		  <div class="row">
-           <div class="col-lg-6 grid-margin stretch-card" style="flex: 100;max-width: 90%;">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Bảng xếp hạng lượt thích</h4>
-                  <canvas id="barChart2"></canvas>
-                </div>
-              </div>
-            </div>          
-          </div>
-         
+      
         <!-- content-wrapper ends -->
-        <!-- partial:../../partials/_footer.html -->
-        
+        <!-- partial:partials/_footer.html -->
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
@@ -170,20 +209,29 @@
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
+
+  
+
   <!-- plugins:js -->
   <script src="vendors/base/vendor.bundle.base.js"></script>
   <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="vendors/chart.js/Chart.min.js"></script>
-    <!-- End plugin js for this page-->
+  <!-- Plugin js for this page-->
+  <script src="vendors/chart.js/Chart.min.js"></script>
+  <script src="vendors/datatables.net/jquery.dataTables.js"></script>
+  <script src="vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+  <!-- End plugin js for this page-->
   <!-- inject:js -->
   <script src="js/off-canvas.js"></script>
   <script src="js/hoverable-collapse.js"></script>
   <script src="js/template.js"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
-  <script src="js/chart.js"></script>
+  <script src="js/dashboard.js"></script>
+  <script src="js/data-table.js"></script>
+  <script src="js/jquery.dataTables.js"></script>
+  <script src="js/dataTables.bootstrap4.js"></script>
   <!-- End custom js for this page-->
 </body>
 
 </html>
+

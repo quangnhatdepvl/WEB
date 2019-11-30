@@ -97,7 +97,7 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-      <!-- partial:partials/_sidebar.html -->
+      <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
@@ -109,36 +109,40 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-              <span class="menu-title">Quản lý Phim </span>
+               <span class="menu-title">Quản lý kho </span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="phimdangPhat.html">Phim đang phát</a></li>
-                <li class="nav-item"> <a class="nav-link" href="phimsapRa.html">Phim sắp ra mắt</a></li>
+              <li class="nav-item"> <a class="nav-link" href="sanphamdaban.html">Sản phẩm đã bán</a></li>
+					<li class="nav-item"> <a class="nav-link" href="sanphamconlai.html">Sản phẩm còn lại</a></li>
               </ul>
             </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="quanlytintuc.html">
-              <i class="mdi mdi-view-headline menu-icon"></i>
-              <span class="menu-title">Quản lý tin tức</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="thongketruycap.html">
-              <i class="mdi mdi-chart-pie menu-icon"></i>
-              <span class="menu-title">Thống kê truy cập</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="topPhim.html">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Top Phim</span>
-            </a>
-          </li>
-
-
+			  <li class="nav-item active">
+				<a class="nav-link" href="quanlydienthoai.html">
+				  <i class="mdi mdi-view-headline menu-icon"></i>
+				  <span class="menu-title">Quản lý điện thoại</span>
+				</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="quanlydonhang.html">
+				  <i class="mdi mdi-chart-pie menu-icon"></i>
+				  <span class="menu-title">Quản lý đơn hàng</span>
+				</a>
+			  </li>
+			 <li class="nav-item">
+				<a class="nav-link" href="quanlythanhtoan.html">
+				  <i class="mdi mdi-chart-pie menu-icon"></i>
+				  <span class="menu-title">Quản lý thanh toán</span>
+				</a>
+			  </li>
+			  <li class="nav-item">
+				<a class="nav-link" href="quanlykhachhang.html">
+				  <i class="mdi mdi-grid-large menu-icon"></i>
+				  <span class="menu-title">Quản lý khách hàng</span>
+				</a>
+			  </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -146,30 +150,28 @@
         <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer" role="grid"
           aria-describedby="datatable-buttons_info">
           <thead>
-            <tr role="row">
-              <th title="Số thứ tự" data-toggle="tooltip" title="" data-original-title="Số thứ tự" tabindex="0"
-                aria-controls="datatable-buttons" rowspan="1" colspan="1" aria-sort="ascending"
-                aria-label="STT: activate to sort column descending" style="width: 55.0104px;">STT</th>
+            <tr role="row">           
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="ID: activate to sort column ascending" style="width: 49.0104px;">ID</th>
+                aria-label="SST: activate to sort column ascending" style="width: 50px;">STT</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Ngày khuyến mãi: activate to sort column ascending" style="width: 170.01px;">Ngày viết</th>
+                aria-label="Tên sản phẩm: activate to sort column ascending" style="width: 200px;">Tên sản phẩm</th>
+				<th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
+                aria-label="Kiểu điện thoại: activate to sort column ascending" style="width: 200px;">Kiểu điện thoại</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Chủ đề: activate to sort column ascending" style="width: 185.01px;">Tiêu đề</th>
+                aria-label="Hãnh sản xuất: activate to sort column ascending" style="width: 200px;">Hãng sản xuất</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Nội dung: activate to sort column ascending" style="width: 482.01px;">Nội dung</th>
+                aria-label="Giá: activate to sort column ascending" style="width: 150px;">Giá</th>				 
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Thao tác: activate to sort column ascending" style="width: 130px;">Thao tác</th>
+                aria-label="Thao tác: activate to sort column ascending" style="width: 150px;">Thao tác</th>
             </tr>
           </thead>
           <tbody>
-            <tr role="row" class="odd">
-              <td class="sorting_1">1</td>
-              <td>01</td>
-              <td>21-11-2019</td>
-              <td>Otome Game no Hametsu - Hóa kiếp trở thành Otome!</td>
-              <td>Mới đây, trang web chính thức cho bộ anime truyền hình được dựa trên light novel Otome Game no Hametsu Flag...<a href="#">Xem thêm</a></td>
-
+             <tr role="row" class="odd">
+              <td></td>
+              <td></td>
+              <td></td>
+			  <td></td>
+              <td></td>
               <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
@@ -184,12 +186,12 @@
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>
-            <tr role="row" class="even">
-              <td class="sorting_1">2</td>
-              <td>02</td>
-              <td>21-11-2019</td>
-              <td>Kimi to Boku no Saigo no Senjou. - Yêu nhầm đối thủ</td>
-              <td>Vào hôm chủ nhật, tại sự kiện "Fantasia Bunko Kanshasai 2019" đã chính thức công bố sẽ chuyển thể light novel Kimi...<a href="#">Xem thêm</a></td>
+            <tr role="row" class="even">            
+              <td></td>
+              <td></td>
+              <td></td>
+			  <td></td>
+              <td></td>
               <!-- phần xóa  -->
               <td class="center"><a data-toggle="modal" data-target="#myModal1"><button title="Xóa bài viết" type="button"
                     class="btn btn-xs btn-danger btn-round">
@@ -202,12 +204,12 @@
                 </a></td>
               <!-- kết thúc phần xóa  -->
             </tr>
-            <tr role="row" class="odd">
-              <td class="sorting_1">3</td>
-              <td>03</td>
-              <td>21-11-2019</td>
-              <td>Kaguya-sama: Love is War - Cuộc chiến tình yêu trở lại với season 2!</td>
-              <td>Mới đây, trang web chính thức cho bộ anime truyền hình Kaguya-sama wa Kokurasetai - Tensai-tachi no Renai...<a href="#">Xem thêm</a></td>
+             <tr role="row" class="odd">
+              <td></td>
+              <td></td>
+              <td></td>
+			  <td></td>
+              <td></td>
               <!-- phần xóa  -->
               <td class="center"><a data-toggle="modal" data-target="#myModal1"><button title="Xóa bài viết" type="button"
                     class="btn btn-xs btn-danger btn-round">
@@ -221,11 +223,11 @@
               <!-- kết thúc phần xóa  -->
             </tr>
             <tr role="row" class="even">
-              <td class="sorting_1">4</td>
-              <td>04</td>
-              <td>21-11-2019</td>
-              <td>Slime Taoshite 300-nen. - Diệt Slime, level max lúc nào không hay!</td>
-              <td>Vào hôm thứ bảy, trong buổi livestream cho sự kiện "GA FES 2019" đã công bố chuyển thể bộ anime truyền hình Slime...<a href="#">Xem thêm</a></td>
+              <td></td>
+              <td></td>
+              <td></td>
+			  <td></td>
+              <td></td>
               <!-- phần xóa  -->
               <td class="center"><a data-toggle="modal" data-target="#myModal1"><button title="Xóa bài viết" type="button"
                     class="btn btn-xs btn-danger btn-round">

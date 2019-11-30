@@ -1,35 +1,39 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <html lang="en">
-
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Ustora Demo</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ustora Demo</title>
 
-	<!-- Google Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600' rel='stylesheet'
-		type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300' rel='stylesheet' type='text/css'>
-	<link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
+<!-- Google Fonts -->
+<link
+	href='http://fonts.googleapis.com/css?family=Titillium+Web:400,200,300,700,600'
+	rel='stylesheet' type='text/css'>
+<link
+	href='http://fonts.googleapis.com/css?family=Roboto+Condensed:400,700,300'
+	rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Raleway:400,100'
+	rel='stylesheet' type='text/css'>
 
-	<!-- Bootstrap -->
-	<link rel="stylesheet" href="css/bootstrap.min.css">
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="css/font-awesome.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="css/font-awesome.min.css">
 
-	<!-- Custom CSS -->
-	<link rel="stylesheet" href="css/owl.carousel.css">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/responsive.css">
-	<link rel="stylesheet" href="css/login.css">
+<!-- Custom CSS -->
+<link rel="stylesheet" href="css/owl.carousel.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive.css">
+<link rel="stylesheet" href="css/login.css">
 
-	<!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
-	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-	<!--[if lt IE 9]>
+<!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/jsp5shiv/3.7.2/jsp5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
@@ -38,7 +42,6 @@
 <body>
 
 	<jsp:include page="header.jsp/">
-
 		<div class="maincontent-area">
 			<div class="zigzag-bottom"></div>
 			<div class="container">
@@ -60,10 +63,9 @@
 															<img src="img/product-1.jpg" alt="">
 															<div class="product-hover">
 																<a href="#" class="add-to-cart-link"><i
-																		class="fa fa-shopping-cart"></i> Add to cart</a>
-																<a href="single-product.html"
-																	class="view-details-link"><i class="fa fa-link"></i>
-																	See details</a>
+																	class="fa fa-shopping-cart"></i> Add to cart</a> <a
+																	href="single-product.html" class="view-details-link"><i
+																	class="fa fa-link"></i> See details</a>
 															</div>
 														</div>
 
@@ -88,8 +90,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-	
-</body>
+		</div></body>
 
 </html>

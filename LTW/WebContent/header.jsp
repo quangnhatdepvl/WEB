@@ -32,15 +32,16 @@
 </head>
 <body>
 
-	
-    <div class="header-area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8" style="float: right;">
-                    <div class="user-menu">
-                        <ul style="float: right;">
-                            <li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>                         
-                            <li><a href="cart.jsp"><i class="fa fa-user"></i> My Cart</a></li>
+
+	<div class="header-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8" style="float: right;">
+					<div class="user-menu">
+						<ul style="float: right;">
+							<li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>
+							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
+									Cart</a></li>
 							<li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
 						</ul>
 					</div>
@@ -85,7 +86,7 @@
 							class="icon-bar"></span>
 					</button>
 				</div>
-			
+
 				<c:url value="ListPhoneController" var="nokia">
 					<c:param name="model" value="nokia" />
 				</c:url>
@@ -105,23 +106,18 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class="">
-						<div>
-						<a href="index.jsp"
-							style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home</b></a>
-							</div>
-							</li>
-						<li class="">
-						<div><a href='<c:out value="${nokia}"/>'><img
-								src="img/brand1.png" alt="a" class="product-thumb"></a>
-									</div></li>
+						<li class=""><a href="index.jsp" style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home</b></a>
+						</li>
+						<li class=""><a href='<c:out value="${nokia}"/>'><img
+								src="img/brand1.png" alt="a" class="product-thumb"></a></li>
 						<li class=""><a href="<c:out value="${samsung}"/>"><img
 								src="img/brand3.png" alt="" class="product-thumb"></a></li>
 						<li class=""><a href="<c:out value="${apple}"/>"><img
 								src="img/brand4.png" alt="" class="product-thumb"></a></li>
 						<li class=""><a href="<c:out value="${htc}"/>"><img
 								src="img/brand5.png" alt="" class="product-thumb"></a></li>
-						<li class=""><a href="<c:out value="${lg}"/>"><img src="img/brand6.png" alt="" class="product-thumb"></a></li>
+						<li class=""><a href="<c:out value="${lg}"/>"><img
+								src="img/brand6.png" alt="" class="product-thumb"></a></li>
 
 					</ul>
 				</div>

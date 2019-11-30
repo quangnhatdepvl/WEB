@@ -37,31 +37,7 @@ public class PhoneDAO {
 		return listPhone;
 	}
 
-	public PhoneModel getPhone(String nhaSanXuat) {
-		PhoneModel phone = new PhoneModel();
-		try {
-			Connection conn = DbUtils.getConnection();
-			String sql = "select * from phone where nhaSanXuat= ?";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, nhaSanXuat);
-			ResultSet rss = ps.executeQuery();
-			if (rss.next()) {
-				phone.setId(rss.getInt("id"));
-				phone.setName(rss.getString("phoneName"));
-				phone.setTypeTel(rss.getString("typePhone"));
-				phone.setPrice(rss.getDouble("price"));
-				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
-				phone.setUrl_img(rss.getString("img_url"));
-				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
-				phone.setDescription(rss.getString("des"));
-				phone.setId(rss.getInt("luotTruyCap"));
-
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return phone;
-	}
+	
 	
 	public PhoneModel getPhone(int id) {
 		PhoneModel phone = new PhoneModel();
@@ -99,15 +75,15 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+//				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
-				phone.setTypeTel(rss.getString("typePhone"));
+//				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
-				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
-				phone.setUrl_img(rss.getString("img_url"));
-				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
-				phone.setDescription(rss.getString("des"));
-				phone.setId(rss.getInt("luotTruyCap"));
+//				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+//				phone.setUrl_img(rss.getString("img_url"));
+//				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+//				phone.setDescription(rss.getString("des"));
+//				phone.setId(rss.getInt("luotTruyCap"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {

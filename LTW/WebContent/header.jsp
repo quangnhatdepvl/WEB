@@ -25,6 +25,8 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
 <!-- Custom CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
@@ -42,7 +44,27 @@
 							<li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>
 							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
 									Cart</a></li>
-							<li><a href="login.jsp"><i class="fa fa-user"></i> Login</a></li>
+							<c:choose>
+								<c:when test="${username == null }">
+									<li><a href="login.jsp"><i class="fa fa-user"></i>
+											Login</a></li>
+								</c:when>
+								<c:otherwise>
+									<li><div class="w3-container">
+											<div class="w3-dropdown-hover">
+												<button class="w3-button">
+													<i class="fa fa-user"></i> ${username }
+												</button>
+												<div class="w3-dropdown-content w3-bar-block w3-border">
+													<a href="#" class="w3-bar-item w3-button">Cài đặt tài khoản </a>
+														 <a href="LogoutController"
+														class="w3-bar-item w3-button">Đăng xuất</a>
+
+												</div>
+											</div>
+										</div></li>
+								</c:otherwise>
+							</c:choose>
 						</ul>
 					</div>
 				</div>
@@ -106,17 +128,18 @@
 
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-						<li class=""><a href="index.jsp" style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home</b></a>
+						<li class=""><a href="index.jsp"
+							style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home</b></a>
 						</li>
-						<li class=""><a href='<c:out value="${nokia}"/>'><img
+						<li class=""><a href="${nokia}"><img
 								src="img/brand1.png" alt="a" class="product-thumb"></a></li>
-						<li class=""><a href="<c:out value="${samsung}"/>"><img
+						<li class=""><a href="${samsung}"><img
 								src="img/brand3.png" alt="" class="product-thumb"></a></li>
-						<li class=""><a href="<c:out value="${apple}"/>"><img
+						<li class=""><a href="${apple}"><img
 								src="img/brand4.png" alt="" class="product-thumb"></a></li>
-						<li class=""><a href="<c:out value="${htc}"/>"><img
+						<li class=""><a href="${htc}"><img
 								src="img/brand5.png" alt="" class="product-thumb"></a></li>
-						<li class=""><a href="<c:out value="${lg}"/>"><img
+						<li class=""><a href="${lg}"><img
 								src="img/brand6.png" alt="" class="product-thumb"></a></li>
 
 					</ul>

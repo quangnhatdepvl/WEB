@@ -37,8 +37,6 @@ public class PhoneDAO {
 		return listPhone;
 	}
 
-	
-	
 	public PhoneModel getPhone(int id) {
 		PhoneModel phone = new PhoneModel();
 		try {
@@ -115,7 +113,7 @@ public class PhoneDAO {
 		}
 		return bl;
 	}
-	
+
 	public boolean deletePhone(PhoneModel phone) {
 		boolean bl = false;
 		try {
@@ -133,4 +131,52 @@ public class PhoneDAO {
 		return bl;
 	}
 
+	public ArrayList<PhoneModel> sortByPrice(int limit) {
+		ArrayList<PhoneModel> list = new ArrayList<>();
+		String sql = "SELECT  DISTINCT * FROM phone ORDER BY price desc LIMIT ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, limit);
+			ResultSet rss = ps.executeQuery();
+			while(rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setName(rss.getString("phoneName"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setUrl_img(rss.getString("img_url"));
+				list.add(phone);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+	
+
+	public ArrayList<PhoneModel> sortByNgaySanXuat(int limit) {
+		ArrayList<PhoneModel> list = new ArrayList<>();
+		String sql = "SELECT  DISTINCT * FROM phone ORDER BY ngaySanXuat desc LIMIT ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, limit);
+			ResultSet rss = ps.executeQuery();
+			while(rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setName(rss.getString("phoneName"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setUrl_img(rss.getString("img_url"));
+				list.add(phone);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+
+	}
 }

@@ -47,7 +47,7 @@ public class LoginController extends HttpServlet {
 		if (usDAO.login(username, password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("username", username);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("trang-chu");
 		} else {
 			String error = "Ten dang nhap hoac mat khau khong dung";
 			request.setAttribute("error", error);

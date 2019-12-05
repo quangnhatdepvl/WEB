@@ -16,7 +16,7 @@ import model.PhoneModel;
 /**
  * Servlet implementation class PhoneController
  */
-@WebServlet("/trang-chu")
+@WebServlet(urlPatterns = "/trang-chu")
 public class PhoneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int SORTBYPRICE = 10;
@@ -42,7 +42,7 @@ public class PhoneController extends HttpServlet {
 		ArrayList<PhoneModel> sortByDate = phDAO.sortByNgaySanXuat(SORTBYDATE);
 		request.setAttribute("sortByPrice", sortByPrice);
 		request.setAttribute("sortByDate", sortByDate);
-		RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/user/index.jsp");
 		rd.forward(request, response);
 	}
 

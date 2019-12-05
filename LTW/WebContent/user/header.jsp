@@ -41,12 +41,12 @@
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">
 						<ul style="float: right;">
-							<li><a href="index.jsp	"><i class="fa fa-user"></i> Home</a></li>
+							<li><a href="${pageContext.request.contextPath }/trang-chu	"><i class="fa fa-user"></i> Home</a></li>
 							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
 									Cart</a></li>
 							<c:choose>
 								<c:when test="${username == null }">
-									<li><a href="login.jsp"><i class="fa fa-user"></i>
+									<li><a href="${pageContext.request.contextPath }/dang-nhap"><i class="fa fa-user"></i>
 											Login</a></li>
 								</c:when>
 								<c:otherwise>
@@ -57,7 +57,7 @@
 												</button>
 												<div class="w3-dropdown-content w3-bar-block w3-border">
 													<a href="#" class="w3-bar-item w3-button">Cài đặt tài khoản </a>
-														 <a href="LogoutController"
+														 <a href="${pageContext.request.contextPath }/LogoutController"
 														class="w3-bar-item w3-button">Đăng xuất</a>
 
 												</div>

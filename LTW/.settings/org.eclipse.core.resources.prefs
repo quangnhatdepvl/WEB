@@ -1,4 +1,11 @@
 eclipse.preferences.version=1
-encoding//WebContent/cart.jsp=UTF-8
-encoding//WebContent/forgot.jsp=UTF-8
+encoding//WebContent/admin/add.jsp=UTF-8
+encoding//WebContent/admin/admin_index.jsp=UTF-8
+encoding//WebContent/admin/quanlydienthoai.jsp=UTF-8
+encoding//WebContent/admin/quanlykhachhang.jsp=UTF-8
+encoding//WebContent/admin/quanlythanhtoan.jsp=UTF-8
+encoding//WebContent/admin/sanphamconlai.jsp=UTF-8
+encoding//WebContent/admin/sanphamdaban.jsp=UTF-8
+encoding//WebContent/user/cart.jsp=UTF-8
+encoding//WebContent/user/forgot.jsp=UTF-8
 encoding/<project>=UTF-8

@@ -1,9 +1,5 @@
 <!DOCTYPE html>
-<!--
-	ustora by freshdesignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
+
   <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
@@ -30,10 +26,13 @@
 <link rel="stylesheet" href="css/font-awesome.min.css">
 
 <!-- Custom CSS -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="css/index.css">
 <link rel="stylesheet" href="css/owl.carousel.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/responsive.css">
 <link rel="stylesheet" href="css/login.css">
+
 
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -124,7 +123,7 @@
 	<img src="img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">
 	
-	<form action="LoginController" method="post">
+	<form action="dang-nhap" method="post">
 	<div class="loginbox">
 		<div style="padding-top: 30%;">
 			<br>

@@ -15,7 +15,7 @@ import dao.UserDAO;
 /**
  * Servlet implementation class LoginController
  */
-@WebServlet("/LoginController")
+@WebServlet(urlPatterns = "/dang-nhap")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -32,7 +32,7 @@ public class LoginController extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("/user/login.jsp");
 	}
 
 	/**
@@ -51,7 +51,7 @@ public class LoginController extends HttpServlet {
 		} else {
 			String error = "Ten dang nhap hoac mat khau khong dung";
 			request.setAttribute("error", error);
-			RequestDispatcher rd = request.getRequestDispatcher("/login.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("user/login.jsp");
 			rd.forward(request, response);
 		}
 	}

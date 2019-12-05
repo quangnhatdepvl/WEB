@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
 /**
  * Servlet implementation class LogoutController
  */
-@WebServlet("/LogoutController")
+@WebServlet("/dang-xuat")
 public class LogoutController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -30,7 +30,7 @@ public class LogoutController extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.removeAttribute("username");
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("trang-chu");
 	}
 
 	/**

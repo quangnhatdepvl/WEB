@@ -1,7 +1,7 @@
+<!DOCTYPE html>
+<html lang="en">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<html lang="en">
-
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -41,7 +41,7 @@
                   <i class="mdi mdi-magnify"></i>
                 </span>
               </div>
-              <input type="text" class="form-control" placeholder="TÃ¬m kiáº¿m" aria-label="search" aria-describedby="search">
+              <input type="text" class="form-control" placeholder="Tìm kiếm" aria-label="search" aria-describedby="search">
             </div>
           </li>
         </ul>
@@ -52,7 +52,7 @@
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="messageDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">Tin nháº¯n</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Tin nhắn</p>
               
    
             </div>
@@ -63,7 +63,7 @@
               <span class="count"></span>
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="notificationDropdown">
-              <p class="mb-0 font-weight-normal float-left dropdown-header">ThÃ´ng bÃ¡o</p>
+              <p class="mb-0 font-weight-normal float-left dropdown-header">Thông báo</p>
             </div>
           </li>
           <li class="nav-item nav-profile dropdown">
@@ -74,11 +74,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
                 <i class="mdi mdi-settings text-primary"></i>
-                CÃ i Äáº·t tÃ i khoáº£n
+                Cài đặt tài khoản
               </a>
               <a class="dropdown-item">
                 <i class="mdi mdi-logout text-primary"></i>
-                ÄÄng xuáº¥t
+                Đăng xuất
               </a>
             </div>
           </li>
@@ -94,46 +94,46 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="index.jsp">
+            <a class="nav-link" href="admin_index.jsp">
               <i class="mdi mdi-home menu-icon"></i>
-              <span class="menu-title">Trang quáº£n lÃ½</span>
+              <span class="menu-title">Trang quản lý</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
               <i class="mdi mdi-circle-outline menu-icon"></i>
-               <span class="menu-title">Quáº£n lÃ½ kho </span>
+               <span class="menu-title">Quản lý kho </span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-              <li class="nav-item"> <a class="nav-link" href="sanphamdaban.jsp">Sáº£n pháº©m ÄÃ£ bÃ¡n</a></li>
-					<li class="nav-item"> <a class="nav-link" href="sanphamconlai.jsp">Sáº£n pháº©m cÃ²n láº¡i</a></li>
+              <li class="nav-item"> <a class="nav-link" href="sanphamdaban.jsp">Sản phẩm đã bán</a></li>
+					<li class="nav-item"> <a class="nav-link" href="sanphamconlai.jsp">Sản phẩm còn lại</a></li>
               </ul>
             </div>
           </li>
           <li class="nav-item">
            <a class="nav-link" href="quanlydienthoai.jsp">
               <i class="mdi mdi-view-headline menu-icon"></i>
-               <span class="menu-title">Quáº£n lÃ½ Äiá»n thoáº¡i</span>
+               <span class="menu-title">Quản lý điện thoại</span>
             </a>
           </li>
          <li class="nav-item active">
             <a class="nav-link" href="quanlydonhang.jsp">
               <i class="mdi mdi-chart-pie menu-icon"></i>
-             <span class="menu-title">Quáº£n lÃ½ ÄÆ¡n hÃ ng</span>
+             <span class="menu-title">Quản lý đơn hàng</span>
             </a>
           </li>
 		  <li class="nav-item">
 				<a class="nav-link" href="quanlythanhtoan.jsp">
 				  <i class="mdi mdi-chart-pie menu-icon"></i>
-				  <span class="menu-title">Quáº£n lÃ½ thanh toÃ¡n</span>
+				  <span class="menu-title">Quản lý thanh toán</span>
 				</a>
 			  </li>
           <li class="nav-item">
             <a class="nav-link" href="quanlykhachhang.jsp">
               <i class="mdi mdi-grid-large menu-icon"></i>
-               <span class="menu-title">Quáº£n lÃ½ khÃ¡ch hÃ ng</span>
+               <span class="menu-title">Quản lý khách hàng</span>
             </a>
           </li>
         </ul>
@@ -147,19 +147,19 @@
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
                 aria-label="SST: activate to sort column ascending" style="width: 50px;">STT</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="TÃªn sáº£n pháº©m: activate to sort column ascending" style="width: 200px;">TÃªn sáº£n pháº©m</th>
+                aria-label="Tên sản phẩm: activate to sort column ascending" style="width: 200px;">Tên sản phẩm</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="HÃ£nh sáº£n xuáº¥t: activate to sort column ascending" style="width: 200px;">HÃ£ng sáº£n xuáº¥t</th>
+                aria-label="Hãnh sản xuất: activate to sort column ascending" style="width: 200px;">Hãng sản xuất</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="GiÃ¡: activate to sort column ascending" style="width: 150px;">GiÃ¡</th>
+                aria-label="Giá: activate to sort column ascending" style="width: 150px;">Giá</th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="HÃ£ng sáº£n xuáº¥t: activate to sort column ascending" style="width: 200px;">TÃªn khÃ¡ch hÃ ng</th>
+                aria-label="Hãng sản xuất: activate to sort column ascending" style="width: 200px;">Tên khách hàng</th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Tuá»i: activate to sort column ascending" style="width: 50px;">Tuá»i</th>
+                aria-label="Tuổi: activate to sort column ascending" style="width: 50px;">Tuổi</th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Äá»a chá»: activate to sort column ascending" style="width: 200px;">Äá»a chá»</th>
+                aria-label="Địa chỉ: activate to sort column ascending" style="width: 200px;">Địa chỉ</th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Thao tÃ¡c: activate to sort column ascending" style="width: 150px;">Thao tÃ¡c</th>
+                aria-label="Thao tác: activate to sort column ascending" style="width: 150px;">Thao tác</th>
             </tr>
           </thead>
           <tbody>
@@ -172,18 +172,18 @@
 			  <td></td>
               <td></td>
 
-              <!-- pháº§n xÃ³a  -->
+              <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="XÃ³a bÃ i viáº¿t" type="button" class="btn btn-xs btn-danger btn-round text-center">xÃ¡c nháº­n
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
                   
                   </button></a>
                 <a href="">
-                  <button title="Sá»­a bÃ i viáº¿t" class="btn btn-xs btn-info btn-round text-center">Há»§y                 
+                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
                   </button>
                 </a>
               </td>
-              <!-- káº¿t thÃºc pháº§n xÃ³a  -->
+              <!-- kết thúc phần xóa  -->
             </tr>
             <tr role="row" class="even">
              <td></td>
@@ -194,18 +194,18 @@
 			  <td></td>
               <td></td>
 
-              <!-- pháº§n xÃ³a  -->
+              <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="XÃ³a bÃ i viáº¿t" type="button" class="btn btn-xs btn-danger btn-round text-center">xÃ¡c nháº­n
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
                   
                   </button></a>
                 <a href="">
-                  <button title="Sá»­a bÃ i viáº¿t" class="btn btn-xs btn-info btn-round text-center">Há»§y                 
+                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
                   </button>
                 </a>
               </td>
-              <!-- káº¿t thÃºc pháº§n xÃ³a  -->
+              <!-- kết thúc phần xóa  -->
             </tr>
             <tr role="row" class="odd">
               <td></td>
@@ -216,18 +216,18 @@
 			  <td></td>
               <td></td>
 
-              <!-- pháº§n xÃ³a  -->
+              <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="XÃ³a bÃ i viáº¿t" type="button" class="btn btn-xs btn-danger btn-round text-center">xÃ¡c nháº­n
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
                   
                   </button></a>
                 <a href="">
-                  <button title="Sá»­a bÃ i viáº¿t" class="btn btn-xs btn-info btn-round text-center">Há»§y                 
+                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
                   </button>
                 </a>
               </td>
-              <!-- káº¿t thÃºc pháº§n xÃ³a  -->
+              <!-- kết thúc phần xóa  -->
             </tr>
             <tr role="row" class="even">
               <td></td>
@@ -238,18 +238,18 @@
 			  <td></td>
               <td></td>
 
-              <!-- pháº§n xÃ³a  -->
+              <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="XÃ³a bÃ i viáº¿t" type="button" class="btn btn-xs btn-danger btn-round text-center">xÃ¡c nháº­n
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
                   
                   </button></a>
                 <a href="">
-                  <button title="Sá»­a bÃ i viáº¿t" class="btn btn-xs btn-info btn-round text-center">Há»§y                 
+                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
                   </button>
                 </a>
               </td>
-              <!-- káº¿t thÃºc pháº§n xÃ³a  -->
+              <!-- kết thúc phần xóa  -->
             </tr>
           
           </tbody>
@@ -281,7 +281,7 @@ function openPage(pageName,elmnt,color) {
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
 </script> 
-<!-- end script slider chÃ¡t -->
+<!-- end script slider chát -->
 
   <!-- plugins:js -->
   <script src="vendors/base/vendor.bundle.base.js"></script>

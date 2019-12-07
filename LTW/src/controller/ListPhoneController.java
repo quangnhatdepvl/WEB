@@ -39,7 +39,7 @@ public class ListPhoneController extends HttpServlet {
 		PhoneDAO phoneDAO = new PhoneDAO();
 		List<PhoneModel> listPhone = phoneDAO.getAll(model);
 		request.setAttribute("listPhone", listPhone);
-		RequestDispatcher rd = request.getRequestDispatcher("danhsachsanpham.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("user/danhsachsanpham.jsp");
 		rd.forward(request, response);
 	}
 

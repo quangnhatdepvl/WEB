@@ -20,16 +20,16 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="user/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="user/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="user/css/owl.carousel.css">
+<link rel="stylesheet" href="user/css/style.css">
+<link rel="stylesheet" href="user/css/responsive.css">
+<link rel="stylesheet" href="user/css/login.css">
 
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -60,7 +60,7 @@
 
 													<div class="single-product">
 														<div class="product-f-image">
-															<img src="img/product-1.jpg" alt="">
+															<img src="user/img/product-1.jpg" alt="">
 															<div class="product-hover">
 																<a href="#" class="add-to-cart-link"><i
 																	class="fa fa-shopping-cart"></i> Add to cart</a> <a

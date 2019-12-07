@@ -42,19 +42,19 @@
 
 
 <body>
-	<c:url value="danh-sach-san-pham" var="nokia">
+	<c:url value="danh-sach-san-pham" var="nokia" scope="request">
 		<c:param name="model" value="nokia" />
 	</c:url>
-	<c:url value="danh-sach-san-pham" var="samsung">
-		<c:param name="model" value="sung" />
+	<c:url value="danh-sach-san-pham" var="samsung" scope="request">
+		<c:param name="model" value="samsung" />
 	</c:url>
-	<c:url value="danh-sach-san-pham" var="apple">
-		<c:param name="model" value="aplle" />
+	<c:url value="danh-sach-san-pham" var="apple" scope="request">
+		<c:param name="model" value="apple" />
 	</c:url>
-	<c:url value="danh-sach-san-pham" var="htc">
+	<c:url value="danh-sach-san-pham" var="htc" scope="request">
 		<c:param name="model" value="htc" />
 	</c:url>
-	<c:url value="danh-sach-san-pham" var="lg">
+	<c:url value="danh-sach-san-pham" var="lg" scope="request">
 		<c:param name="model" value="lg" />
 	</c:url>
 

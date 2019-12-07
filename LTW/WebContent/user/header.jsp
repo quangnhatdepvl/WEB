@@ -20,16 +20,16 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="user/csss/bootstrap.min.css">
+<link rel="stylesheet" href="user/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="user/csss/font-awesome.min.css">
+<link rel="stylesheet" href="user/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="user/csss/owl.carousel.css">
-<link rel="stylesheet" href="user/csss/style.css">
-<link rel="stylesheet" href="user/csss/responsive.css">
-<link rel="stylesheet" href="user/csss/login.css">
+<link rel="stylesheet" href="user/css/owl.carousel.css">
+<link rel="stylesheet" href="user/css/style.css">
+<link rel="stylesheet" href="user/css/responsive.css">
+<link rel="stylesheet" href="user/css/login.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
@@ -62,7 +62,7 @@
 		<div class="container">
 			<div class="row">
 			<div class="logo">
-                       <h1 style="padding-bottom: 1px;"><a href="./"><img src="img/logo.png"></a></h1>
+                     <h1 style="padding-bottom: 1px;"><a href="#"><img src="user/img/logo1.png"></a></h1>
                     </div>
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">

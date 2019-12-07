@@ -69,7 +69,7 @@
 		</div>
 
 		<br> <a href="forgot.jsp"><b>Bạn quên mật khẩu ?</b></a> <a
-			href="register.jsp"><b>Bạn chưa có tài khoản?</b></a>
+			href="dang-ky"><b>Bạn chưa có tài khoản?</b></a>
 		</form>
 		<h6 style="color:red">${error }</h6>
 	</div>

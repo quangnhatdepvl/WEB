@@ -61,6 +61,9 @@
 	<div class="header-area">
 		<div class="container">
 			<div class="row">
+			<div class="logo">
+                       <h1 style="padding-bottom: 1px;"><a href="index.html"><img src="img/logo.png"></a></h1>
+                    </div>
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">
 						<ul style="float: right;">
@@ -105,20 +108,7 @@
 		</div>
 	</div>
 	<!-- End header area -->
-
-	<div class="site-branding-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="logo">
-						<h1>
-							<a href="./"><img src="user/img/logo.png"></a>
-						</h1>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+	
 	<!-- End site branding area -->
 
 	<div class="mainmenu-area">

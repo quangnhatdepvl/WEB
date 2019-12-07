@@ -13,7 +13,7 @@ public class UserDAO {
 		boolean bl = false;
 		Connection conn = DbUtils.getConnection();
 		try {
-			String sql = "insert into user (username, password) values (?,?)";
+			String sql = "insert into user_db (username, pass) values (?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, username);
 			ps.setString(2, password);
@@ -38,7 +38,7 @@ public class UserDAO {
 		Connection conn = DbUtils.getConnection();
 		try {
 			PreparedStatement ps = conn
-					.prepareStatement("select username, password from user where username = ? and password = ?");
+					.prepareStatement("select username, pass from user_db where username = ? and pass = ?");
 			ps.setString(1, username);
 			ps.setString(2, password);
 			ResultSet rss = ps.executeQuery();

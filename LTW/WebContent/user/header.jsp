@@ -66,8 +66,7 @@
 						<ul style="float: right;">
 							<li><a href="${pageContext.request.contextPath }/trang-chu"><i
 									class="fa fa-user"></i> Home</a></li>
-							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
-									Cart</a></li>
+							
 							<c:choose>
 								<c:when test="${username == null }">
 									<li><a
@@ -75,6 +74,8 @@
 											class="fa fa-user"></i> Login</a></li>
 								</c:when>
 								<c:otherwise>
+								<li><a href="${pageContext.request.contextPath }/shopping-cart"><i class="fa fa-user"></i> My
+									Cart</a></li>
 									<li><div class="w3-container">
 											<div class="w3-dropdown-hover">
 												<button class="w3-button">

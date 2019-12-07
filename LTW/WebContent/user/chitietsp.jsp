@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<!--
-	ustora by fresh`ignweb.com
-	Twitter: https://twitter.com/freshdesignweb
-	URL: https://www.freshdesignweb.com/ustora/
--->
-<html lang="en">
-<head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<html lang="en">
+<head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -38,14 +32,15 @@
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+		  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+		<![endif]-->
 </head>
 
 <body>
 
-	<jsp:include page="header.jsp" />
+<jsp:include page="header.jsp"/>
+	<!-- End header area -->
 
 	<div class="product-big-title-area">
 		<div class="container">
@@ -77,9 +72,9 @@
 						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
 						<h2 class="sidebar-title">Products</h2>
 						<div class="thubmnail-recent">
-							<img src="user/imgproduct-thumb-1.jpg" class="recent-thumb" alt="">
+							<img src="user/img/product-thumb-1.jpg" class="recent-thumb" alt="">
 							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
+								<a href="single-product.html">Sony Smart TV - 2015</a>
 							</h2>
 							<div class="product-sidebar-price">
 								<ins>$700.00</ins>
@@ -93,15 +88,15 @@
 					<div class="single-sidebar">
 						<h2 class="sidebar-title">Thương hiệu</h2>
 						<ul>
-							<li><a href="nokia.jsp"><img src="user/imgbrand1.png"
+							<li><a href="nokia.html"><img src="user/img/brand1.png"
 									style="width: 30%"> 99+ sản phẩm khác</a></li>
-							<li><a href="samsung.jsp"><img src="user/imgbrand3.png"
+							<li><a href="samsung.html"><img src="user/img/brand3.png"
 									style="width: 30%">99+ sản phẩm khác </a></li>
-							<li><a href="apple.jsp"><img src="user/imgbrand4.png"
+							<li><a href="apple.html"><img src="user/img/brand4.png"
 									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="htc.jsp"><img src="user/imgbrand5.png"
+							<li><a href="htc.html"><img src="user/img/brand5.png"
 									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="lg.jsp"><img src="user/imgbrand6.png"
+							<li><a href="lg.html"><img src="user/img/brand6.png"
 									style="width: 30%">99+ sản phẩm khác</a></li>
 						</ul>
 					</div>
@@ -118,25 +113,25 @@
 							<div class="col-sm-6">
 								<div class="product-images">
 									<div class="product-main-img">
-										<img src="user/imganh.jpg" alt="">
+										<img src="user/img/anh.jpg" alt="">
 
 									</div>
 
 
 									<div class="product-gallery">
-										<img src="user/imgproduct-thumb-1.jpg" alt=""> <img
-											src="user/imgproduct-thumb-2.jpg" alt=""> <img
-											src="user/imgproduct-thumb-3.jpg" alt="">
+										<img src="user/img/product-thumb-1.jpg" alt=""> <img
+											src="user/img/product-thumb-2.jpg" alt=""> <img
+											src="user/img/product-thumb-3.jpg" alt="">
 									</div>
 								</div>
 							</div>
 
 							<div class="col-sm-6">
 								<div class="product-inner">
-									<h2 class="product-name">Sony Smart TV - 2015</h2>
+									<h2 class="product-name">${phone.name }</h2>
 									<div class="product-inner-price">
-										<ins>5,700,000VND</ins>
-										<del>7,500,000VND</del>
+										<ins>${phone.price }</ins>
+										
 									</div>
 
 									<form action="" class="cart">
@@ -144,7 +139,8 @@
 											<input type="number" size="4" class="input-text qty text"
 												title="Qty" value="1" name="quantity" min="1" step="1">
 										</div>
-										<button class="add_to_cart_button" type="submit">Thêm
+										
+										<button class="add_to_cart_button" type="submit" style="margin-top:10px;">Thêm
 											vào giỏ hàng</button>
 									</form>
 
@@ -169,7 +165,7 @@
 												id="home">
 												<h4>Mô tả</h4>
 												<hr>
-												<p>Chả có gì</p>
+												<p>${phone.description }</p>
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="profile">
 												<h4>Thông số kĩ thuật</h4>

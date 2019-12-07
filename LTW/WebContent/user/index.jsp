@@ -84,14 +84,14 @@
 									<div class="product-f-image">
 										<img src="user/img/product-5.jpg" alt="">
 										<div class="product-hover">
-											<a href="#" class="add-to-cart-link"><i
-												class="fa fa-shopping-cart"></i> Add to cart</a> <a href="${phone }"
+											<a href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }" class="add-to-cart-link"><i
+												class="fa fa-shopping-cart"></i> Add to cart</a> <a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
 												class="view-details-link"><i class="fa fa-link"></i> See
 												details</a>
 										</div>
 									</div>
 
-									<h2>iPhone 6</h2>
+									<h2>${phone.name }</h2>
 
 									<div class="product-carousel-price">
 										<ins>${phone.price }</ins>

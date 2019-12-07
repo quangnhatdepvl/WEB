@@ -62,7 +62,7 @@
 		<div class="container">
 			<div class="row">
 			<div class="logo">
-                       <h1 style="padding-bottom: 1px;"><a href="index.html"><img src="img/logo.png"></a></h1>
+                       <h1 style="padding-bottom: 1px;"><a href="./"><img src="img/logo.png"></a></h1>
                     </div>
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">
@@ -108,7 +108,6 @@
 		</div>
 	</div>
 	<!-- End header area -->
-	
 	<!-- End site branding area -->
 
 	<div class="mainmenu-area">

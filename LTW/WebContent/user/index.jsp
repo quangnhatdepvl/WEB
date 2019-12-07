@@ -19,18 +19,18 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="user/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="user/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/index.css">
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="user/css/index.css">
+<link rel="stylesheet" href="user/css/owl.carousel.css">
+<link rel="stylesheet" href="user/css/style.css">
+<link rel="stylesheet" href="user/css/responsive.css">
+<link rel="stylesheet" href="user/css/login.css">
 
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -42,14 +42,14 @@
 
 <body>
 
-	<jsp:include page="header.jsp"></jsp:include>
+	<jsp:include page="header.jsp"/>
 
 	<div class="slider-area">
 		<!-- Slider -->
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
-				
-				<li><img src="img/h4-slide.png" alt="Slide">
+
+				<li><img src="user/img/h4-slide.png" alt="Slide">
 					<div class="caption-group">
 						<h2 class="caption title">
 							iPhone <span class="primary">6 <strong>Plus</strong></span>
@@ -58,15 +58,14 @@
 						<a class="caption button-radius" href="#"><span class="icon"></span>Shop
 							now</a>
 					</div></li>
-				
-				
+
+
 			</ul>
 		</div>
 		<!-- ./Slider -->
 	</div>
 	<!-- End slider area -->
 	<!-- End promo area -->
-
 	<div class="maincontent-area">
 		<div class="zigzag-bottom"></div>
 		<div class="container">
@@ -77,31 +76,29 @@
 						<div
 							class="product-carousel owl-carousel owl-theme owl-loaded owl-responsive-1000"
 							style="height: 400px;">
+							<c:forEach items="${sortByPrice }" var="phone">
+								<c:url value="chitietsp.jsp" var="chitiet">
+									<c:param name="sanpham" value="${phone.id }" />
+								</c:url>
+								<div class="single-product">
+									<div class="product-f-image">
+										<img src="user/img/product-5.jpg" alt="">
+										<div class="product-hover">
+											<a href="#" class="add-to-cart-link"><i
+												class="fa fa-shopping-cart"></i> Add to cart</a> <a href="${phone }"
+												class="view-details-link"><i class="fa fa-link"></i> See
+												details</a>
+										</div>
+									</div>
 
-							<div class="single-product">
-								<div class="product-f-image">
-									<img src="img/product-1.jpg" alt="">
-									<div class="product-hover">
-										<a href="#" class="add-to-cart-link"><i
-											class="fa fa-shopping-cart"></i> Add to cart</a> <a
-											href="single-product.jsp" class="view-details-link"><i
-											class="fa fa-link"></i> See details</a>
+									<h2>iPhone 6</h2>
+
+									<div class="product-carousel-price">
+										<ins>${phone.price }</ins>
+
 									</div>
 								</div>
-
-								<h2>
-									<a href="single-product.jsp">Samsung Galaxy s5- 2015</a>
-								</h2>
-
-								<div class="product-carousel-price">
-									<ins>$700.00</ins>
-									<del>$100.00</del>
-								</div>
-							</div>
-
-
-
-
+							</c:forEach>
 						</div>
 					</div>
 				</div>
@@ -122,7 +119,7 @@
 						<a href="" class="wid-view-more">View All</a>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Sony Smart TV - 2015</a>
 							</h2>
@@ -138,7 +135,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Apple new mac book 2015</a>
 							</h2>
@@ -154,7 +151,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Apple new i phone 6</a>
 							</h2>
@@ -176,7 +173,7 @@
 						<a href="#" class="wid-view-more">View All</a>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Sony playstation microsoft</a>
 							</h2>
@@ -192,7 +189,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Sony Smart Air Condtion</a>
 							</h2>
@@ -208,7 +205,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-2.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Samsung gallaxy note 4</a>
 							</h2>
@@ -230,7 +227,7 @@
 						<a href="#" class="wid-view-more">View All</a>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-3.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Apple new i phone 6</a>
 							</h2>
@@ -246,7 +243,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-4.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Samsung gallaxy note 4</a>
 							</h2>
@@ -262,7 +259,7 @@
 						</div>
 						<div class="single-wid-product">
 							<a href="single-product.jsp"><img
-								src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
+								src="user/img/product-thumb-1.jpg" alt="" class="product-thumb"></a>
 							<h2>
 								<a href="single-product.jsp">Sony playstation microsoft</a>
 							</h2>
@@ -294,14 +291,14 @@
 		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	<!-- jQuery sticky menu -->
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
+	<script src="user/js/owl.carousel.min.js"></script>
+	<script src="user/js/jquery.sticky.js"></script>
 
 	<!-- jQuery easing -->
-	<script src="js/jquery.easing.1.3.min.js"></script>
+	<script src="user/js/jquery.easing.1.3.min.js"></script>
 
 	<!-- Main Script -->
-	<script src="js/main.js"></script>
+	<script src="user/js/main.js"></script>
 
 	<!-- Slider -->
 	<script>
@@ -315,7 +312,7 @@
 			}
 		}
 	</script>
-	<script type="text/javascript" src="js/bxslider.min.js"></script>
-	<script type="text/javascript" src="js/script.slider.js"></script>
+	<script type="text/javascript" src="user/js/bxslider.min.js"></script>
+	<script type="text/javascript" src="user/js/script.slider.js"></script>
 </body>
 </html>

@@ -38,6 +38,7 @@ public class PhoneController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PhoneDAO phDAO = new PhoneDAO();
+		
 		ArrayList<PhoneModel> sortByPrice = phDAO.sortByPrice(SORTBYPRICE);
 		ArrayList<PhoneModel> sortByDate = phDAO.sortByNgaySanXuat(SORTBYDATE);
 		request.setAttribute("sortByPrice", sortByPrice);

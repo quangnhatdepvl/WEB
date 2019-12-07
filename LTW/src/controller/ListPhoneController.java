@@ -16,7 +16,7 @@ import model.PhoneModel;
 /**
  * Servlet implementation class ListPhoneController
  */
-@WebServlet("/ListPhoneController")
+@WebServlet("/danh-sach-san-pham")
 public class ListPhoneController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

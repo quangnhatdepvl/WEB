@@ -1,9 +1,9 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-<html lang="en">
-<head>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<html lang="en">
+<head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -43,20 +43,21 @@
 
 <body>
 	<c:url value="danh-sach-san-pham" var="nokia">
-	<c:param name="model" value="nokia"/>
+		<c:param name="model" value="nokia" />
 	</c:url>
 	<c:url value="danh-sach-san-pham" var="samsung">
-	<c:param name="model" value="sung"/>
+		<c:param name="model" value="sung" />
 	</c:url>
 	<c:url value="danh-sach-san-pham" var="apple">
-	<c:param name="model" value="aplle"/>
+		<c:param name="model" value="aplle" />
 	</c:url>
 	<c:url value="danh-sach-san-pham" var="htc">
-	<c:param name="model" value="htc"/>
+		<c:param name="model" value="htc" />
 	</c:url>
 	<c:url value="danh-sach-san-pham" var="lg">
-	<c:param name="model" value="lg"/>
+		<c:param name="model" value="lg" />
 	</c:url>
+
 	<div class="header-area">
 		<div class="container">
 			<div class="row">
@@ -115,8 +116,6 @@
 						</h1>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
@@ -135,7 +134,7 @@
 				</div>
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
-	
+
 						<li class=""><a href="trang-chu"
 							style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home<b></b></b></a></li>
 						<a href="${nokia }"><img src="user/img/brand1.png" alt="a"
@@ -158,6 +157,6 @@
 		</div>
 	</div>
 	<!-- End mainmenu area -->
-	
+
 </body>
 </html>

@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
+<!--
+	ustora by fresh`ignweb.com
+	Twitter: https://twitter.com/freshdesignweb
+	URL: https://www.freshdesignweb.com/ustora/
+-->
 <html lang="en">
-
   <head>
+     <%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
     <meta charset="utf-8">
-
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ustora Demo</title>
@@ -120,15 +122,15 @@
             <div class="row">
                 <div class="col-md-3">
                      <div class="single-sidebar">
-                        <h2 class="sidebar-title">TÃM KIáº¾M Sáº¢N PHáº¨M</h2>
+                        <h2 class="sidebar-title">TÌM KIẾM SẢN PHẨM</h2>
                         <form action="#">
-                            <input type="text" placeholder="Nháº­p tÃªn sáº£n pháº©m...">
-                            <input type="submit" value="TÃ¬m kiáº¿m">
+                            <input type="text" placeholder="Nhập tên sản phẩm...">
+                            <input type="submit" value="Tìm kiếm">
                         </form>
                     </div>
                     
                                <div class="single-sidebar">
-									<!-- Láº¥y dá»¯ liá»u lÃªn. PhÃ¢n loáº¡i báº±ng thÆ°Æ¡ng hiá»u. Láº¥y top 4 lÆ°á»£t xem cao nháº¥t-->
+									<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
                         <h2 class="sidebar-title">Products</h2>
                         <div class="thubmnail-recent">
                             <img src="img/product-thumb-1.jpg" class="recent-thumb" alt="">
@@ -143,13 +145,13 @@
                     </div>
                     
                    <div class="single-sidebar">
-                        <h2 class="sidebar-title">ThÆ°Æ¡ng hiá»u</h2>
+                        <h2 class="sidebar-title">Thương hiệu</h2>
                         <ul>
-                            <li><a href="nokia.jsp"><img src="img/brand1.png" style = "width : 30%" >  99+ sáº£n pháº©m khÃ¡c</a></li>
-                             <li><a href="samsung.jsp"><img src="img/brand3.png"style = "width : 30%" >99+ sáº£n pháº©m khÃ¡c </a></li>
-                                 <li><a href="apple.jsp"><img src="img/brand4.png"  style = "width : 30%">99+ sáº£n pháº©m khÃ¡c</a></li>
-                                        <li><a href="htc.jsp"><img src="img/brand5.png" style = "width : 30%" >99+ sáº£n pháº©m khÃ¡c</a></li>
-                                 <li><a href="lg.jsp"><img src="img/brand6.png" style = "width : 30%" >99+ sáº£n pháº©m khÃ¡c</a></li>
+                            <li><a href="nokia.jsp"><img src="img/brand1.png" style = "width : 30%" >  99+ sản phẩm khác</a></li>
+                             <li><a href="samsung.jsp"><img src="img/brand3.png"style = "width : 30%" >99+ sản phẩm khác </a></li>
+                                 <li><a href="apple.jsp"><img src="img/brand4.png"  style = "width : 30%">99+ sản phẩm khác</a></li>
+                                        <li><a href="htc.jsp"><img src="img/brand5.png" style = "width : 30%" >99+ sản phẩm khác</a></li>
+                                 <li><a href="lg.jsp"><img src="img/brand6.png" style = "width : 30%" >99+ sản phẩm khác</a></li>
                         </ul>
                     </div>
                 </div>
@@ -190,31 +192,31 @@
                                         <div class="quantity">
                                             <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1">
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">ThÃªm vÃ o giá» hÃ ng</button>
+                                        <button class="add_to_cart_button" type="submit">Thêm vào giỏ hàng</button>
                                     </form>   
                                     
                                     <div class="product-inner-category">
-                                        <p>Thá» loáº¡i: <a href="#">Smartphone</a>. CÃ¹ng thá» loáº¡i: <a href="#">Má»i nháº¥t</a>, 
-										<a href="#">mÃ n hÃ¬nh Äáº¹p</a>, <a href="#">cáº¥u hÃ¬nh máº¡nh</a>, <a href="#">giÃ¡ Äáº¹p</a>.</p>
+                                        <p>Thể loại: <a href="#">Smartphone</a>. Cùng thể loại: <a href="#">Mới nhất</a>, 
+										<a href="#">màn hình đẹp</a>, <a href="#">cấu hình mạnh</a>, <a href="#">giá đẹp</a>.</p>
                                     </div> 
                                     
                                     <div role="tabpanel">
                                         <ul class="product-tab" role="tablist">
-                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">MÃ´ táº£</a></li>
-                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">ThÃ´ng sá» chi tiáº¿t</a></li>
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Thông số chi tiết</a></li>
                                         </ul>
                                         <div class="tab-content">
                                             <div role="tabpanel" class="tab-pane fade in active" id="home">
-                                                <h4>MÃ´ táº£</h4> 		
+                                                <h4>Mô tả</h4> 		
 												<hr>
-											<p> Cháº£ cÃ³ gÃ¬</p>
+											<p> Chả có gì</p>
                                             </div>
                                             <div role="tabpanel" class="tab-pane fade" id="profile">
-                                                <h4>ThÃ´ng sá» kÄ© thuáº­t</h4>
+                                                <h4>Thông số kĩ thuật</h4>
 												<hr>
-												<li> Vi xá»­ lÃ½ <b>A13 Bionic</b> tiáº¿n trÃ¬nh 7mm (ÄÆ°á»£c ÄÃ¡nh giÃ¡ lÃ  con chip di Äá»ng máº¡nh máº½ nháº¥t thá»i Äiá»m ra máº¯t).</li>	
-												<li> MÃ n hÃ¬nh <b>OLED</b> cÃ´ng nghá» Super Retina XDR 5.8 inch (Äá» phÃ¢n giáº£i 1125 Ã 2436 pixels) trÃªn 11 Pro vÃ  6.5 inch (Äá» phÃ¢n giáº£i 1242 Ã 2688 pixels) trÃªn 11 Pro Max.</li>
-												<li>Máº­t Äá» Äiá»m áº£nh trÃªn mÃ n hÃ¬nh Äáº¡t 458 ppi, Äá» tÆ°Æ¡ng pháº£n 2,000,000:1, Äá» sÃ¡ng tá»i Äa 1200 nits (HDR). </li>
+												<li> Vi xử lý <b>A13 Bionic</b> tiến trình 7mm (được đánh giá là con chip di động mạnh mẽ nhất thời điểm ra mắt).</li>	
+												<li> Màn hình <b>OLED</b> công nghệ Super Retina XDR 5.8 inch (độ phân giải 1125 × 2436 pixels) trên 11 Pro và 6.5 inch (độ phân giải 1242 × 2688 pixels) trên 11 Pro Max.</li>
+												<li>Mật độ điểm ảnh trên màn hình đạt 458 ppi, độ tương phản 2,000,000:1, độ sáng tối đa 1200 nits (HDR). </li>
                                         </div>
                                     </div>
                                     

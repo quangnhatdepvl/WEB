@@ -1,53 +1,78 @@
 package model;
 
 public class UserModel {
-	private String username;
-	private String password;
-	private String fullname;
-	private int age;
-	private String address;
+	private int user_id;
+	private String user_name;
+	private String user_password;
+	private String user_fullname;
+	private Role role;
+
 	
 	public UserModel() {
 		
 	}
-	public UserModel(String username, String password, String fullname, int age, String address) {
-		super();
-		this.username = username;
-		this.password = password;
-		this.fullname = fullname;
-		this.age = age;
-		this.address = address;
+
+
+	public UserModel(int user_id, String user_name, String user_password, String user_fullname,Role role) {
+		this.user_id = user_id;
+		this.user_name = user_name;
+		this.user_password = user_password;
+		this.user_fullname = user_fullname;
+		this.setRole(role);
 	}
+
+
+	public int getUser_id() {
+		return user_id;
+	}
+
+
+	public void setUser_id(int user_id) {
+		this.user_id = user_id;
+	}
+
+
+	public String getUser_name() {
+		return user_name;
+	}
+
+
+	public void setUser_name(String user_name) {
+		this.user_name = user_name;
+	}
+
+
+	public String getUser_password() {
+		return user_password;
+	}
+
+
+	public void setUser_password(String user_password) {
+		this.user_password = user_password;
+	}
+
+
+	public String getUser_fullname() {
+		return user_fullname;
+	}
+
+
+	public void setUser_fullname(String user_fullname) {
+		this.user_fullname = user_fullname;
+	}
+
+
+	public Role getRole() {
+		return role;
+	}
+
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+
 	
-	public String getUsername() {
-		return username;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public String getFullname() {
-		return fullname;
-	}
-	public int getAge() {
-		return age;
-	}
-	public String getAddress() {
-		return address;
-	}
-	public void setUsername(String username) {
-		this.username = username;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public void setFullname(String fullname) {
-		this.fullname = fullname;
-	}
-	public void setAge(int age) {
-		this.age = age;
-	}
-	public void setAddress(String address) {
-		this.address = address;
-	}
+	
 	
 }

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import model.Role;
 import model.UserModel;
@@ -38,7 +39,7 @@ public class UserDAO {
 
 	public UserModel login(String username, String password) {
 		UserModel user = new UserModel();
-
+		ArrayList<Role> roles = new ArrayList<>();
 		Connection conn = DbUtils.getConnection();
 		StringBuilder sql = new StringBuilder();
 		sql.append("select user_name,user_password,role_name ");
@@ -50,13 +51,14 @@ public class UserDAO {
 			ps.setString(1, username);
 			ps.setString(2, password);
 			ResultSet rss = ps.executeQuery();
-			if (rss.next()) {
+			while (rss.next()) {
 			
 				user.setUser_name(rss.getString("user_name"));
 				user.setUser_password(rss.getString("user_password"));
 				Role role = new Role();
 				role.setRole_name(rss.getString("role_name"));
-				user.setRole(role);
+				roles.add(role);
+				user.setRoles(roles);
 			}
 		} catch (SQLException ex) {
 

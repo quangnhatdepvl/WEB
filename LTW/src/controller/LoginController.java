@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.UserDAO;
+import model.Role;
 import model.UserModel;
 
 /**
@@ -45,17 +47,20 @@ public class LoginController extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
+
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		UserDAO userDAO = new UserDAO();
 		UserModel user = userDAO.login(username, password);
-		if(user.getRole().getRole_name().equals("ROLE_ADMIN")) {
-			response.sendRedirect(request.getContextPath()+"/admin-trang-chu");
-		} else {
-			response.sendRedirect(request.getContextPath()+"/trang-chu");
+		ArrayList<Role> roles = user.getRoles();
+		for (Role role : roles) {
+			if (role.getRole_name().equals("ROLE_ADMIN")) {
+				response.sendRedirect(request.getContextPath() + "/admin-trang-chu");
+				break;
+			} else {
+				response.sendRedirect(request.getContextPath() + "/trang-chu");
+			}
 		}
-
 	}
 
 }

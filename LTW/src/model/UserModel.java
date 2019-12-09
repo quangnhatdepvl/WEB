@@ -1,11 +1,13 @@
 package model;
 
+import java.util.ArrayList;
+
 public class UserModel {
 	private int user_id;
 	private String user_name;
 	private String user_password;
 	private String user_fullname;
-	private Role role;
+	private ArrayList<Role> roles;
 
 	
 	public UserModel() {
@@ -13,12 +15,13 @@ public class UserModel {
 	}
 
 
-	public UserModel(int user_id, String user_name, String user_password, String user_fullname,Role role) {
+	public UserModel(int user_id, String user_name, String user_password, String user_fullname, ArrayList<Role> roles) {
+		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_password = user_password;
 		this.user_fullname = user_fullname;
-		this.setRole(role);
+		this.roles = roles;
 	}
 
 
@@ -62,15 +65,24 @@ public class UserModel {
 	}
 
 
-	public Role getRole() {
-		return role;
+	public ArrayList<Role> getRoles() {
+		return roles;
 	}
 
 
-	public void setRole(Role role) {
-		this.role = role;
+	public void setRoles(ArrayList<Role> roles) {
+		this.roles = roles;
 	}
 
+
+	@Override
+	public String toString() {
+		return "UserModel [user_id=" + user_id + ", user_name=" + user_name + ", user_password=" + user_password
+				+ ", user_fullname=" + user_fullname + ", roles=" + roles + "]";
+	}
+
+
+	
 
 	
 	

@@ -16,7 +16,7 @@ import model.PhoneModel;
 /**
  * Servlet implementation class HomeUserController
  */
-@WebServlet(urlPatterns = "/trang-chu")
+@WebServlet(urlPatterns = {"/trang-chu","/"} )
 public class HomeUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int SORTBYPRICE = 10;

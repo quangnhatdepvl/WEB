@@ -1,4 +1,4 @@
-package controller;
+package controller.user;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,10 +14,10 @@ import dao.PhoneDAO;
 import model.PhoneModel;
 
 /**
- * Servlet implementation class PhoneController
+ * Servlet implementation class HomeUserController
  */
 @WebServlet(urlPatterns = "/trang-chu")
-public class PhoneController extends HttpServlet {
+public class HomeUserController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final int SORTBYPRICE = 10;
 	private static final int SORTBYDATE = 5;
@@ -25,7 +25,7 @@ public class PhoneController extends HttpServlet {
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public PhoneController() {
+	public HomeUserController() {
 		super();
 		// TODO Auto-generated constructor stub
 	}

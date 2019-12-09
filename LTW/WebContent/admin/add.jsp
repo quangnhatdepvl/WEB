@@ -152,7 +152,7 @@
 							<div class="card">
 								<div class="card-body">
 
-									<form class="forms-sample">
+									<form class="forms-sample" enctype="multipart/form-data">
 										<div class="form-group">
 											<label for="exampleInputName1">Tiêu đề</label> <input
 												type="text" class="form-control" id="exampleInputName1"
@@ -170,7 +170,7 @@
 										</div>
 										<div class="form-group">
 											<label>Hình ảnh</label> <input type="file" name="img[]"
-												class="file-upload-default">
+												class="file-upload-default" accept="image/">
 											<div class="input-group col-xs-12">
 												<input type="text" class="form-control file-upload-info"
 													disabled placeholder="Upload Image"> <span

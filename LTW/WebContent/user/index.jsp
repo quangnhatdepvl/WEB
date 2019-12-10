@@ -84,10 +84,12 @@
 									<div class="product-f-image">
 										<img src="user/img/product-5.jpg" alt="">
 										<div class="product-hover">
+										<form action="shopping-cart" method="post">
 											<a href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }" class="add-to-cart-link"><i
 												class="fa fa-shopping-cart"></i> Add to cart</a> <a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
 												class="view-details-link"><i class="fa fa-link"></i> See
 												details</a>
+												</form>
 										</div>
 									</div>
 

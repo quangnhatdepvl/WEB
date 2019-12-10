@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import model.UserModel;
+
 /**
  * Servlet Filter implementation class ShoppingCartFilter
  */
@@ -40,8 +42,9 @@ public class ShoppingCartFilter implements Filter {
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
 		 String userLogin = null;
-		  if( session.getAttribute("username")!= null){
-	            userLogin =  session.getAttribute("username").toString();
+		  if( session.getAttribute("user")!= null){
+	           UserModel user = (UserModel) session.getAttribute("user");
+	           userLogin = user.getUser_name();
 	        }
 	        if(userLogin != null){
 	            chain.doFilter(request, response);

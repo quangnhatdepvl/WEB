@@ -54,13 +54,15 @@ public class LoginController extends HttpServlet {
 		UserDAO userDAO = new UserDAO();
 		UserModel user = userDAO.login(username, password);
 		ArrayList<Role> roles = user.getRoles();
+		HttpSession session = request.getSession();
 		for (Role role : roles) {
 			if (role.getRole_name().equals("ROLE_ADMIN")) {
-				HttpSession session = request.getSession();
+				
 				session.setAttribute("user", user);
 				response.sendRedirect(request.getContextPath() + "/admin-trang-chu");
 				break;
 			} else {
+				session.setAttribute("user", user);
 				response.sendRedirect(request.getContextPath() + "/trang-chu");
 			}
 		}

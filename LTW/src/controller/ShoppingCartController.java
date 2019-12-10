@@ -1,6 +1,7 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -19,6 +20,7 @@ import model.PhoneModel;
 @WebServlet("/shopping-cart")
 public class ShoppingCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private ArrayList<PhoneModel> listPhone = new ArrayList<>();
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -43,7 +45,10 @@ public class ShoppingCartController extends HttpServlet {
 		PhoneDAO phDAO = new PhoneDAO();
 		PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
 		HttpSession session = request.getSession();
-		session.setAttribute("phone", phone);
+		session.setAttribute("phone1", phone);
+		
+		listPhone.add(phone);
+		session.setAttribute("listPhone", listPhone);
 		RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
 		rd.forward(request, response);
 		}

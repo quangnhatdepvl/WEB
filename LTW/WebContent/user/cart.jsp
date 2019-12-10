@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html lang="en">
 <head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -118,30 +118,33 @@
 										</tr>
 									</thead>
 									<tbody>
-										<tr class="cart_item">
-											<td class="product-remove"><a title="Remove this item"
-												class="remove" href="#">×</a></td>
+										<c:forEach items="${listPhone}" var="phone">
+											<tr class="cart_item">
 
-											<td class="product-thumbnail"><a
-												href="single-product.jsp"><img width="145" height="145"
-													alt="poster_1_up" class="shop_thumbnail"
-													src="user/img/product-thumb-2.jpg"></a></td>
+												<td class="product-remove"><a title="Remove this item"
+													class="remove" href="#">×</a></td>
 
-											<td class="product-name"><a
-												href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a></td>
+												<td class="product-thumbnail"><a
+													href="single-product.jsp"><img width="145" height="145"
+														alt="poster_1_up" class="shop_thumbnail"
+														src="user/img/product-thumb-2.jpg"></a></td>
 
-											<td class="product-price"><span class="amount">${phone.price }</span>
-											</td>
+												<td class="product-name"><a
+													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a></td>
 
-											<td class="product-quantity">
-												<div class="quantity buttons_added">
-													<span class="amount">1</span>
-												</div>
-											</td>
-											<td class="product-subtotal"><span class="amount">£15.00</span>
-											</td>
-										</tr>
+												<td class="product-price"><span class="amount">${phone.price }</span>
+												</td>
 
+												<td class="product-quantity">
+													<div class="quantity buttons_added">
+														<span class="amount">1</span>
+													</div>
+												</td>
+												<td class="product-subtotal"><span class="amount">${phone.price }</span>
+												</td>
+
+											</tr>
+										</c:forEach>
 									</tbody>
 								</table>
 							</form>
@@ -173,7 +176,7 @@
 											href="#">Xem chi tiết</a></li>
 									</ul>
 								</div>
-								
+
 								<div class="cart_totals ">
 									<h2>TỔNG ĐƠN HÀNG</h2>
 

@@ -71,7 +71,7 @@
 									class="fa fa-user"></i> Home</a></li>
 							
 							<c:choose>
-								<c:when test="${user.username == null }">
+								<c:when test="${user.user_name == null }">
 									<li><a
 										href="${pageContext.request.contextPath }/dang-nhap"><i
 											class="fa fa-user"></i> Login</a></li>
@@ -82,7 +82,7 @@
 									<li><div class="w3-container">
 											<div class="w3-dropdown-hover">
 												<button class="w3-button">
-													<i class="fa fa-user"></i> ${username }
+													<i class="fa fa-user"></i> ${user.user_name }
 												</button>
 												<div class="w3-dropdown-content w3-bar-block w3-border">
 													<a href="#" class="w3-bar-item w3-button">Cài đặt tài

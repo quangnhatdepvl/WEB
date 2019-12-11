@@ -53,17 +53,23 @@ public class LoginController extends HttpServlet {
 		String password = request.getParameter("password");
 		UserDAO userDAO = new UserDAO();
 		UserModel user = userDAO.login(username, password);
-		ArrayList<Role> roles = user.getRoles();
-		HttpSession session = request.getSession();
-		for (Role role : roles) {
-			if (role.getRole_name().equals("ROLE_ADMIN")) {
-				
-				session.setAttribute("user", user);
-				response.sendRedirect(request.getContextPath() + "/admin-trang-chu");
-				break;
-			} else {
-				session.setAttribute("user", user);
-				response.sendRedirect(request.getContextPath() + "/trang-chu");
+		if (user.getUser_id() == 0) {
+			String error = "Ten dang nhap hoac mat khau khong chinh xac";
+			request.setAttribute("error", error);
+			RequestDispatcher rd = request.getRequestDispatcher("/user/login.jsp");
+			rd.forward(request, response);
+		} else {
+			ArrayList<Role> roles = user.getRoles();
+			HttpSession session = request.getSession(true);
+			for (Role role : roles) {
+				if (role.getRole_name().equals("ROLE_ADMIN")) {
+					session.setAttribute("user", user);
+					response.sendRedirect(request.getContextPath() + "/admin-trang-chu");
+					break;
+				} else {
+					session.setAttribute("user", user);
+					response.sendRedirect(request.getContextPath() + "/trang-chu");
+				}
 			}
 		}
 	}

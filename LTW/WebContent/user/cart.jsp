@@ -120,11 +120,15 @@
 									<tbody>
 										<c:set var="total" value="${0}" />
 										<c:forEach items="${listPhone}" var="phone">
+											<c:url value="shopping-cart" var="cart">
+												
+												<c:param name="delete" value="${phone.id }" />
+											</c:url>
 											<c:set var="total" value="${total +phone.price}" />
 											<tr class="cart_item">
 
 												<td class="product-remove"><a title="Remove this item"
-													class="remove" href="#">×</a></td>
+													class="remove" href="${cart}">×</a></td>
 
 												<td class="product-thumbnail"><a
 													href="single-product.jsp"><img width="145" height="145"
@@ -148,9 +152,9 @@
 
 
 										</c:forEach>
-										
+
 									</tbody>
-									
+
 								</table>
 								<p>${total }</p>
 							</form>

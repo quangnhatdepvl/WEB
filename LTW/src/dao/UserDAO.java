@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.PhoneModel;
 import model.Role;
 import model.UserModel;
 import utils.DbUtils;
@@ -42,7 +43,7 @@ public class UserDAO {
 		ArrayList<Role> roles = new ArrayList<>();
 		Connection conn = DbUtils.getConnection();
 		StringBuilder sql = new StringBuilder();
-		sql.append("select user_name,user_password,role_name ");
+		sql.append("select user_id, user_name,user_password,role_name ");
 		sql.append("from user_db as u ");
 		sql.append("inner join role_db as r ");
 		sql.append("on u.role_id = r.role_id where user_name = ? and user_password = ?");
@@ -52,7 +53,7 @@ public class UserDAO {
 			ps.setString(2, password);
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
-			
+				user.setUser_id(rss.getInt("user_id"));
 				user.setUser_name(rss.getString("user_name"));
 				user.setUser_password(rss.getString("user_password"));
 				Role role = new Role();
@@ -68,4 +69,6 @@ public class UserDAO {
 		return user;
 
 	}
+	
+	
 }

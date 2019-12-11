@@ -1,13 +1,14 @@
 package model;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class PhoneModel {
 	
 	private int id;
 	private String name;
 	private String typeTel;
-	private double price;
+	private double price;//long price 
 	private String nhaSanXuat;
 	private String url_img;
 	private Date ngaySanXuat;
@@ -123,6 +124,16 @@ public class PhoneModel {
 	public void setLuotTruyCap(int luotTruyCap) {
 		this.luotTruyCap = luotTruyCap;
 	}
+
+
+	@Override
+	public String toString() {
+		return "PhoneModel [id=" + id + ", name=" + name + ", typeTel=" + typeTel + ", price=" + price + ", nhaSanXuat="
+				+ nhaSanXuat + ", url_img=" + url_img + ", ngaySanXuat=" + ngaySanXuat + ", description=" + description
+				+ ", luotTruyCap=" + luotTruyCap + "]";
+	}
+	
+	
 	
 }
 	

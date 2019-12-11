@@ -118,7 +118,9 @@
 										</tr>
 									</thead>
 									<tbody>
+										<c:set var="total" value="${0}" />
 										<c:forEach items="${listPhone}" var="phone">
+											<c:set var="total" value="${total +phone.price}" />
 											<tr class="cart_item">
 
 												<td class="product-remove"><a title="Remove this item"
@@ -142,11 +144,15 @@
 												</td>
 												<td class="product-subtotal"><span class="amount">${phone.price }</span>
 												</td>
-
 											</tr>
+
+
 										</c:forEach>
+										
 									</tbody>
+									
 								</table>
+								<p>${total }</p>
 							</form>
 
 							<div class="cart-collaterals">

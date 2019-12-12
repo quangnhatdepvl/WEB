@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
@@ -44,19 +44,20 @@
 
 <body>
 
-<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
+
+	<c:url value="dang-ky" var="dangKy" />
 	<!-- End header area -->
 	<img src="user/img/dienthoai.jpg" style="width: 43%;">
 	<img src="user/img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">
-	
+
 	<form action="dang-nhap" method="post">
-	<div class="loginbox">
-		<div style="padding-top: 30%;">
-			<br>
-			<h2 style="color: black;">ĐĂNG NHẬP</h2>
-			<br>
-				<input type="text" name="username"
+		<div class="loginbox">
+			<div style="padding-top: 30%;">
+				<br>
+				<h2 style="color: black;">ĐĂNG NHẬP</h2>
+				<br> <input type="text" name="username"
 					class="form-control border border-success"
 					placeholder="Tên đăng nhập" autofocus="true "
 					style="width: 250px; hight: 30px; border: 2px solid black;">
@@ -66,13 +67,14 @@
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br> <input type="submit" class="btn10" value="Đăng nhập"
 					style="width: 250px; height: 50px; color: white; background-color: #ffce93;"></input>
-		</div>
+			</div>
 
-		<br> <a href="forgot.jsp"><b>Bạn quên mật khẩu ?</b></a> <a
-			href="register.jsp"><b>Bạn chưa có tài khoản?</b></a>
-		</form>
-		<h6 style="color:red">${error }</h6>
-	</div>
+			<br> <a href="forgot.jsp"><b>Bạn quên mật khẩu ?</b></a> <a
+				href="${dangKy }"><b>Bạn chưa có tài khoản?</b></a>
+				</div>
+	</form>
+	<h6 style="color: red">${error }</h6>
+	
 
 	<!-- Latest jQuery form server -->
 	<script src="https://code.jquery.com/jquery.min.js"></script>

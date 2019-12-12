@@ -190,4 +190,23 @@ public class PhoneDAO {
 		return list;
 
 	}
+	
+	public int getCountNhaSanXuat(String nhaSanXuat) {
+		int total = 0;
+		String sql = "select count(*) as total from phone where nhaSanXuat = ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,nhaSanXuat);
+			ResultSet rss = ps.executeQuery();
+			if(rss.next()) {
+				total = rss.getInt("total");
+			}
+		} catch(SQLException e) {
+			
+		}
+		return total;
+	}
+	
+	
 }

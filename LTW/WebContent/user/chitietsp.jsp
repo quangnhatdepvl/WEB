@@ -137,7 +137,7 @@
 								<div class="product-inner">
 									<h2 class="product-name">${phone.name }</h2>
 									<div class="product-inner-price">
-										<b style="color: red"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" />vnd</b>
+										<b style="color: red">Giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
 
 									</div>
 

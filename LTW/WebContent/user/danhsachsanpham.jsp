@@ -75,7 +75,7 @@
 
 													<h2>
 														<a href="single-product.html">${phone.name }</a> <br>
-														<b style="color: red"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
+														<b style="color: red">Giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
 													</h2>
 
 												</div>

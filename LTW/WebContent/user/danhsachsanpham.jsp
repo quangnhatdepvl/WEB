@@ -41,55 +41,57 @@
 
 <body>
 
-	<jsp:include page="header.jsp"/> 
-		<div class="maincontent-area">
-			<div class="zigzag-bottom"></div>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="latest-product">
-							<h2 class="section-title">Latest Products</h2>
+	<jsp:include page="header.jsp" />
+	<div class="maincontent-area">
+		<div class="zigzag-bottom"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="latest-product">					
+						<div
+							class="product-carousel owl-carousel owl-theme owl-responsive-1000 owl-loaded">
+							<div class="owl-stage-outer">
+								<div class="owl-stage">
 
-							<div class="product-carousel owl-carousel owl-theme owl-responsive-1000 owl-loaded">
-								<div class="owl-stage-outer">
-									<div class="owl-stage">
-
-										<c:forEach items="${listPhone}" var="phone">
-											<div class="owl-item cloned" style="width: 22%">
+									<c:forEach items="${listPhone}" var="phone">
+										<div class="owl-item cloned"
+											style="width: 22%; border-style: ridge;">
+											<div class="single-product">
 												<div class="single-product">
-													<div class="single-product">
-														<div class="product-f-image">
-															<img src="${phone.url_img}" style="width:  100%">
-															<div class="product-hover">
-																<a href="#" class="add-to-cart-link"><i
-																	class="fa fa-shopping-cart"></i> Add to cart</a> <a
-																	href="single-product.html" class="view-details-link"><i
-																	class="fa fa-link"></i> See details</a>
-															</div>
-														</div>
-
-														<h2>
-															<a href="single-product.html">${phone.name }</a>
-														</h2>
-
-														<div class="product-carousel-price">
-															<ins>${phone.price} vnd</ins>
+													<div class="product-f-image">
+														<img src="${phone.url_img}" style="width: 100%">
+														<div class="product-hover">
+															<a
+													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
+													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
+													Add to cart</a> <a
+													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
+													class="view-details-link"><i class="fa fa-link"></i>
+													See details</a>
 
 														</div>
 													</div>
 
+													<h2>
+														<a href="single-product.html">${phone.name }</a> <br>
+														<b style="color: red">Price: ${phone.price} vnd</b>
+													</h2>
+
 												</div>
 											</div>
-										</c:forEach>
-									</div>
-
+										</div>
+										
+									</c:forEach>
+									<br>
 								</div>
+
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		</body>
+	</div>
+</body>
 
 </html>

@@ -155,60 +155,13 @@
 									</tbody>
 
 								</table>
-								<p>${total }</p>
+								<p style="color: red">Tổng giá: ${total } vnd</p>
 							</form>
 
 							<div class="cart-collaterals">
 
-
-								<div class="cross-sells">
-									<h2>Những sản phẩm khác</h2>
-									<ul class="products">
-										<li class="product"><a href="single-product.jsp"> <img
-												width="325" height="325" alt="T_4_front"
-												class="attachment-shop_catalog wp-post-image"
-												src="user/img/product-2.jpg">
-												<h3>Tên đt</h3> <span class="price"><span
-													class="amount">£20.00</span></span>
-										</a> <a class="add_to_cart_button" data-quantity="1"
-											data-product_sku="" data-product_id="22" rel="nofollow"
-											href="#">Xem chi tiết</a></li>
-
-										<li class="product"><a href="single-product.jsp"> <img
-												width="325" height="325" alt="T_4_front"
-												class="attachment-shop_catalog wp-post-image"
-												src="user/img/product-4.jpg">
-												<h3>Tên đt</h3> <span class="price"><span
-													class="amount">£20.00</span></span>
-										</a> <a class="add_to_cart_button" data-quantity="1"
-											data-product_sku="" data-product_id="22" rel="nofollow"
-											href="#">Xem chi tiết</a></li>
-									</ul>
-								</div>
-
-								<div class="cart_totals ">
-									<h2>TỔNG ĐƠN HÀNG</h2>
-
-									<table cellspacing="0">
-										<tbody>
-											<tr class="cart-subtotal">
-												<th>Giá của đơn hàng</th>
-												<td><span class="amount">£15.00</span></td>
-											</tr>
-
-											<tr class="shipping">
-												<th>Phí vận chuyển</th>
-												<td>Free</td>
-											</tr>
-
-											<tr class="order-total">
-												<th>Tổng đơn</th>
-												<td><strong><span class="amount">£15.00</span></strong>
-												</td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
+<button style="width: 16%;padding-left: 14px;">Thanh toán</button>
+								
 							</div>
 						</div>
 					</div>

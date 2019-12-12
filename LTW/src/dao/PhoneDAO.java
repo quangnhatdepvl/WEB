@@ -82,15 +82,15 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-//				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
-//				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
-//				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setUrl_img(rss.getString("img_url"));
-//				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
-//				phone.setDescription(rss.getString("des"));
-//				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				phone.setDescription(rss.getString("des"));
+				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {

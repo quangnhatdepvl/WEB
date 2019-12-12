@@ -44,6 +44,7 @@ public class HomeUserController extends HttpServlet {
 		request.setAttribute("sortByPrice", sortByPrice);
 		request.setAttribute("sortByDate", sortByDate);
 		
+				
 		RequestDispatcher rd = request.getRequestDispatcher("/user/index.jsp");
 		rd.forward(request, response);
 	}

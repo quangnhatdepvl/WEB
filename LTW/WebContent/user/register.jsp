@@ -4,7 +4,7 @@
 	Twitter: https://twitter.com/freshdesignweb
 	URL: https://www.freshdesignweb.com/ustora/
 -->
-  <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
 <head>
@@ -44,7 +44,7 @@
 </head>
 
 <body>
-<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
 	<!-- End header area -->
 	<img src="user/img/dienthoai.jpg" style="width: 43%;">
 	<img src="user/img/anh.jpg"
@@ -70,8 +70,8 @@
 
 			</div>
 			<input type="submit" class="btn10"
-				style="width: 200px; height: 50px; color: white; background-color: #ffce93;" value="Dang ky">
-			<br>
+				style="width: 200px; height: 50px; color: white; background-color: #ffce93;"
+				value="Dang ky"> <br>
 
 			<h6 style="color: red">${error }</h6>
 		</div>

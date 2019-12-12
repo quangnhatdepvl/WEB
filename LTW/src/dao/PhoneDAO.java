@@ -90,7 +90,7 @@ public class PhoneDAO {
 //				phone.setUrl_img(rss.getString("img_url"));
 //				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 //				phone.setDescription(rss.getString("des"));
-//				phone.setId(rss.getInt("luotTruyCap"));
+//				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {

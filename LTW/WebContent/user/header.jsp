@@ -137,10 +137,6 @@
 							class="product-thumb"></a>
 						<a href="${lg }"><img src="user/img/brand6.png" alt=""
 							class="product-thumb"></a>
-
-
-
-
 					</ul>
 				</div>
 			</div>

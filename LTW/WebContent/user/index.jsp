@@ -49,7 +49,7 @@
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
 				<c:forEach items="${sortByDate }" var="ph">
-					<li><img src="user/img/h4-slide.png" alt="Slide">
+					<li><img src="${ph.url_img}" alt="Slide" >
 					<c:url value="chi-tiet-san-pham" var="buy">
 					<c:param name="id" value="${ph.id }"></c:param>
 					</c:url>

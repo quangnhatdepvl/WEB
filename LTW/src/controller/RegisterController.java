@@ -14,7 +14,7 @@ import dao.UserDAO;
 /**
  * Servlet implementation class RegisterController
  */
-@WebServlet("/RegisterController")
+@WebServlet("/dang-ky")
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -33,7 +33,8 @@ public class RegisterController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.sendRedirect("register.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/user/register.jsp");
+		rd.forward(request, response);
 	}
 
 	/**
@@ -49,12 +50,12 @@ public class RegisterController extends HttpServlet {
 		UserDAO usDAO = new UserDAO();
 		if (password.equals(confirm)) {
 			if (usDAO.register(username, password)) {
-				response.sendRedirect("login.jsp");
+				response.sendRedirect("dang-nhap");
 			}
 		} else {
 			String error = "Tai khoan dang ky khong thanh cong";
 			request.setAttribute("error", error);
-			RequestDispatcher rd = request.getRequestDispatcher("register.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/user/register.jsp");
 			rd.forward(request, response);
 		}
 	}

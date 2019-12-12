@@ -24,16 +24,16 @@
 	rel='stylesheet' type='text/css'>
 
 <!-- Bootstrap -->
-<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="user/css/bootstrap.min.css">
 
 <!-- Font Awesome -->
-<link rel="stylesheet" href="css/font-awesome.min.css">
+<link rel="stylesheet" href="user/css/font-awesome.min.css">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" href="css/owl.carousel.css">
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/responsive.css">
-<link rel="stylesheet" href="css/login.css">
+<link rel="stylesheet" href="user/css/owl.carousel.css">
+<link rel="stylesheet" href="user/css/style.css">
+<link rel="stylesheet" href="user/css/responsive.css">
+<link rel="stylesheet" href="user/css/login.css">
 
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -44,86 +44,12 @@
 </head>
 
 <body>
-
-	<div class="header-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-8" style="float: right;">
-					<div class="user-menu">
-						<ul style="float: right;">
-							<li><a href="index.jsp	"><i class="fa fa-user"></i>
-									Home</a></li>
-							<li><a href="cart.jsp"><i class="fa fa-user"></i> My
-									Cart</a></li>
-									<li style="background-color: #ffce93;"><a href="login.jsp"><i
-									class="fa fa-user"></i> Login</a></li>
-						</ul>
-					</div>
-				</div>
-
-				<div class="col-md-4">
-					<div class="header-right">
-						<ul class="list-unstyled list-inline">
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+<jsp:include page="header.jsp"/>
 	<!-- End header area -->
-
-	<div class="site-branding-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-sm-6">
-					<div class="logo">
-						<h1>
-							<a href="index.jsp"><img src="img/logo.png"></a>
-						</h1>
-					</div>
-				</div>
-
-
-			</div>
-		</div>
-	</div>
-	<!-- End site branding area -->
-
-	<div class="mainmenu-area">
-		<div class="container">
-			<div class="row">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse"
-						data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span> <span
-							class="icon-bar"></span> <span class="icon-bar"></span> <span
-							class="icon-bar"></span>
-					</button>
-				</div>
-				<div class="navbar-collapse collapse">
-					<ul class="nav navbar-nav">
-						<li class=""><a href="index.jsp">Home</a></li>
-						<a href="nokia.jsp"><img src="img/brand1.png" alt="a"
-							class="product-thumb"></a>
-						<a href="samsung.jsp"><img src="img/brand3.png" alt=""
-							class="product-thumb"></a>
-						<a href="apple.jsp"><img src="img/brand4.png" alt=""
-							class="product-thumb"></a>
-						<a href="htc.jsp"><img src="img/brand5.png" alt=""
-							class="product-thumb"></a>
-						<a href="lg.jsp"><img src="img/brand6.png" alt=""
-							class="product-thumb"></a>
-
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
-	<!-- End header area -->
-	<img src="img/dienthoai.jpg" style="width: 43%;">
-	<img src="img/anh.jpg"
+	<img src="user/img/dienthoai.jpg" style="width: 43%;">
+	<img src="user/img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">
-	<form action="RegisterController" method="post">
+	<form action="dang-ky" method="post">
 		<div class="loginbox">
 			<div style="padding-top: 30%;">
 				<br>
@@ -144,8 +70,8 @@
 
 			</div>
 			<input type="submit" class="btn10"
-				style="width: 200px; height: 50px; color: white; background-color: #ffce93;">Đăng
-			ký</input> <br>
+				style="width: 200px; height: 50px; color: white; background-color: #ffce93;" value="Dang ky">
+			<br>
 
 			<h6 style="color: red">${error }</h6>
 		</div>
@@ -158,17 +84,17 @@
 		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 
 	<!-- jQuery sticky menu -->
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.sticky.js"></script>
+	<script src="user/jsowl.carousel.min.js"></script>
+	<script src="user/jsjquery.sticky.js"></script>
 
 	<!-- jQuery easing -->
-	<script src="js/jquery.easing.1.3.min.js"></script>
+	<script src="user/jsjquery.easing.1.3.min.js"></script>
 
 	<!-- Main Script -->
-	<script src="js/main.js"></script>
+	<script src="user/jsmain.js"></script>
 
 	<!-- Slider -->
-	<script type="text/javascript" src="js/bxslider.min.js"></script>
-	<script type="text/javascript" src="js/script.slider.js"></script>
+	<script type="text/javascript" src="user/jsbxslider.min.js"></script>
+	<script type="text/javascript" src="user/jsscript.slider.js"></script>
 </body>
 </html>

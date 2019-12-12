@@ -101,7 +101,7 @@
 									<h2>${phone.name }</h2>
 
 									<div class="product-carousel-price">
-										<ins>${phone.price } vnd</ins>
+										<p style="color: red">Giá: ${phone.price } vnd</p>
 
 									</div>
 								</div>

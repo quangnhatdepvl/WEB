@@ -87,7 +87,7 @@ public class PhoneDAO {
 //				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
 //				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
-//				phone.setUrl_img(rss.getString("img_url"));
+				phone.setUrl_img(rss.getString("img_url"));
 //				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 //				phone.setDescription(rss.getString("des"));
 //				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));

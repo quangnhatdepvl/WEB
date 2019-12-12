@@ -55,12 +55,11 @@
 									<div class="owl-stage">
 
 										<c:forEach items="${listPhone}" var="phone">
-											<div class="owl-item cloned">
+											<div class="owl-item cloned" style="width: 22%">
 												<div class="single-product">
-
 													<div class="single-product">
 														<div class="product-f-image">
-															<img src="user/img/product-1.jpg" alt="">
+															<img src="${phone.url_img}" style="width:  100%">
 															<div class="product-hover">
 																<a href="#" class="add-to-cart-link"><i
 																	class="fa fa-shopping-cart"></i> Add to cart</a> <a
@@ -74,7 +73,7 @@
 														</h2>
 
 														<div class="product-carousel-price">
-															<ins>${phone.price}</ins>
+															<ins>${phone.price} vnd</ins>
 
 														</div>
 													</div>

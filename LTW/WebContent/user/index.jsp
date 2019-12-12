@@ -82,9 +82,9 @@
 								<c:url value="chitietsp.jsp" var="chitiet">
 									<c:param name="sanpham" value="${phone.id }" />
 								</c:url>
-								<div class="single-product">
+								<div class="single-product" style="width:125%">
 									<div class="product-f-image">
-										<img src="user/img/product-5.jpg" alt="">
+										<img src="${phone.url_img }" alt="">
 										<div class="product-hover">
 											<form action="shopping-cart" method="post">
 												<a
@@ -101,7 +101,7 @@
 									<h2>${phone.name }</h2>
 
 									<div class="product-carousel-price">
-										<ins>${phone.price }</ins>
+										<ins>${phone.price } vnd</ins>
 
 									</div>
 								</div>

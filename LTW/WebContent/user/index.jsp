@@ -1,6 +1,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -49,17 +50,15 @@
 		<div class="block-slider block-slider4">
 			<ul class="" id="bxslider-home4">
 				<c:forEach items="${sortByDate }" var="ph">
-					<li><img src="${ph.url_img}" alt="Slide" >
-					<c:url value="chi-tiet-san-pham" var="buy">
-					<c:param name="id" value="${ph.id }"></c:param>
-					</c:url>
+					<li><img src="${ph.url_img}" alt="Slide"> <c:url
+							value="chi-tiet-san-pham" var="buy">
+							<c:param name="id" value="${ph.id }"></c:param>
+						</c:url>
 						<div class="caption-group">
-							<h2 class="caption title">${ph.name }
-								
-							</h2>
-							
-							<a class="caption button-radius" href="${buy }"><span class="icon"></span>Shop
-								now</a>
+							<h2 class="caption title">${ph.name }</h2>
+
+							<a class="caption button-radius" href="${buy }"><span
+								class="icon"></span>Shop now</a>
 						</div></li>
 				</c:forEach>
 			</ul>
@@ -82,7 +81,7 @@
 								<c:url value="chitietsp.jsp" var="chitiet">
 									<c:param name="sanpham" value="${phone.id }" />
 								</c:url>
-								<div class="single-product" style="width:125%">
+								<div class="single-product" style="width: 125%">
 									<div class="product-f-image">
 										<img src="${phone.url_img }" alt="">
 										<div class="product-hover">
@@ -101,7 +100,12 @@
 									<h2>${phone.name }</h2>
 
 									<div class="product-carousel-price">
-										<p style="color: red">Giá: ${phone.price } vnd</p>
+										<p style="color: red">
+											Giá:
+											<fmt:formatNumber type="number" maxFractionDigits="0"
+												value="${phone.price}" />
+											vnd
+										</p>
 
 									</div>
 								</div>

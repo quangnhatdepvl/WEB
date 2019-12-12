@@ -1,8 +1,10 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<html lang="en">
-<head>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<html lang="en">
+<head>
+
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -145,7 +147,7 @@
 														<span class="amount">1</span>
 													</div>
 												</td>
-												<td class="product-subtotal"><span class="amount">${phone.price }</span>
+												<td class="product-subtotal"><span class="amount"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /></span>
 												</td>
 											</tr>
 
@@ -155,13 +157,14 @@
 									</tbody>
 
 								</table>
-								<p style="color: red">Tổng giá: ${total } vnd</p>
+								<p style="color: red">Tổng giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${total}" /> vnd</p>
 							</form>
 
 							<div class="cart-collaterals">
 
-<button style="width: 16%;padding-left: 14px;">Thanh toán</button>
-								
+								<button style="width: 16%; padding-left: 14px;">Thanh
+									toán</button>
+
 							</div>
 						</div>
 					</div>

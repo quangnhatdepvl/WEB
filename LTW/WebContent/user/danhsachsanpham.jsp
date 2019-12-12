@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 
 <html lang="en">
 <head>
@@ -74,7 +75,7 @@
 
 													<h2>
 														<a href="single-product.html">${phone.name }</a> <br>
-														<b style="color: red">Price: ${phone.price} vnd</b>
+														<b style="color: red"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
 													</h2>
 
 												</div>

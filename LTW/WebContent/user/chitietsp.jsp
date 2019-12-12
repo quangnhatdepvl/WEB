@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -136,7 +137,7 @@
 								<div class="product-inner">
 									<h2 class="product-name">${phone.name }</h2>
 									<div class="product-inner-price">
-										<b style="color: red">Price: ${phone.price }vnd</b>
+										<b style="color: red"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" />vnd</b>
 
 									</div>
 

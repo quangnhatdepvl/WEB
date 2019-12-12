@@ -38,7 +38,6 @@ public class ShoppingCartController extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
-
 		ArrayList<PhoneModel> listPhone= (ArrayList<PhoneModel>) session.getAttribute("listPhone");
 		if (listPhone == null) {
 			listPhone = new ArrayList<>();
@@ -51,20 +50,14 @@ public class ShoppingCartController extends HttpServlet {
 		} else if (id != null && delete == null) {
 			PhoneDAO phDAO = new PhoneDAO();
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
-
 			listPhone.add(phone);
 			session.setAttribute("listPhone", listPhone);
-			System.out.println(session.getId());
 			response.sendRedirect("shopping-cart");
-
 		} else if (id == null && delete != null) {
-
 			PhoneDAO phDAO = new PhoneDAO();
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(delete));
-
 			for (Iterator<PhoneModel> iterator = listPhone.iterator(); iterator.hasNext();) {
 				PhoneModel p = iterator.next();
-
 				if (p.getId() == phone.getId()) {
 					iterator.remove();
 				}

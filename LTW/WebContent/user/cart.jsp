@@ -139,7 +139,7 @@
 												<td class="product-name"><a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a></td>
 
-												<td class="product-price"><span class="amount">${phone.price }</span>
+												<td class="product-price"><span class="amount"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /></span>
 												</td>
 
 												<td class="product-quantity">

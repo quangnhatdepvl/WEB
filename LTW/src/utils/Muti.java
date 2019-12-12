@@ -15,6 +15,10 @@ public class Muti {
 		mybundle = ResourceBundle.getBundle("language/messages");
 		System.out.println("Say how are you in Malaysian VN language: " + mybundle.getString("how_are_you"));
 		
+		Locale local = new Locale("vi");
+		System.out.println(local.getLanguage());
+		 String referer = request.getHeader("Referer");
+	        return "redirect:" + referer;
 		
 	}
 }

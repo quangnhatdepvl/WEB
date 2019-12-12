@@ -10,7 +10,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <fmt:setLocale value = "en"/>
+  <fmt:setLocale value = "vi"/>
       
 	<fmt:setBundle basename="language/messages"/>
  <fmt:message key = "nnn"/><br/>

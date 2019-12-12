@@ -121,7 +121,6 @@
 										<c:set var="total" value="${0}" />
 										<c:forEach items="${listPhone}" var="phone">
 											<c:url value="shopping-cart" var="cart">
-												
 												<c:param name="delete" value="${phone.id }" />
 											</c:url>
 											<c:set var="total" value="${total +phone.price}" />

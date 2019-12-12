@@ -17,7 +17,7 @@ import model.UserModel;
 /**
  * Servlet Filter implementation class ShoppingCartFilter
  */
-@WebFilter(urlPatterns = "/shopping-cart")
+@WebFilter(urlPatterns = {"/shopping-cart","/thanh-toan"})
 public class ShoppingCartFilter implements Filter {
 
     /**

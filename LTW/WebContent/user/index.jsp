@@ -58,7 +58,7 @@
 						<div class="caption-group">
 							<h2 class="caption title">${ph.name }</h2>
 							<p style="color: red">
-								Giá:
+							<fmt:message key="price" />
 								<fmt:formatNumber type="number" maxFractionDigits="0"
 									value="${ph.price}" />
 								vnd

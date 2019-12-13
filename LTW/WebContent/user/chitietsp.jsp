@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="product-bit-title text-center">
-						<h2>INFORMATION DETAILS</h2>
+						<h2><fmt:message key="informationDetails"/></h2>
 					</div>
 				</div>
 			</div>
@@ -78,7 +78,7 @@
 								</h2>
 								<div class="product-sidebar-price">
 									<p style="color: red">
-										Giá:
+										<fmt:message key="price"/>:
 										<fmt:formatNumber type="number" maxFractionDigits="0"
 											value="${phone.price}" />
 										vnd
@@ -117,7 +117,7 @@
 								<div class="product-inner">
 									<h2 class="product-name">${phone.name }</h2>
 									<div class="product-inner-price">
-										<b style="color: red">Giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
+										<b style="color: red"><fmt:message key="price"/>: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
 
 									</div>
 
@@ -128,7 +128,7 @@
 										</c:url>
 										<a href="${add }">
 										<button class="add_to_cart_button" type="button"
-											style="margin-top: 10px;">Thêm vào giỏ hàng</button></a>
+											style="margin-top: 10px;"><fmt:message key="themVaoGioHang"/></button></a>
 									
 									</form>
 
@@ -143,10 +143,9 @@
 									<div role="tabpanel">
 										<ul class="product-tab" role="tablist">
 											<li role="presentation" class="active"><a href="#home"
-												aria-controls="home" role="tab" data-toggle="tab">Mô tả</a></li>
+												aria-controls="home" role="tab" data-toggle="tab"><fmt:message key="moTa"/></a></li>
 											<li role="presentation"><a href="#profile"
-												aria-controls="profile" role="tab" data-toggle="tab">Thông
-													số chi tiết</a></li>
+												aria-controls="profile" role="tab" data-toggle="tab"><fmt:message key="thongSoChiTiet"/></a></li>
 										</ul>
 										<div class="tab-content">
 											<div role="tabpanel" class="tab-pane fade in active"

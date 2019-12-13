@@ -102,7 +102,7 @@
 								<c:otherwise>
 									<li><a
 										href="${pageContext.request.contextPath }/shopping-cart"><i
-											class="fa fa-user"></i> <fmt:message key="cart"/></a></li>
+											class="fa fa-user"></i> <fmt:message key="myCart"/></a></li>
 									<li><div class="w3-container">
 											<div class="w3-dropdown-hover">
 												<button class="w3-button">
@@ -112,7 +112,7 @@
 													<a href="#" class="w3-bar-item w3-button">Cài đặt tài
 														khoản </a> <a
 														href="${pageContext.request.contextPath }/dang-xuat"
-														class="w3-bar-item w3-button"> <fmt:message key="logout"/></a>
+														class="w3-bar-item w3-button"> <fmt:message key="dangXuat"/></a>
 
 												</div>
 											</div>

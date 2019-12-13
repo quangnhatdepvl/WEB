@@ -67,17 +67,17 @@
 															<a
 													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
 													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
-													Add to cart</a> <a
+													<fmt:message key="label.add"/></a> <a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
 													class="view-details-link"><i class="fa fa-link"></i>
-													See details</a>
+													<fmt:message key="label.details"/></a>
 
 														</div>
 													</div>
 
 													<h2>
 														<a href="single-product.html">${phone.name }</a> <br>
-														<b style="color: red">Giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
+														<b style="color: red"><fmt:message key="price"/> <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
 													</h2>
 
 												</div>

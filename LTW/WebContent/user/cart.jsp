@@ -51,7 +51,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="product-bit-title text-center">
-						<h2>Shopping Cart</h2>
+						<h2><fmt:message key="shoppingCart"/></h2>
 					</div>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 					<div class="single-sidebar" style="border-right: outset;">
 
 						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-						<h2 class="sidebar-title">Products</h2>
+						<h2 class="sidebar-title"><fmt:message key="product"/></h2>
 						<c:forEach items="${listPhoneView}" var="phone">
 							<div class="thubmnail-recent">
 
@@ -82,7 +82,7 @@
 								</h2>
 								<div class="product-sidebar-price">
 									<p style="color: red">
-										Giá:
+										<fmt:message key="price"/>:
 										<fmt:formatNumber type="number" maxFractionDigits="0"
 											value="${phone.price}" />
 										vnd
@@ -103,10 +103,10 @@
 										<tr>
 											<th class="product-remove">&nbsp;</th>
 											<th class="product-thumbnail">&nbsp;</th>
-											<th class="product-name">Tên sản phẩm</th>
-											<th class="product-price">Giá cả</th>
-											<th class="product-quantity">Số lượng</th>
-											<th class="product-subtotal">Thành tiền</th>
+											<th class="product-name"><fmt:message key="tenSanPham"/></th>
+											<th class="product-price"><fmt:message key="giaCa"/></th>
+											<th class="product-quantity"><fmt:message key="soluong"/></th>
+											<th class="product-subtotal"><fmt:message key="thanhTien"/></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -150,7 +150,7 @@
 
 								</table>
 								<p style="color: red">
-									Tổng giá:
+								<fmt:message key="tongGia"/>:
 									<fmt:formatNumber type="number" maxFractionDigits="0"
 										value="${total}" />
 									vnd

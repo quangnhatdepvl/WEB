@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +42,8 @@
 </head>
 
 <body>
-
+	<fmt:setLocale value="${locale }" />
+	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
 
 	<div class="slider-area">
@@ -56,14 +57,14 @@
 						</c:url>
 						<div class="caption-group">
 							<h2 class="caption title">${ph.name }</h2>
-									<p style="color: red">
-											Giá:
-											<fmt:formatNumber type="number" maxFractionDigits="0"
-												value="${ph.price}" />
-											vnd
-										</p>
+							<p style="color: red">
+								Giá:
+								<fmt:formatNumber type="number" maxFractionDigits="0"
+									value="${ph.price}" />
+								vnd
+							</p>
 							<a class="caption button-radius" href="${buy }"><span
-								class="icon"></span><fmt:message key="label.shopnow"/></a>
+								class="icon"></span> <fmt:message key="label.shopnow" /></a>
 						</div></li>
 				</c:forEach>
 			</ul>
@@ -78,7 +79,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="latest-product">
-						<h2 class="section-title">NEW PRODUCTS</h2>
+						<h2 class="section-title">
+							<fmt:message key="newProduct" />
+						</h2>
 						<div
 							class="product-carousel owl-carousel owl-theme owl-loaded owl-responsive-1000"
 							style="height: 400px;">
@@ -94,11 +97,10 @@
 												<a
 													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
 													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
-													<fmt:message key="label.add"/></a>
-													 <a
+													<fmt:message key="label.add" /></a> <a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
-													class="view-details-link"><i class="fa fa-link"></i>
-													<fmt:message key="label.details"/></a>
+													class="view-details-link"><i class="fa fa-link"></i> <fmt:message
+														key="label.details" /></a>
 											</form>
 										</div>
 									</div>
@@ -107,7 +109,8 @@
 
 									<div class="product-carousel-price">
 										<p style="color: red">
-											<fmt:message key="price"/>:
+											<fmt:message key="price" />
+											:
 											<fmt:formatNumber type="number" maxFractionDigits="0"
 												value="${phone.price}" />
 											vnd

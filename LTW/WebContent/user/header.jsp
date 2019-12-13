@@ -68,15 +68,19 @@
 	<div class="header-area">
 		<div class="container">
 			<div class="row">
-			<div class="logo">
-                       <h1 style="padding-bottom: 1px;"><a href="./"><img src="img/logo.png"></a></h1>
-                    </div>
+				<div class="logo" style="margin-bottom: -36px">
+					<a href="/" hreflang="en" title="English"> <img
+						src="user/img/en.png" height="25" style="padding: 0px 0px">
+					</a> <a href="/vi" hreflang="vi" title="Vietnamese"> <img
+						src="user/img/vi.png" height="25" style="padding: 0px 0px">
+					</a>
+				</div>
 				<div class="col-md-8" style="float: right;">
 					<div class="user-menu">
 						<ul style="float: right;">
 							<li><a href="${pageContext.request.contextPath }/trang-chu"><i
 									class="fa fa-user"></i> Home</a></li>
-							
+
 							<c:choose>
 								<c:when test="${user.user_name == null }">
 									<li><a
@@ -84,8 +88,9 @@
 											class="fa fa-user"></i> Login</a></li>
 								</c:when>
 								<c:otherwise>
-								<li><a href="${pageContext.request.contextPath }/shopping-cart"><i class="fa fa-user"></i> My
-									Cart</a></li>
+									<li><a
+										href="${pageContext.request.contextPath }/shopping-cart"><i
+											class="fa fa-user"></i> My Cart</a></li>
 									<li><div class="w3-container">
 											<div class="w3-dropdown-hover">
 												<button class="w3-button">
@@ -132,8 +137,8 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 
-						<li class=""><a href="trang-chu"
-							style="font-family: sans-serif; font-size: 15px; padding-left: 48px; padding-right: 48px;"><b>Home<b></b></b></a></li>
+						<a href="trang-chu"><img src="user/img/logo2.png" alt="a"
+							class="product-thumb"></a>
 						<a href="${nokia }"><img src="user/img/brand1.png" alt="a"
 							class="product-thumb"></a>
 						<a href="${samsung }"><img src="user/img/brand3.png" alt=""

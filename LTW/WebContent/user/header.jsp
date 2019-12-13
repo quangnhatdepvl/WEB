@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<html lang="en">
+<html>
 <head>
 
 <meta charset="utf-8">
@@ -42,6 +43,10 @@
 
 
 <body>
+
+	<fmt:setLocale value="${locale }" />
+
+	<fmt:setBundle basename="language/messages" />
 	<c:url value="language" var="english" scope="session">
 		<c:param name="choose" value="en" />
 	</c:url>
@@ -69,19 +74,20 @@
 		<div class="container">
 			<div class="row">
 				<div class="logo" style="">
-					<form action="search" method="post"  height="25"
-						style="padding: -16px 0px; ">
-						<a  href="${english }" title="English"> <img
-						src="user/img/en.png" height="25" style="padding: 0px 0px">
-					</a> <a  href="${vietnam }" title="Vietnamese"> <img
-						src="user/img/vi.png" height="25" style="padding: 0px 0px">
-					</a>
-						<input type="text" name= "search" placeholder="Nhập tên sản phẩm..."
-							style="width: 30%; margin-left: 108px; height: 5%"> 
-						<input type="submit" value="Search">
+					<form action="search" method="post" height="25"
+						style="padding: -16px 0px;">
+						<a href="${english }" title="English"> <img
+							src="user/img/en.png" height="25" style="padding: 0px 0px">
+						</a> <a href="${vietnam }" title="Vietnamese"> <img
+							src="user/img/vi.png" height="25" style="padding: 0px 0px">
+						</a> <input type="text" name="search"
+							placeholder="Nhập tên sản phẩm..."
+							style="width: 30%; margin-left: 108px; height: 5%"> <input
+							type="submit" value="Search">
 					</form>
 				</div>
-				<div class="col-md-8" style="float: right; margin-top: -53;width: 500px">
+				<div class="col-md-8"
+					style="float: right; margin-top: -53; width: 500px">
 					<div class="user-menu">
 						<ul style="float: right;">
 							<li><a href="${pageContext.request.contextPath }/trang-chu"><i
@@ -91,7 +97,7 @@
 								<c:when test="${user.user_name == null }">
 									<li><a
 										href="${pageContext.request.contextPath }/dang-nhap"><i
-											class="fa fa-user"></i> Login</a></li>
+											class="fa fa-user"></i> <fmt:message key="login" /></a></li>
 								</c:when>
 								<c:otherwise>
 									<li><a

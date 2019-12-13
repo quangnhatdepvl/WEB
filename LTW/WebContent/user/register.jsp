@@ -53,25 +53,25 @@
 		<div class="loginbox">
 			<div style="padding-top: 30%;">
 				<br>
-				<h2 style="color: black;">Đăng ký nhanh</h2>
+				<h2 style="color: black;"><fmt:message key="dangKy"/></h2>
 				<br> <input type="text" name="username"
 					class="form-control border border-success"
-					placeholder="Tên đăng nhập" autofocus="true "
+					placeholder="<fmt:message key="label.userName"/>" autofocus="true "
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br> <input type="password" name="password"
-					class="form-control border border-success" placeholder="Mật khẩu"
+					class="form-control border border-success" placeholder="<fmt:message key="label.passWord"/>"
 					autofocus="true"
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br> <input type="password" name="confirm"
 					class="form-control border border-success"
-					placeholder="Nhập lại mật khẩu" autofocus="true"
+					placeholder="<fmt:message key="label.cf"/>" autofocus="true"
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br>
 
 			</div>
 			<input type="submit" class="btn10"
 				style="width: 200px; height: 50px; color: white; background-color: #ffce93;"
-				value="Dang ky"> <br>
+				value="<fmt:message key="dangKy"/>"> <br>
 
 			<h6 style="color: red">${error }</h6>
 		</div>

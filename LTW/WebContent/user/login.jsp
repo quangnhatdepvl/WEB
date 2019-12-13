@@ -59,21 +59,21 @@
 		<div class="loginbox">
 			<div style="padding-top: 30%;">
 				<br>
-				<h2 style="color: black;">ĐĂNG NHẬP</h2>
+				<h2 style="color: black;"><fmt:message key="dangNhap"/></h2>
 				<br> <input type="text" name="username"
 					class="form-control border border-success"
-					placeholder="Tên đăng nhập" autofocus="true "
+					placeholder="<fmt:message key="label.userName"/>" autofocus="true "
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br> <input type="password" name="password"
-					class="form-control border border-success" placeholder="Mật khẩu"
+					class="form-control border border-success" placeholder="<fmt:message key="label.passWord"/>"
 					autofocus="true"
 					style="width: 250px; hight: 30px; border: 2px solid black;">
-				<br> <input type="submit" class="btn10" value="Đăng nhập"
+				<br> <input type="submit" class="btn10" value="<fmt:message key="dangNhap"/>"
 					style="width: 250px; height: 50px; color: white; background-color: #ffce93;"></input>
 			</div>
 
-			<br> <a href="forgot.jsp"><b>Bạn quên mật khẩu ?</b></a> <a
-				href="${dangKy }"><b>Bạn chưa có tài khoản?</b></a>
+			<br> <a href="forgot.jsp"><b><fmt:message key="label.forgot"/></b></a> <a
+				href="${dangKy }"><b><fmt:message key="label.regis"/></b></a>
 				</div>
 	</form>
 	<h6 style="color: red">${error }</h6>

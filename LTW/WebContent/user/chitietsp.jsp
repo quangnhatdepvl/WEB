@@ -61,7 +61,7 @@
 		<div class="zigzag-bottom"></div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-3">
+				<div class="col-md-4">
 					<div class="single-sidebar">
 						<h2 class="sidebar-title">TÌM KIẾM SẢN PHẨM</h2>
 						<form action="#">
@@ -70,43 +70,35 @@
 						</form>
 					</div>
 
-					<div class="single-sidebar">
-						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-						<h2 class="sidebar-title">Products</h2>
-						<div class="thubmnail-recent">
-							<img src="user/img/product-thumb-1.jpg" class="recent-thumb"
-								alt="">
-							<h2>
-								<a href="#">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
+				<div class="single-sidebar">
+					
+							<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
+							<h2 class="sidebar-title">Products</h2>
+										<c:forEach items="${listPhone}" var="phone">
+							<div class="thubmnail-recent">
+					
+								<img src="${phone.url_img }" class="recent-thumb" alt="">
+								<h2>
+									<a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
+
+								</h2>
+								<div class="product-sidebar-price">
+									<p style="color: red">
+										Giá:
+										<fmt:formatNumber type="number" maxFractionDigits="0"
+											value="${phone.price}" />
+										vnd
+									</p>
+								</div>
+								</div>
+								</c:forEach>
 							</div>
-						</div>
-
-
-
-					</div>
-
-					<div class="single-sidebar">
-						<h2 class="sidebar-title">Thương hiệu</h2>
-						<ul>
-							<li><a href="nokia.html"><img src="user/img/brand1.png"
-									style="width: 30%"> 99+ sản phẩm khác</a></li>
-							<li><a href="samsung.html"><img
-									src="user/img/brand3.png" style="width: 30%">99+ sản phẩm
-									khác </a></li>
-							<li><a href="apple.html"><img src="user/img/brand4.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="htc.html"><img src="user/img/brand5.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="lg.html"><img src="user/img/brand6.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-						</ul>
-					</div>
+						
+				
+			
 				</div>
 
-				<div class="col-md-9">
+				<div class="col-md-8">
 					<div class="product-content-right">
 						<div class="product-breadcroumb">
 							<c:url value="danh-sach-san-pham" var="danhSach">
@@ -120,16 +112,10 @@
 							<div class="col-sm-6">
 								<div class="product-images">
 									<div class="product-main-img">
-										<img src="user/img/anh.jpg" alt="">
+										<img src="${phone.url_img }" alt="">
 
 									</div>
 
-
-									<div class="product-gallery">
-										<img src="user/img/product-thumb-1.jpg" alt=""> <img
-											src="user/img/product-thumb-2.jpg" alt=""> <img
-											src="user/img/product-thumb-3.jpg" alt="">
-									</div>
 								</div>
 							</div>
 

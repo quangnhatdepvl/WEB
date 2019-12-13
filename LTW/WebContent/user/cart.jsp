@@ -71,37 +71,30 @@
 						</form>
 					</div>
 
-					<div class="single-sidebar">
-						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-						<h2 class="sidebar-title">Products</h2>
-						<div class="thubmnail-recent">
-							<img src="user/img/product-thumb-1.jpg" class="recent-thumb"
-								alt="">
-							<h2>
-								<a href="single-product.jsp">Sony Smart TV - 2015</a>
-							</h2>
-							<div class="product-sidebar-price">
-								<ins>$700.00</ins>
+				<div class="single-sidebar">
+					
+							<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
+							<h2 class="sidebar-title">Products</h2>
+										<c:forEach items="${listPhoneView}" var="phone">
+							<div class="thubmnail-recent">
+					
+								<img src="${phone.url_img }" class="recent-thumb" alt="">
+								<h2>
+									<a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
+
+								</h2>
+								<div class="product-sidebar-price">
+									<p style="color: red">
+										Giá:
+										<fmt:formatNumber type="number" maxFractionDigits="0"
+											value="${phone.price}" />
+										vnd
+									</p>
+								</div>
+								</div>
+								</c:forEach>
 							</div>
-						</div>
 
-					</div>
-
-					<div class="single-sidebar">
-						<h2 class="sidebar-title">Thương hiệu</h2>
-						<ul>
-							<li><a href="nokia.jsp"><img src="user/img/brand1.png"
-									style="width: 30%"> 99+ sản phẩm khác</a></li>
-							<li><a href="samsung.jsp"><img src="user/img/brand3.png"
-									style="width: 30%">99+ sản phẩm khác </a></li>
-							<li><a href="apple.jsp"><img src="user/img/brand4.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="htc.jsp"><img src="user/img/brand5.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-							<li><a href="lg.jsp"><img src="user/img/brand6.png"
-									style="width: 30%">99+ sản phẩm khác</a></li>
-						</ul>
-					</div>
 				</div>
 
 				<div class="col-md-8">
@@ -134,21 +127,23 @@
 												<td class="product-thumbnail"><a
 													href="single-product.jsp"><img width="145" height="145"
 														alt="poster_1_up" class="shop_thumbnail"
-														src="user/img/product-thumb-2.jpg"></a></td>
+														src="${phone.url_img}" style="Width: 2%"></a></td>
 
 												<td class="product-name"><a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a></td>
 
-												<td class="product-price"><span class="amount"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /></span>
-												</td>
+												<td class="product-price"><span class="amount"><fmt:formatNumber
+															type="number" maxFractionDigits="0"
+															value="${phone.price}" /></span></td>
 
 												<td class="product-quantity">
 													<div class="quantity buttons_added">
 														<span class="amount">1</span>
 													</div>
 												</td>
-												<td class="product-subtotal"><span class="amount"><fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /></span>
-												</td>
+												<td class="product-subtotal"><span class="amount"><fmt:formatNumber
+															type="number" maxFractionDigits="0"
+															value="${phone.price}" /></span></td>
 											</tr>
 
 
@@ -157,7 +152,12 @@
 									</tbody>
 
 								</table>
-								<p style="color: red">Tổng giá: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${total}" /> vnd</p>
+								<p style="color: red">
+									Tổng giá:
+									<fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${total}" />
+									vnd
+								</p>
 							</form>
 
 							<div class="cart-collaterals">

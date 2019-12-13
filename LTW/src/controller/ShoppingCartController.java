@@ -21,6 +21,7 @@ import model.PhoneModel;
 @WebServlet("/shopping-cart")
 public class ShoppingCartController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	private static final int LIMIT = 4;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
@@ -37,8 +38,12 @@ public class ShoppingCartController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		PhoneDAO phDAO = new PhoneDAO();
+		ArrayList<PhoneModel> listPhoneView = phDAO.sortByView(LIMIT);
+		request.setAttribute("listPhoneView", listPhoneView);
+
 		HttpSession session = request.getSession();
-		ArrayList<PhoneModel> listPhone= (ArrayList<PhoneModel>) session.getAttribute("listPhone");
+		ArrayList<PhoneModel> listPhone = (ArrayList<PhoneModel>) session.getAttribute("listPhone");
 		if (listPhone == null) {
 			listPhone = new ArrayList<>();
 		}
@@ -48,13 +53,13 @@ public class ShoppingCartController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("user/cart.jsp");
 			rd.forward(request, response);
 		} else if (id != null && delete == null) {
-			PhoneDAO phDAO = new PhoneDAO();
+
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
 			listPhone.add(phone);
 			session.setAttribute("listPhone", listPhone);
 			response.sendRedirect("shopping-cart");
 		} else if (id == null && delete != null) {
-			PhoneDAO phDAO = new PhoneDAO();
+
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(delete));
 			for (Iterator<PhoneModel> iterator = listPhone.iterator(); iterator.hasNext();) {
 				PhoneModel p = iterator.next();

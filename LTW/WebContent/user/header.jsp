@@ -1,5 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <html lang="en">
@@ -43,12 +42,10 @@
 
 
 <body>
-
-
-	<c:url value="language" var="english" scope="request">
+	<c:url value="language" var="english" scope="session">
 		<c:param name="choose" value="en" />
 	</c:url>
-	<c:url value="language" var="vietnam" scope="request">
+	<c:url value="language" var="vietnam" scope="session">
 		<c:param name="choose" value="vi" />
 	</c:url>
 
@@ -67,17 +64,16 @@
 	<c:url value="danh-sach-san-pham" var="lg" scope="request">
 		<c:param name="model" value="lg" />
 	</c:url>
-	<fmt:setLocale value="${locale }" />
 
-	<fmt:setBundle basename="language/messages" />
 	<div class="header-area">
 		<div class="container">
 			<div class="row">
-				<div class="logo" style="margin-bottom: -36px">
-					<a href="${english }"> <img
+				<div class="logo" style="">
+					<form action="search" method="post"  height="25"
+						style="padding: -16px 0px; ">
+						<a  href="${english }" title="English"> <img
 						src="user/img/en.png" height="25" style="padding: 0px 0px">
-					</a>
-					 <a  href="${vietnam }" title="Vietnamese"> <img
+					</a> <a  href="${vietnam }" title="Vietnamese"> <img
 						src="user/img/vi.png" height="25" style="padding: 0px 0px">
 					</a>
 						<input type="text" name= "search" placeholder="Nhập tên sản phẩm..."
@@ -95,7 +91,7 @@
 								<c:when test="${user.user_name == null }">
 									<li><a
 										href="${pageContext.request.contextPath }/dang-nhap"><i
-											class="fa fa-user"></i><fmt:message key="login" /></a></li>
+											class="fa fa-user"></i> Login</a></li>
 								</c:when>
 								<c:otherwise>
 									<li><a

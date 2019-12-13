@@ -16,7 +16,7 @@ import model.PhoneModel;
 /**
  * Servlet implementation class SearchController
  */
-@WebServlet("/SearchController")
+@WebServlet("/search")
 public class SearchController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

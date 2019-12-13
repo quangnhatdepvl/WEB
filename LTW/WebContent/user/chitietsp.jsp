@@ -62,15 +62,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="single-sidebar">
-						<h2 class="sidebar-title">TÌM KIẾM SẢN PHẨM</h2>
-						<form action="#">
-							<input type="text" placeholder="Nhập tên sản phẩm..."> <input
-								type="submit" value="Tìm kiếm">
-						</form>
-					</div>
-
-				<div class="single-sidebar">
+						<div class="single-sidebar" style="border-right: outset;">
 					
 							<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
 							<h2 class="sidebar-title">Products</h2>

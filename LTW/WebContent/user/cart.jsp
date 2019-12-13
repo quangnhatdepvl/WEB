@@ -63,24 +63,19 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-					<div class="single-sidebar">
-						<h2 class="sidebar-title">TÌM KIẾM SẢN PHẨM</h2>
-						<form action="#">
-							<input type="text" placeholder="Nhập tên sản phẩm..."> <input
-								type="submit" value="Tìm kiếm">
-						</form>
-					</div>
 
-				<div class="single-sidebar">
-					
-							<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-							<h2 class="sidebar-title">Products</h2>
-										<c:forEach items="${listPhoneView}" var="phone">
+
+					<div class="single-sidebar" style="border-right: outset;">
+
+						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
+						<h2 class="sidebar-title">Products</h2>
+						<c:forEach items="${listPhoneView}" var="phone">
 							<div class="thubmnail-recent">
-					
+
 								<img src="${phone.url_img }" class="recent-thumb" alt="">
 								<h2>
-									<a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
+									<a
+										href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
 
 								</h2>
 								<div class="product-sidebar-price">
@@ -91,9 +86,9 @@
 										vnd
 									</p>
 								</div>
-								</div>
-								</c:forEach>
 							</div>
+						</c:forEach>
+					</div>
 
 				</div>
 
@@ -114,11 +109,11 @@
 									</thead>
 									<tbody>
 										<c:set var="total" value="${0}" />
-										<c:forEach items="${listPhone}" var="phone">
+										<c:forEach items="${listPhone}" var="phone2">
 											<c:url value="shopping-cart" var="cart">
-												<c:param name="delete" value="${phone.id }" />
+												<c:param name="delete" value="${phone2.id }" />
 											</c:url>
-											<c:set var="total" value="${total +phone.price}" />
+											<c:set var="total" value="${total +phone2.price}" />
 											<tr class="cart_item">
 
 												<td class="product-remove"><a title="Remove this item"
@@ -127,14 +122,14 @@
 												<td class="product-thumbnail"><a
 													href="single-product.jsp"><img width="145" height="145"
 														alt="poster_1_up" class="shop_thumbnail"
-														src="${phone.url_img}" style="Width: 2%"></a></td>
+														src="${phone2.url_img}" style="Width: 2%"></a></td>
 
 												<td class="product-name"><a
-													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a></td>
+													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone2.id }">${phone2.name }</a></td>
 
 												<td class="product-price"><span class="amount"><fmt:formatNumber
 															type="number" maxFractionDigits="0"
-															value="${phone.price}" /></span></td>
+															value="${phone2.price}" /></span></td>
 
 												<td class="product-quantity">
 													<div class="quantity buttons_added">
@@ -143,7 +138,7 @@
 												</td>
 												<td class="product-subtotal"><span class="amount"><fmt:formatNumber
 															type="number" maxFractionDigits="0"
-															value="${phone.price}" /></span></td>
+															value="${phone2.price}" /></span></td>
 											</tr>
 
 

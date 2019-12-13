@@ -120,9 +120,9 @@
 													class="remove" href="${cart}">×</a></td>
 
 												<td class="product-thumbnail"><a
-													href="single-product.jsp"><img width="145" height="145"
+													href="#"><img 
 														alt="poster_1_up" class="shop_thumbnail"
-														src="${phone2.url_img}" style="Width: 2%"></a></td>
+														src="${phone2.url_img}" ></a></td>
 
 												<td class="product-name"><a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone2.id }">${phone2.name }</a></td>

@@ -40,7 +40,9 @@
 </head>
 
 <body>
+<fmt:setLocale value="${locale }" />
 
+	<fmt:setBundle basename="language/messages" />
 
 	<jsp:include page="header.jsp" />
 	<!-- End header area -->

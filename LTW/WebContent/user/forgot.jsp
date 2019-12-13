@@ -37,7 +37,9 @@
   </head>
  
   <body>
-   
+   <fmt:setLocale value="${locale }" />
+
+	<fmt:setBundle basename="language/messages" />
     <div class="header-area">
         <div class="container">
             <div class="row">

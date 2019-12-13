@@ -41,7 +41,9 @@
 </head>
 
 <body>
+<fmt:setLocale value="${locale }" />
 
+	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
 	<div class="maincontent-area">
 		<div class="zigzag-bottom"></div>

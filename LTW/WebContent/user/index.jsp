@@ -56,7 +56,12 @@
 						</c:url>
 						<div class="caption-group">
 							<h2 class="caption title">${ph.name }</h2>
-
+									<p style="color: red">
+											Giá:
+											<fmt:formatNumber type="number" maxFractionDigits="0"
+												value="${ph.price}" />
+											vnd
+										</p>
 							<a class="caption button-radius" href="${buy }"><span
 								class="icon"></span>Shop now</a>
 						</div></li>
@@ -89,7 +94,8 @@
 												<a
 													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
 													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
-													Add to cart</a> <a
+													Add to cart</a>
+													 <a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
 													class="view-details-link"><i class="fa fa-link"></i>
 													See details</a>

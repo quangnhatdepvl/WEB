@@ -211,6 +211,59 @@ public class PhoneDAO {
 		return total;
 	}
 	
+	public ArrayList<PhoneModel> sortByView(int limit) {
+		ArrayList<PhoneModel> list = new ArrayList<>();
+		String sql = "SELECT  DISTINCT * FROM phone ORDER BY luotTruyCap desc LIMIT ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, limit);
+			ResultSet rss = ps.executeQuery();
+			while(rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setUrl_img(rss.getString("img_url"));
+				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				list.add(phone);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+	
+	public ArrayList<PhoneModel> search(String text){
+		ArrayList<PhoneModel> list = new ArrayList<>();
+		String sql = "SELECT * FROM phone WHERE phoneName LIKE ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1,"%"+ text + "%");
+			ResultSet rss = ps.executeQuery();
+			while(rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setUrl_img(rss.getString("img_url"));
+//				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				list.add(phone);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+		
+		
+	}
+	
 
 	
 }

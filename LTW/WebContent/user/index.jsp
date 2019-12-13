@@ -78,7 +78,7 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="latest-product">
-						<h2 class="section-title">Latest Products</h2>
+						<h2 class="section-title">NEW PRODUCTS</h2>
 						<div
 							class="product-carousel owl-carousel owl-theme owl-loaded owl-responsive-1000"
 							style="height: 400px;">

@@ -42,6 +42,13 @@
 
 
 <body>
+	<c:url value="language" var="english" scope="session">
+		<c:param name="choose" value="en" />
+	</c:url>
+	<c:url value="language" var="vietnam" scope="session">
+		<c:param name="choose" value="vi" />
+	</c:url>
+
 	<c:url value="danh-sach-san-pham" var="nokia" scope="request">
 		<c:param name="model" value="nokia" />
 	</c:url>

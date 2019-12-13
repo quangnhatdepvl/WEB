@@ -41,16 +41,6 @@
 
 <body>
 
-<a href="${pageContext.request.contextPath }/language?choose=en">link</a>
-<a href="${pageContext.request.contextPath }/language?choose=vi">link</a>
-	<fmt:setLocale value="${locale }" />
-
-	<fmt:setBundle basename="language/messages" />
-
-	<fmt:message key="nnn" />
-	<br />
-	<H1>........................</H1>
-
 	<jsp:include page="header.jsp" />
 	<!-- End header area -->
 	<img src="user/img/dienthoai.jpg" style="width: 43%;">

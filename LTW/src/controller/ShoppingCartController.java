@@ -60,6 +60,7 @@ public class ShoppingCartController extends HttpServlet {
 				PhoneModel p = iterator.next();
 				if (p.getId() == phone.getId()) {
 					iterator.remove();
+					break;
 				}
 			}
 			session.setAttribute("listPhone", listPhone);

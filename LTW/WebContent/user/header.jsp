@@ -69,9 +69,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="logo" style="margin-bottom: -36px">
-					<a href="/" hreflang="en" title="English"> <img
+					<a href="/" href="${english }" title="English"> <img
 						src="user/img/en.png" height="25" style="padding: 0px 0px">
-					</a> <a href="/vi" hreflang="vi" title="Vietnamese"> <img
+					</a> <a href="/vi" href="${vietnam }" title="Vietnamese"> <img
 						src="user/img/vi.png" height="25" style="padding: 0px 0px">
 					</a>
 				</div>

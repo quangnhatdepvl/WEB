@@ -58,12 +58,12 @@
 
 									<c:forEach items="${listPhone}" var="phone">
 										<div class="owl-item cloned"
-											style="width: 22%; border-style: ridge;">
+											style="width: 20%; border-style: ridge;">
 											<div class="single-product">
 												<div class="single-product">
 													<div class="product-f-image">
 														<img src="${phone.url_img}" style="width: 100%">
-														<div class="product-hover">
+														<div class="product-hover"style="width: 100%;">
 															<a
 													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
 													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>

@@ -383,7 +383,7 @@ z-index: 999;}
     left: 0;
     position: absolute;
     top: 0;
-    width: 100%;overflow: hidden;border: 1px solid #ddd;
+    width: 88%;overflow: hidden;border: 1px solid #ddd;
 }
 .product-hover:after {
   background: none repeat scroll 0 0 #000;

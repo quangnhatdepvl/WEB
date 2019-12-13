@@ -80,14 +80,12 @@
 					 <a  href="${vietnam }" title="Vietnamese"> <img
 						src="user/img/vi.png" height="25" style="padding: 0px 0px">
 					</a>
-					<form action="#" height="25"
-						style="padding: -16px 0px; margin-top: -39px;">
-						<input type="text" placeholder="Nhập tên sản phẩm..."
-							style="width: 30%; margin-left: 108px; height: 5%"> <input
-							type="submit" value="Search">
+						<input type="text" name= "search" placeholder="Nhập tên sản phẩm..."
+							style="width: 30%; margin-left: 108px; height: 5%"> 
+						<input type="submit" value="Search">
 					</form>
 				</div>
-				<div class="col-md-8" style="float: right; margin-top: -18">
+				<div class="col-md-8" style="float: right; margin-top: -53;width: 500px">
 					<div class="user-menu">
 						<ul style="float: right;">
 							<li><a href="${pageContext.request.contextPath }/trang-chu"><i

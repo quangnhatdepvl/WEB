@@ -63,7 +63,7 @@
 											vnd
 										</p>
 							<a class="caption button-radius" href="${buy }"><span
-								class="icon"></span>Shop now</a>
+								class="icon"></span><fmt:message key="label.shopnow"/></a>
 						</div></li>
 				</c:forEach>
 			</ul>
@@ -94,11 +94,11 @@
 												<a
 													href="${pageContext.request.contextPath }/shopping-cart?id=${phone.id }"
 													class="add-to-cart-link"><i class="fa fa-shopping-cart"></i>
-													Add to cart</a>
+													<fmt:message key="label.add"/></a>
 													 <a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }"
 													class="view-details-link"><i class="fa fa-link"></i>
-													See details</a>
+													<fmt:message key="label.details"/></a>
 											</form>
 										</div>
 									</div>
@@ -107,7 +107,7 @@
 
 									<div class="product-carousel-price">
 										<p style="color: red">
-											Giá:
+											<fmt:message key="price"/>:
 											<fmt:formatNumber type="number" maxFractionDigits="0"
 												value="${phone.price}" />
 											vnd

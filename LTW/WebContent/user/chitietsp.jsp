@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -40,7 +40,7 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
@@ -51,7 +51,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="product-bit-title text-center">
-						<h2><fmt:message key="informationDetails"/></h2>
+						<h2>
+							<fmt:message key="informationDetails" />
+						</h2>
 					</div>
 				</div>
 			</div>
@@ -64,32 +66,34 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4">
-						<div class="single-sidebar" style="border-right: outset;">
-					
-							<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-							<h2 class="sidebar-title">Products</h2>
-										<c:forEach items="${listPhone}" var="phone">
+					<div class="single-sidebar" style="border-right: outset;">
+
+						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
+						<h2 class="sidebar-title">Products</h2>
+						<c:forEach items="${listPhone}" var="phone">
 							<div class="thubmnail-recent">
-					
+
 								<img src="${phone.url_img }" class="recent-thumb" alt="">
 								<h2>
-									<a href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
+									<a
+										href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone.id }">${phone.name }</a>
 
 								</h2>
 								<div class="product-sidebar-price">
 									<p style="color: red">
-										<fmt:message key="price"/>:
+										<fmt:message key="price" />
+										:
 										<fmt:formatNumber type="number" maxFractionDigits="0"
 											value="${phone.price}" />
 										vnd
 									</p>
 								</div>
-								</div>
-								</c:forEach>
 							</div>
-						
-				
-			
+						</c:forEach>
+					</div>
+
+
+
 				</div>
 
 				<div class="col-md-8">
@@ -117,19 +121,24 @@
 								<div class="product-inner">
 									<h2 class="product-name">${phone.name }</h2>
 									<div class="product-inner-price">
-										<b style="color: red"><fmt:message key="price"/>: <fmt:formatNumber type = "number" maxFractionDigits = "0" value = "${phone.price}" /> vnd</b>
+										<b style="color: red"><fmt:message key="price" />: <fmt:formatNumber
+												type="number" maxFractionDigits="0" value="${phone.price}" />
+											vnd</b>
 
 									</div>
 
 									<form action="" class="cart">
-										
+
 										<c:url value="shopping-cart" var="add">
 											<c:param name="id" value="${phone.id }" />
 										</c:url>
 										<a href="${add }">
-										<button class="add_to_cart_button" type="button"
-											style="margin-top: 10px;"><fmt:message key="themVaoGioHang"/></button></a>
-									
+											<button class="add_to_cart_button" type="button"
+												style="margin-top: 10px;">
+												<fmt:message key="themVaoGioHang" />
+											</button>
+										</a>
+
 									</form>
 
 									<div class="product-inner-category">
@@ -143,9 +152,11 @@
 									<div role="tabpanel">
 										<ul class="product-tab" role="tablist">
 											<li role="presentation" class="active"><a href="#home"
-												aria-controls="home" role="tab" data-toggle="tab"><fmt:message key="moTa"/></a></li>
+												aria-controls="home" role="tab" data-toggle="tab"><fmt:message
+														key="moTa" /></a></li>
 											<li role="presentation"><a href="#profile"
-												aria-controls="profile" role="tab" data-toggle="tab"><fmt:message key="thongSoChiTiet"/></a></li>
+												aria-controls="profile" role="tab" data-toggle="tab"><fmt:message
+														key="thongSoChiTiet" /></a></li>
 										</ul>
 										<div class="tab-content">
 											<div role="tabpanel" class="tab-pane fade in active"

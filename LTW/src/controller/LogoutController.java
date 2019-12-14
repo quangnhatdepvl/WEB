@@ -30,6 +30,7 @@ public class LogoutController extends HttpServlet {
 		// TODO Auto-generated method stub
 		HttpSession session = request.getSession();
 		session.invalidate();
+//		session.removeAttribute("user");
 		response.sendRedirect("trang-chu");
 	}
 

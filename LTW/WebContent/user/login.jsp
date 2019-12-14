@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -44,7 +44,7 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
@@ -59,25 +59,35 @@
 		<div class="loginbox">
 			<div style="padding-top: 30%;">
 				<br>
-				<h2 style="color: black;"><fmt:message key="dangNhap"/></h2>
+				<h2 style="color: black;">
+					<fmt:message key="dangNhap" />
+				</h2>
 				<br> <input type="text" name="username"
 					class="form-control border border-success"
 					placeholder="<fmt:message key="label.userName"/>" autofocus="true "
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br> <input type="password" name="password"
-					class="form-control border border-success" placeholder="<fmt:message key="label.passWord"/>"
-					autofocus="true"
+					class="form-control border border-success"
+					placeholder="<fmt:message key="label.passWord"/>" autofocus="true"
 					style="width: 250px; hight: 30px; border: 2px solid black;">
-				<br> <input type="submit" class="btn10" value="<fmt:message key="dangNhap"/>"
+				<br> <input type="submit" class="btn10"
+					value="<fmt:message key="dangNhap"/>"
 					style="width: 250px; height: 50px; color: white; background-color: #ffce93;"></input>
+
+
 			</div>
 
-			<br> <a href="forgot.jsp"><b><fmt:message key="label.forgot"/></b></a> <a
-				href="${dangKy }"><b><fmt:message key="label.regis"/></b></a>
-				</div>
+			<br> <a href="forgot.jsp"><b><fmt:message
+						key="label.forgot" /></b></a> <a href="${dangKy }"><b><fmt:message
+						key="label.regis" /></b></a>
+
+			<p style="color: red">${error }</p>
+		</div>
+
+
 	</form>
-	<h6 style="color: red">${error }</h6>
-	
+
+
 
 	<!-- Latest jQuery form server -->
 	<script src="https://code.jquery.com/jquery.min.js"></script>

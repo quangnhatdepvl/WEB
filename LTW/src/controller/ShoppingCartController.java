@@ -57,7 +57,7 @@ public class ShoppingCartController extends HttpServlet {
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
 			listPhone.add(phone);
 			session.setAttribute("listPhone", listPhone);
-			response.sendRedirect("shopping-cart");
+			response.sendRedirect("trang-chu");
 		} else if (id == null && delete != null) {
 
 			PhoneModel phone = phDAO.getPhone(Integer.parseInt(delete));

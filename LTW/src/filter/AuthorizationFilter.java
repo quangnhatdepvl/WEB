@@ -42,7 +42,7 @@ public class AuthorizationFilter implements Filter {
 						filterChain.doFilter(request, response);
 						break;
 					} else if(role.getRole_name().equalsIgnoreCase("ROLE_USER")) {
-						response.sendRedirect(request.getContextPath() +"/dang-nhap");
+						response.sendRedirect(request.getContextPath() +"/trang-chu");
 					}
 				}
 				

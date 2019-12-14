@@ -47,6 +47,7 @@
 	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
+	
 	<c:url value="language" var="english" scope="session">
 		<c:param name="choose" value="en" />
 	</c:url>
@@ -109,8 +110,7 @@
 													<i class="fa fa-user"></i> ${user.user_name }
 												</button>
 												<div class="w3-dropdown-content w3-bar-block w3-border">
-													<a href="#" class="w3-bar-item w3-button">Cài đặt tài
-														khoản </a> <a
+													<a href="#" class="w3-bar-item w3-button"> <fmt:message key="setting" /></a> <a
 														href="${pageContext.request.contextPath }/dang-xuat"
 														class="w3-bar-item w3-button"> <fmt:message key="dangXuat"/></a>
 

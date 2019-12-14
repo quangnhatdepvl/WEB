@@ -12,8 +12,8 @@ import utils.DbUtils;
 
 public class PhoneDAO {
 
-	private static NumberFormat formatter= NumberFormat.getInstance();
-    
+	private static NumberFormat formatter = NumberFormat.getInstance();
+
 	public ArrayList<PhoneModel> getAll() {
 		ArrayList<PhoneModel> listPhone = new ArrayList<>();
 		try {
@@ -46,7 +46,8 @@ public class PhoneDAO {
 		try {
 			conn = DbUtils.getConnection();
 			String sql = "select * from phone where id= ?";
-			PreparedStatement ps = conn.prepareStatement(sql,  ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
+			PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
 			ps.setInt(1, id);
 			ResultSet rss = ps.executeQuery();
 			if (rss.next()) {
@@ -151,7 +152,7 @@ public class PhoneDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, limit);
 			ResultSet rss = ps.executeQuery();
-			while(rss.next()) {
+			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
 				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
@@ -167,7 +168,6 @@ public class PhoneDAO {
 		return list;
 
 	}
-	
 
 	public ArrayList<PhoneModel> sortByNgaySanXuat(int limit) {
 		ArrayList<PhoneModel> list = new ArrayList<>();
@@ -177,7 +177,7 @@ public class PhoneDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, limit);
 			ResultSet rss = ps.executeQuery();
-			while(rss.next()) {
+			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
 				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
@@ -193,24 +193,41 @@ public class PhoneDAO {
 		return list;
 
 	}
-	
+
 	public int getCountNhaSanXuat(String nhaSanXuat) {
 		int total = 0;
 		String sql = "select count(*) as total from phone where nhaSanXuat = ?";
 		try {
 			Connection conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,nhaSanXuat);
+			ps.setString(1, nhaSanXuat);
 			ResultSet rss = ps.executeQuery();
-			if(rss.next()) {
+			if (rss.next()) {
 				total = rss.getInt("total");
 			}
-		} catch(SQLException e) {
-			
+		} catch (SQLException e) {
+
 		}
 		return total;
 	}
-	
+
+	public int getCountPhone() {
+		int total = 0;
+		String sql = "select count(*) as total from phone";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ResultSet rss = ps.executeQuery();
+			if (rss.next()) {
+				total = rss.getInt("total");
+			}
+		} catch (SQLException e) {
+
+		}
+		return total;
+	}
+
 	public ArrayList<PhoneModel> sortByView(int limit) {
 		ArrayList<PhoneModel> list = new ArrayList<>();
 		String sql = "SELECT  DISTINCT * FROM phone ORDER BY luotTruyCap desc LIMIT ?";
@@ -219,7 +236,7 @@ public class PhoneDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, limit);
 			ResultSet rss = ps.executeQuery();
-			while(rss.next()) {
+			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
 				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
@@ -236,16 +253,16 @@ public class PhoneDAO {
 		return list;
 
 	}
-	
-	public ArrayList<PhoneModel> search(String text){
+
+	public ArrayList<PhoneModel> search(String text) {
 		ArrayList<PhoneModel> list = new ArrayList<>();
 		String sql = "SELECT * FROM phone WHERE phoneName LIKE ?";
 		try {
 			Connection conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1,"%"+ text + "%");
+			ps.setString(1, "%" + text + "%");
 			ResultSet rss = ps.executeQuery();
-			while(rss.next()) {
+			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
 				phone.setId(rss.getInt("id"));
 				phone.setName(rss.getString("phoneName"));
@@ -260,10 +277,43 @@ public class PhoneDAO {
 			e.printStackTrace();
 		}
 		return list;
-		
-		
-	}
-	
 
-	
+	}
+
+	/**
+	 *
+	 * @param limit:  quantity of post list
+	 * @param offset: starting index
+	 * @return
+	 */
+	public ArrayList<PhoneModel> listPhone(int limit, int offset) {
+		ArrayList<PhoneModel> list = new ArrayList<>();
+		String sql = "SELECT * FROM phone LIMIT ? , ?";
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, offset);
+			ps.setInt(2, limit);
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setUrl_img(rss.getString("img_url"));
+				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setDescription(rss.getString("des"));
+				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				list.add(phone);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+
 }

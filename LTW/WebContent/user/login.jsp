@@ -51,8 +51,8 @@
 
 	<c:url value="dang-ky" var="dangKy" />
 	<!-- End header area -->
-	<img src="user/img/dienthoai.jpg" style="width: 43%;">
-	<img src="user/img/anh.jpg"
+	<img src="img/dienthoai.jpg" style="width: 43%;">
+	<img src="img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">
 
 	<form action="dang-nhap" method="post">

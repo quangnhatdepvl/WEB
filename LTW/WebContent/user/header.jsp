@@ -78,9 +78,9 @@
 					<form action="search" method="post" height="25"
 						style="padding: -16px 0px;">
 						<a href="${english }" title="English"> <img
-							src="user/img/en.png" height="25" style="padding: 0px 0px">
+							src="img/en.png" height="25" style="padding: 0px 0px">
 						</a> <a href="${vietnam }" title="Vietnamese"> <img
-							src="user/img/vi.png" height="25" style="padding: 0px 0px">
+							src="img/vi.png" height="25" style="padding: 0px 0px">
 						</a> <input type="text" name="search"
 							placeholder="<fmt:message key="label.search"/>"
 							style="width: 30%; margin-left: 108px; height: 5%"> <input
@@ -149,17 +149,17 @@
 				<div class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
 
-						<a href="trang-chu"><img src="user/img/logo2.png" alt="a"
+						<a href="trang-chu"><img src="img/logo2.png" alt="a"
 							class="product-thumb"></a>
-						<a href="${nokia }"><img src="user/img/brand1.png" alt="a"
+						<a href="${nokia }"><img src="img/brand1.png" alt="a"
 							class="product-thumb"></a>
-						<a href="${samsung }"><img src="user/img/brand3.png" alt=""
+						<a href="${samsung }"><img src="img/brand3.png" alt=""
 							class="product-thumb"></a>
-						<a href="${apple }"><img src="user/img/brand4.png" alt=""
+						<a href="${apple }"><img src="img/brand4.png" alt=""
 							class="product-thumb"></a>
-						<a href="${htc }"><img src="user/img/brand5.png" alt=""
+						<a href="${htc }"><img src="img/brand5.png" alt=""
 							class="product-thumb"></a>
-						<a href="${lg }"><img src="user/img/brand6.png" alt=""
+						<a href="${lg }"><img src="img/brand6.png" alt=""
 							class="product-thumb"></a>
 					</ul>
 				</div>

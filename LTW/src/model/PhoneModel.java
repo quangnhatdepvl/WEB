@@ -1,8 +1,15 @@
 package model;
 
+import java.io.Serializable;
 import java.sql.Date;
 
-public class PhoneModel {
+public class PhoneModel implements Serializable {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	
 	private int id;
 	private String name;

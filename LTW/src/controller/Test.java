@@ -22,7 +22,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String DATA_DIRECTORY = "user\\img";
+	private static final String DATA_DIRECTORY = "D:\\LTW\\WEB\\LTW\\WebContent\\user\\img";
 	private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
 	private static final int MAX_REQUEST_SIZE = 1024 * 1024;
 
@@ -66,8 +66,7 @@ public class Test extends HttpServlet {
 	        // java
 	        factory.setRepository(new File(System.getProperty("java.io.tmpdir")));
 	        // constructs the folder where uploaded file will be stored
-	        String uploadFolder = getServletContext().getRealPath("")
-	                + File.separator + DATA_DIRECTORY;
+	       
 	        // Create a new file upload handler
 	        ServletFileUpload upload = new ServletFileUpload(factory);
 	        // Set overall request size constraint
@@ -81,7 +80,7 @@ public class Test extends HttpServlet {
 
 	                if (!item.isFormField()) {
 	                    String fileName = new File(item.getName()).getName();
-	                    String filePath = uploadFolder + File.separator + fileName;
+	                    String filePath = DATA_DIRECTORY + File.separator + fileName;
 	                    File uploadedFile = new File(filePath);
 	                    System.out.println(filePath);
 	                    // saves the file to upload directory

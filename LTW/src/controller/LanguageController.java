@@ -40,7 +40,6 @@ public class LanguageController extends HttpServlet {
 		}
 		session.setAttribute("locale", locale);
 		String referer = request.getHeader("Referer");
-		System.out.println(referer);
 		response.sendRedirect(referer);
 	}
 

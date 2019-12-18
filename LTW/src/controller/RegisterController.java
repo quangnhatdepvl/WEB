@@ -47,11 +47,14 @@ public class RegisterController extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String confirm = request.getParameter("confirm");
+		String name = request.getParameter("name");
+		String sdt = request.getParameter("sdt");
+		String email = request.getParameter("email");
 		UserDAO usDAO = new UserDAO();
 		if (password.equals(confirm)) {
 			if (usDAO.register(username, password)) {
 				response.sendRedirect("dang-nhap");
-			}
+			}			
 		} else {
 			String error = "Tai khoan dang ky khong thanh cong";
 			request.setAttribute("error", error);

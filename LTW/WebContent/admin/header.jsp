@@ -81,7 +81,7 @@
 			<nav class="sidebar sidebar-offcanvas" id="sidebar">
 				<ul class="nav">
 					<li class="nav-item"><a class="nav-link"
-						href="admin_index.jsp"> <i class="mdi mdi-home menu-icon"></i>
+						href="admin-trang-chu"> <i class="mdi mdi-home menu-icon"></i>
 							<span class="menu-title">Trang quản lý</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"
@@ -93,9 +93,9 @@
 						<div class="collapse" id="ui-basic">
 							<ul class="nav flex-column sub-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="sanphamdaban.jsp">Sản phẩm đã bán</a></li>
+									href="admin-san-pham-da-ban">Sản phẩm đã bán</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="sanphamconlai.jsp">Sản phẩm còn lại</a></li>
+									href="admin-san-pham-con-lai">Sản phẩm còn lại</a></li>
 							</ul>
 						</div></li>
 					<li class="nav-item"><a class="nav-link"
@@ -104,17 +104,13 @@
 							class="menu-title">Quản lý điện thoại</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="quanlydonhang.jsp"> <i
+						href="admin-quan-ly-don-hang"> <i
 							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
 								lý đơn hàng</span>
 					</a></li>
+					
 					<li class="nav-item"><a class="nav-link"
-						href="quanlythanhtoan.jsp"> <i
-							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
-								lý thanh toán</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="quanlykhachhang.jsp"> <i
+						href="admin-quan-ly-khach-hang"> <i
 							class="mdi mdi-grid-large menu-icon"></i> <span
 							class="menu-title">Quản lý khách hàng</span>
 					</a></li>

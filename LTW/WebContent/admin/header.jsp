@@ -81,7 +81,7 @@
 			<nav class="sidebar sidebar-offcanvas" id="sidebar">
 				<ul class="nav">
 					<li class="nav-item"><a class="nav-link"
-						href="admin_index.jsp"> <i class="mdi mdi-home menu-icon"></i>
+						href="admin-trang-chu"> <i class="mdi mdi-home menu-icon"></i>
 							<span class="menu-title">Trang quản lý</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"

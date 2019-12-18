@@ -1,7 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<html lang="en">
+
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
@@ -26,7 +26,7 @@
       <div class="navbar-brand-wrapper d-flex justify-content-center">
         <div class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">  
           <a class="navbar-brand brand-logo" href="admin_index.jsp"><img src="logo.png" alt="logo"/></a>
-
+      
           <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
             <span class="mdi mdi-sort-variant"></span>
           </button>
@@ -94,7 +94,7 @@
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link" href="admin_index.jsp">
+            <a class="nav-link" href="index.jsp">
               <i class="mdi mdi-home menu-icon"></i>
               <span class="menu-title">Trang quản lý</span>
             </a>
@@ -118,13 +118,13 @@
                <span class="menu-title">Quản lý điện thoại</span>
             </a>
           </li>
-         <li class="nav-item active">
+         <li class="nav-item">
             <a class="nav-link" href="quanlydonhang.jsp">
               <i class="mdi mdi-chart-pie menu-icon"></i>
              <span class="menu-title">Quản lý đơn hàng</span>
             </a>
           </li>
-		  <li class="nav-item">
+		  <li class="nav-item active">
 				<a class="nav-link" href="quanlythanhtoan.jsp">
 				  <i class="mdi mdi-chart-pie menu-icon"></i>
 				  <span class="menu-title">Quản lý thanh toán</span>
@@ -175,13 +175,9 @@
               <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận thanh toán                 
                   </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
+               
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>
@@ -197,13 +193,9 @@
               <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận thanh toán                 
                   </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
+               
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>
@@ -217,15 +209,11 @@
               <td></td>
 
               <!-- phần xóa  -->
-              <td class="center">
+             <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận thanh toán                 
                   </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
+               
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>
@@ -241,13 +229,9 @@
               <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
+                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận thanh toán                 
                   </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
+               
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>

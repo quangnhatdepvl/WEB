@@ -5,11 +5,12 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+
 import model.PhoneModel;
+import model.UserModel;
 import utils.DbUtils;
 
 public class PhoneDAO {
-
 
 	public ArrayList<PhoneModel> getAll() {
 		ArrayList<PhoneModel> listPhone = new ArrayList<>();
@@ -102,8 +103,9 @@ public class PhoneDAO {
 
 	public boolean savePhone(PhoneModel phone) {
 		boolean bl = false;
+		Connection conn = null;
 		try {
-			Connection conn = DbUtils.getConnection();
+			conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?) ");
 			ps.setInt(1, phone.getId());
 			ps.setString(2, phone.getName());
@@ -119,7 +121,12 @@ public class PhoneDAO {
 			}
 
 		} catch (SQLException ex) {
-			ex.printStackTrace();
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		return bl;
 	}
@@ -311,6 +318,34 @@ public class PhoneDAO {
 		}
 		return list;
 
+	}
+
+	public boolean thanhToan(UserModel user, ArrayList<PhoneModel> listPhone) {
+		boolean result = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0)");
+			ps.setInt(1, user.getUser_id());
+			for (PhoneModel phone : listPhone) {
+				ps.setInt(2, phone.getId());
+				int kq = ps.executeUpdate();
+				if (kq > 0) {
+					result = true;
+					conn.commit();
+				}
+			}
+
+		} catch (SQLException ex) {
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
 	}
 
 }

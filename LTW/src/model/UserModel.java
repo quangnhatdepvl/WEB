@@ -7,20 +7,25 @@ public class UserModel {
 	private String user_name;
 	private String user_password;
 	private String user_fullname;
+	private String phone;
+	private String email;
+	private String address;
 	private ArrayList<Role> roles;
-
 	
 	public UserModel() {
 		
 	}
 
-
-	public UserModel(int user_id, String user_name, String user_password, String user_fullname, ArrayList<Role> roles) {
+	public UserModel(int user_id, String user_name, String user_password, String user_fullname, String phone,
+			String email, String address, ArrayList<Role> roles) {
 		super();
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_password = user_password;
 		this.user_fullname = user_fullname;
+		this.phone = phone;
+		this.email = email;
+		this.address = address;
 		this.roles = roles;
 	}
 
@@ -75,11 +80,38 @@ public class UserModel {
 	}
 
 
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
 	@Override
 	public String toString() {
 		return "UserModel [user_id=" + user_id + ", user_name=" + user_name + ", user_password=" + user_password
-				+ ", user_fullname=" + user_fullname + ", roles=" + roles + "]";
+				+ ", user_fullname=" + user_fullname + ", phone=" + phone + ", email=" + email + ", address=" + address
+				+ ", roles=" + roles + "]";
 	}
+
+	
 
 
 	

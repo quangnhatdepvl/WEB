@@ -167,6 +167,7 @@
 					<div class="checkout-shop-order-group__orders">
 						<div class="checkout-product-ordered-list-item">
 							<div class="checkout-product-ordered-list-item-shop-info"></div>
+							
 							<div class="checkout-product-ordered-list-item__items">
 								<div
 									class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
@@ -181,6 +182,7 @@
 												cứng SSD 128GB Colorful SL300 chính hãng NWH Phân phối</span>
 										</span>
 									</div>
+									
 									<div
 										class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--variation"></div>
 									<div class="checkout-product-ordered-list-item__header">1</div>
@@ -190,12 +192,20 @@
 							</div>
 						</div>
 					</div>
+					
+					
+					
 					<div class="_1pkbuI">
 						<div class="_1wd2xT">Tổng số tiền (1 sản phẩm):</div>
 						<div class="ZwtlWT">₫415.100</div>
 					</div>
 				</div>
-			</div>
+				
+				
+				
+				
+				
+							</div>
 		</div>
 		<!-- phuongthuc -->
 		<div class="_1nqViI _3Rq9ya">

@@ -110,7 +110,7 @@
 													<i class="fa fa-user"></i> ${user.user_name }
 												</button>
 												<div class="w3-dropdown-content w3-bar-block w3-border">
-													<a href="#" class="w3-bar-item w3-button"> <fmt:message key="setting" /></a> <a
+													<a href="${pageContext.request.contextPath }/sua-thong-tin" class="w3-bar-item w3-button"> <fmt:message key="setting" /></a> <a
 														href="${pageContext.request.contextPath }/dang-xuat"
 														class="w3-bar-item w3-button"> <fmt:message key="dangXuat"/></a>
 

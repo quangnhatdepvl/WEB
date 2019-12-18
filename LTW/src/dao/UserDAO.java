@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import model.PhoneModel;
 import model.Role;
@@ -43,7 +45,7 @@ public class UserDAO {
 		ArrayList<Role> roles = new ArrayList<>();
 		Connection conn = DbUtils.getConnection();
 		StringBuilder sql = new StringBuilder();
-		sql.append("select user_id, user_name,user_password,role_name ");
+		sql.append("select * ");
 		sql.append("from user_db as u ");
 		sql.append("inner join role_db as r ");
 		sql.append("on u.role_id = r.role_id where user_name = ? and user_password = ?");
@@ -56,6 +58,10 @@ public class UserDAO {
 				user.setUser_id(rss.getInt("user_id"));
 				user.setUser_name(rss.getString("user_name"));
 				user.setUser_password(rss.getString("user_password"));
+				user.setAddress(rss.getString("address"));
+				user.setEmail(rss.getString("email"));
+				user.setPhone(rss.getString("phone"));
+				user.setUser_fullname(rss.getString("user_fullname"));
 				Role role = new Role();
 				role.setRole_name(rss.getString("role_name"));
 				roles.add(role);
@@ -70,5 +76,32 @@ public class UserDAO {
 
 	}
 	
+	public boolean updateUser(UserModel user) {
+		boolean result = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			String sql = "update user_db set user_fullname = ? , phone = ? , email = ? , address = ? where user_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getUser_fullname());
+			ps.setString(2, user.getPhone());
+			ps.setString(3, user.getEmail());
+			ps.setString(4, user.getAddress());
+			ps.setInt(5, user.getUser_id());
+			if (ps.executeUpdate() > 0) {
+				result = true;
+				conn.commit();
+			}
+		} catch (SQLException ex) {
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		}
+		return result;
+	}
 	
 }

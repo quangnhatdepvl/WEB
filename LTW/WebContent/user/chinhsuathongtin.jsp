@@ -45,67 +45,70 @@
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
 	<br>
-	<div class="right" style="
-    width: 70%;
-    margin: auto;
-"> 
-            
-            <div class="col-md-12">
-                
-                <form action="" method="post">
+	<div class="right" style="width: 70%; margin: auto;">
 
-    <div class="panel panel-primary">
-        <div class="panel-heading">
-            <h3 class="panel-title">Thay đổi thông tin tài khoản</h3>
-        </div>
-        <div class="panel-body">
-            <div class="bao">
-               
-                <div class="bao1">        
-				 <div class="form-group">
-                            <label class="col-sm-3 control-label">Tên của bạn: </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Tên của bạn" name="name" value="">
-                            </div>
-                            <div class="clear"> </div>
-                        </div>                    
+		<div class="col-md-12">
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Số điện thoại: </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Số điện thoại" name="phone" value="">
-                            </div>
-                            <div class="clear"> </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Email: </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Nhập email" name="email" value="">
-                            </div>
-                            <div class="clear"> </div>
-                        </div>
 
-                        <div class="form-group">
-                            <label class="col-sm-3 control-label">Địa chỉ: </label>
-                            <div class="col-sm-9">
-                                <input type="text" class="form-control" placeholder="Nhập địa chỉ nhà bạn" name="address" value="">
-                            </div>
-                            <div class="clear"> </div>
-                        </div>
 
-                        <div class="form-group">
-                            <input class="btn btn-success" name="btn" type="submit" value="Cập nhật">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</form> 
+			<div class="panel panel-primary">
+				<div class="panel-heading">
+					<h3 class="panel-title">Thay đổi thông tin tài khoản</h3>
+				</div>
+				<div class="panel-body">
+					<div class="bao">
 
-            </div>
-           
-        </div>
-	
-	
-	</body></html>
+						<div class="bao1">
+							<form action="sua-thong-tin" method="post">
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Tên của bạn: </label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control"
+											placeholder="Tên của bạn" name="name" value="${user.user_fullname }">
+									</div>
+								
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Số điện thoại: </label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control"
+											placeholder="Số điện thoại" name="phone" value="${user.phone }">
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Email: </label>
+									<div class="col-sm-9">
+										<input type="email" class="form-control"
+											placeholder="Nhập email" name="email" value="${user.email }">
+									</div>
+									<div class="clear"></div>
+								</div>
+
+								<div class="form-group">
+									<label class="col-sm-3 control-label">Địa chỉ: </label>
+									<div class="col-sm-9">
+										<input type="text" class="form-control"
+											placeholder="Nhập địa chỉ nhà bạn" name="address" value="${user.address }">
+									</div>
+									<div class="clear"></div>
+								</div>
+
+								<div class="form-group">
+									<input class="btn btn-success" name="btn" type="submit"
+										value="Cập nhật">
+								</div>
+								<p>${error}</p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+
+	</div>
+</body>
+</html>

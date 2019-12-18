@@ -45,50 +45,51 @@
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
 	<br>
-	<div class="right" style="
-    width: 70%;
-    margin: auto;
-"> 
-
-          
-            <div class="col-md-12">
-                
-                <form action="" method="post" accept-charset="utf-8" id="register">
-<div class="panel panel-primary">
-    <div class="panel-heading">
-        <h3 class="panel-title">Thay đổi mật khẩu</h3>
-    </div>
-    <div class="panel-body">
-        <div class="bao">
-            <div class="leftabl">
-                <h3>Nhập thông tin vào các ô bên dưới</h3>              
-            </div>
-            <div class="bao1">
-			    
-                <div class="form-group">
-                    <input type="password" placeholder="Mật khẩu hiện tại " class="form-control" name="password" id="username" value="">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Mật khẩu mới" class="form-control" name="password_new" id="password" value="">
-                </div>
-                <div class="form-group">
-                    <input type="password" placeholder="Xác nhận mật khẩu mới" class="form-control" name="confirm_password" id="password" value="">
-                </div>
-                
-                <div class="form-group"><input class="btn btn-success" type="submit" value="Đổi mật khẩu"></div>
-            </div>
-        </div>
-    </div>
-</div>
-</form>
+	<div class="right" style="width: 70%; margin: auto;">
 
 
+		<div class="col-md-12">
 
- 
+			<form action="" method="post" accept-charset="utf-8" id="register">
+				<div class="panel panel-primary">
+					<div class="panel-heading">
+						<h3 class="panel-title">Thay đổi mật khẩu</h3>
+					</div>
+					<div class="panel-body">
+						<div class="bao">
+							<div class="leftabl">
+								<h3>Nhập thông tin vào các ô bên dưới</h3>
+							</div>
+							<div class="bao1">
 
-            </div>
-           
-        </div>   
-	
-	
-	</body></html>
+								<div class="form-group">
+									<input type="password" placeholder="Mật khẩu hiện tại "
+										class="form-control" name="password" id="username" value="">
+								</div>
+								<div class="form-group">
+									<input type="password" placeholder="Mật khẩu mới"
+										class="form-control" name="password_new" id="password"
+										value="">
+								</div>
+								<div class="form-group">
+									<input type="password" placeholder="Xác nhận mật khẩu mới"
+										class="form-control" name="confirm_password" id="password"
+										value="">
+								</div>
+
+								<div class="form-group">
+									<input class="btn btn-success" type="submit"
+										value="Đổi mật khẩu">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+
+	</div>
+
+
+</body>
+</html>

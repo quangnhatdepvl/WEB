@@ -165,7 +165,7 @@
 		<div class="_1nqViI _3Rq9ya">
 			<form action="thanh-toan" method="post">
 				<input type="submit" value="Đặt hàng">
-
+				<p>${error }
 			</form>
 		</div>
 

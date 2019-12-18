@@ -132,12 +132,7 @@
 						href="quanlydonhang.jsp"> <i
 							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
 								lý đơn hàng</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="quanlythanhtoan.jsp"> <i
-							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
-								lý thanh toán</span>
-					</a></li>
+					</a></li>					
 					<li class="nav-item"><a class="nav-link"
 						href="quanlykhachhang.jsp"> <i
 							class="mdi mdi-grid-large menu-icon"></i> <span

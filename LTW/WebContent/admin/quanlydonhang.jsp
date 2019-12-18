@@ -27,6 +27,9 @@
 </head>
 
 <body>
+<fmt:setLocale value="${locale }" />
+
+	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp"/>
       <!-- partial -->
       <div class="col-xs-12">
@@ -35,21 +38,21 @@
           <thead>
             <tr role="row">           
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="SST: activate to sort column ascending" style="width: 50px;">STT</th>
+                aria-label="SST: activate to sort column ascending" style="width: 50px;"><fmt:message key="stt"/></th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Tên sản phẩm: activate to sort column ascending" style="width: 200px;">Tên sản phẩm</th>
+                aria-label="Tên sản phẩm: activate to sort column ascending" style="width: 200px;"><fmt:message key="tenDienThoai"/></th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Hãnh sản xuất: activate to sort column ascending" style="width: 200px;">Hãng sản xuất</th>
+                aria-label="Hãnh sản xuất: activate to sort column ascending" style="width: 200px;"><fmt:message key="nhaSanXuat"/></th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Giá: activate to sort column ascending" style="width: 150px;">Giá</th>
+                aria-label="Giá: activate to sort column ascending" style="width: 150px;"><fmt:message key="giaCaAdmin"/></th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Hãng sản xuất: activate to sort column ascending" style="width: 200px;">Tên khách hàng</th>
+                aria-label="Tên khách hàng: activate to sort column ascending" style="width: 200px;"><fmt:message key="tenKhachHang"/></th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Tuổi: activate to sort column ascending" style="width: 50px;">Tuổi</th>
+                aria-label="SDT: activate to sort column ascending" style="width: 300px;"><fmt:message key="sdt"/></th>
 				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Địa chỉ: activate to sort column ascending" style="width: 200px;">Địa chỉ</th>
+                aria-label="Địa chỉ: activate to sort column ascending" style="width: 200px;"><fmt:message key="diaChi"/></th>
               <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Thao tác: activate to sort column ascending" style="width: 150px;">Thao tác</th>
+                aria-label="Thao tác: activate to sort column ascending" style="width: 150px;"><fmt:message key="thaoTac"/></th>
             </tr>
           </thead>
           <tbody>
@@ -65,83 +68,18 @@
               <!-- phần xóa  -->
               <td class="center">
                 <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
+                  <button title="" type="button" class="btn btn-xs btn-danger btn-round text-center"><fmt:message key="xacNhan"/>
                   
                   </button></a>
                 <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
+                  <button title="" class="btn btn-xs btn-info btn-round text-center"><fmt:message key="huy"/>             
                   </button>
                 </a>
               </td>
               <!-- kết thúc phần xóa  -->
             </tr>
-            <tr role="row" class="even">
-             <td></td>
-              <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-
-              <!-- phần xóa  -->
-              <td class="center">
-                <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
-                  </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
-              </td>
-              <!-- kết thúc phần xóa  -->
-            </tr>
-            <tr role="row" class="odd">
-              <td></td>
-              <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-
-              <!-- phần xóa  -->
-              <td class="center">
-                <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
-                  </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
-              </td>
-              <!-- kết thúc phần xóa  -->
-            </tr>
-            <tr role="row" class="even">
-              <td></td>
-              <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-
-              <!-- phần xóa  -->
-              <td class="center">
-                <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="Xóa bài viết" type="button" class="btn btn-xs btn-danger btn-round text-center">xác nhận
-                  
-                  </button></a>
-                <a href="">
-                  <button title="Sửa bài viết" class="btn btn-xs btn-info btn-round text-center">Hủy                 
-                  </button>
-                </a>
-              </td>
-              <!-- kết thúc phần xóa  -->
-            </tr>
-          
+     
+              
           </tbody>
         </table>
        

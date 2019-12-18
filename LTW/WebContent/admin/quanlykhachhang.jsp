@@ -27,30 +27,34 @@
 </head>
 
 <body>
+<fmt:setLocale value="${locale }" />
+
+	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp"/>
 	
 	        <div class="col-lg-12 stretch-card" style = "width :14%">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Bảng thống kê điện thoại đã bán</h4>
-                  <div class="table-responsive pt-3" >
+                   <div class="table-responsive pt-3" >
                     <table class="table table-bordered" >
                       <thead>
                         <tr>
                          
-                         <th style="width: 5%;">STT</th>
+                         <th style="width: 5%;"><fmt:message key="stt"/></th>
                           	<th style="width: 15%;">
-                            Tên	khách hàng 
+                           <fmt:message key="tenKhachHang"/>
                           </th>
-						<th style="width: 10%;">Năm sinh</th>
-                         	<th style="width: 13%;">
-							Số điện thoại
+                         	<th style="width: 15%;">
+							<fmt:message key="sdt"/>
                           </th>
-		<th style="width: 20%;">
-							Địa chỉ
+		<th style="width: 18%;">
+						<fmt:message key="diaChi"/>
                           </th>
-						   <th>
-							Sản phẩm đã mua
+						   <th style="width: 18%;">
+						<fmt:message key="tenDienThoai"/>
+                          </th>
+                           <th>
+						<fmt:message key="ngayMua"/>
                           </th>
 						   
                         </tr>
@@ -65,9 +69,6 @@
 							Nguyễn Văn A
                           </td>
                           <td>
-							1999
-                          </td>
-                          <td>
                            0912226362
                           </td>
 						   <td>
@@ -75,6 +76,9 @@
                           </td>
 				   <td>
                           Iphone 8 plus
+                          </td>
+                          	   <td>
+                       25/11/1999
                           </td>
 						 
                         </tr>

@@ -27,37 +27,40 @@
 </head>
 
 <body>
+<fmt:setLocale value="${locale }" />
+
+	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp"/>
 
 			<!-- partial -->
 			<div class="col-xs-12">
-				<table id="datatable-buttons"
+							<table id="datatable-buttons"
 					class="table table-striped table-bordered dataTable no-footer"
 					role="grid" aria-describedby="datatable-buttons_info">
 					<thead>
 						<tr role="row">
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1" aria-label="SST: activate to sort column ascending"
-								style="width: 50px;">STT</th>
+								style="width: 50px;"><fmt:message key="stt"/></th>
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1"
 								aria-label="Tên sản phẩm: activate to sort column ascending"
-								style="width: 200px;">Tên sản phẩm</th>
+								style="width: 200px;"><fmt:message key="tenDienThoai"/></th>
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1"
 								aria-label="Kiểu điện thoại: activate to sort column ascending"
-								style="width: 200px;">Kiểu điện thoại</th>
+								style="width: 200px;"><fmt:message key="maDienThoai"/></th>
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1"
-								aria-label="Hãnh sản xuất: activate to sort column ascending"
-								style="width: 200px;">Hãng sản xuất</th>
+								aria-label="Nhà sản xuất: activate to sort column ascending"
+								style="width: 200px;"><fmt:message key="nhaSanXuat"/></th>
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1" aria-label="Giá: activate to sort column ascending"
-								style="width: 150px;">Giá</th>
+								style="width: 150px;"><fmt:message key="giaCaAdmin"/></th>
 							<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 								colspan="1"
 								aria-label="Thao tác: activate to sort column ascending"
-								style="width: 150px;">Thao tác</th>
+								style="width: 150px;"><fmt:message key="thaoTac"/></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -73,12 +76,12 @@
 								<!-- phần xóa  -->
 								<td class="center"><a data-toggle="modal"
 									data-target="#myModal1" style="display: inline-block">
-										<button title="Xóa bài viết" type="button"
+										<button title="<fmt:message key="btnXoa"/> " type="button"
 											class="btn btn-xs btn-danger btn-round text-center">
 											<i class="ace-icon fa fa-trash-o"></i>
 										</button>
 								</a> <a href="">
-										<button title="Sửa bài viết"
+										<button title="<fmt:message key="btnSua"/> "
 											class="btn btn-xs btn-info btn-round text-center">
 											<i class="ace-icon fa fa-pencil"></i>
 										</button>

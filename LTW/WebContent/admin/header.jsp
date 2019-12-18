@@ -104,17 +104,13 @@
 							class="menu-title">Quản lý điện thoại</span>
 					</a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="quanlydonhang.jsp"> <i
+						href="admin-quan-ly-don-hang"> <i
 							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
 								lý đơn hàng</span>
 					</a></li>
+					
 					<li class="nav-item"><a class="nav-link"
-						href="quanlythanhtoan.jsp"> <i
-							class="mdi mdi-chart-pie menu-icon"></i> <span class="menu-title">Quản
-								lý thanh toán</span>
-					</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="quanlykhachhang.jsp"> <i
+						href="admin-quan-ly-khach-hang"> <i
 							class="mdi mdi-grid-large menu-icon"></i> <span
 							class="menu-title">Quản lý khách hàng</span>
 					</a></li>

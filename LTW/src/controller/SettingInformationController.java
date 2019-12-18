@@ -18,7 +18,7 @@ import model.UserModel;
 /**
  * Servlet implementation class SettingInformationController
  */
-@WebServlet(urlPatterns = {"/sua-thong-tin"})
+@WebServlet(urlPatterns = { "/sua-thong-tin" })
 public class SettingInformationController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -54,26 +54,33 @@ public class SettingInformationController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
-		HttpSession session = request.getSession();
-		UserModel user = (UserModel) session.getAttribute("user");
-		user.setPhone(phone);
-		user.setAddress(address);
-		user.setEmail(email);
-		user.setUser_fullname(name);
-		UserDAO usDAO = new UserDAO();
-		if (usDAO.updateUser(user)) {
-			session.setAttribute("user", user);
-			response.sendRedirect(request.getContextPath() +"/sua-thong-tin");
-		} else {
-			String error = "Loi nhap lieu";
-			request.setAttribute("error", error);
-			RequestDispatcher rd = request.getRequestDispatcher("user/chinhsuathongtin.jsp");
-			rd.forward(request, response);
+		if (checkPhone(phone)) {
+			HttpSession session = request.getSession();
+			UserModel user = (UserModel) session.getAttribute("user");
+			user.setPhone(phone);
+			user.setAddress(address);
+			user.setEmail(email);
+			user.setUser_fullname(name);
+			UserDAO usDAO = new UserDAO();
+			if (usDAO.updateUser(user)) {
+				session.setAttribute("user", user);
+				response.sendRedirect(request.getContextPath() + "/sua-thong-tin");
+			} else {
+				error(request, response);
 
+			}
+		} else {
+			error(request, response);
 		}
 
 	}
-	
+
+	private void error(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String error = "Loi nhap lieu";
+		request.setAttribute("error", error);
+		RequestDispatcher rd = request.getRequestDispatcher("user/chinhsuathongtin.jsp");
+		rd.forward(request, response);
+	}
 
 	private boolean checkPhone(String phone) {
 		Pattern pattern = Pattern.compile("^[0-9]*$");
@@ -90,6 +97,5 @@ public class SettingInformationController extends HttpServlet {
 		}
 		return false;
 	}
-	
 
 }

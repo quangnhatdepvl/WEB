@@ -159,8 +159,8 @@
 
 							<div class="cart-collaterals">
 
-								<button style="width: 16%; padding-left: 14px;">Thanh
-									toán</button>
+								<a href="${pageContext.request.contextPath }/thanh-toan"><button style="width: 16%; padding-left: 14px;">Thanh
+									toán</button></a>
 
 							</div>
 						</div>

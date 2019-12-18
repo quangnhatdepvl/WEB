@@ -50,21 +50,28 @@ public class ThanhToanController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		long millis=System.currentTimeMillis();  
-		java.sql.Date dateCreate = new java.sql.Date(millis);  
+		long millis = System.currentTimeMillis();
+		java.sql.Date dateCreate = new java.sql.Date(millis);
 		HttpSession session = request.getSession();
 		UserModel user = (UserModel) session.getAttribute("user");
 		ArrayList<PhoneModel> listPhone = (ArrayList<PhoneModel>) session.getAttribute("listPhone");
 		Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate);
 		PhoneDAO phDAO = new PhoneDAO();
-		if(phDAO.thanhToan(pay)) {
-			response.sendRedirect(request.getContextPath()+"/trang-chu");
-			session.removeAttribute("listPhone");
+		if (listPhone != null) {
+
+			if (phDAO.thanhToan(pay)) {
+				response.sendRedirect(request.getContextPath() + "/trang-chu");
+				session.removeAttribute("listPhone");
+			} else {
+				response.sendRedirect(request.getContextPath() + "/thanh-toan");
+			}
 		} else {
-			response.sendRedirect(request.getContextPath()+"/thanh-toan");
+			String error = "Thanh toan that bai";
+			request.setAttribute("error", error);
+			RequestDispatcher rd = request.getRequestDispatcher("user/thanhtoan.jsp");
+			rd.forward(request, response);
 		}
-	
-		
+
 	}
 
 }

@@ -6,8 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.Pay;
+import model.PayInf;
 import model.PhoneModel;
-import model.UserModel;
 import utils.DbUtils;
 
 public class PhoneDAO {
@@ -320,14 +321,15 @@ public class PhoneDAO {
 
 	}
 
-	public boolean thanhToan(UserModel user, ArrayList<PhoneModel> listPhone) {
+	public boolean thanhToan(Pay pay) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0)");
-			ps.setInt(1, user.getUser_id());
-			for (PhoneModel phone : listPhone) {
+			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?)");
+			ps.setInt(1, pay.getUser_id());
+			ps.setDate(3, (java.sql.Date) pay.getDateCreate());
+			for (PhoneModel phone : pay.getListPhone()) {
 				ps.setInt(2, phone.getId());
 				int kq = ps.executeUpdate();
 				if (kq > 0) {
@@ -347,5 +349,39 @@ public class PhoneDAO {
 
 		return result;
 	}
+	
+	
+	public ArrayList<PayInf> listPay() {
+		ArrayList<PayInf> list = new ArrayList<>();
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT p.phoneName as PhoneName, u.user_name as UserName, ");
+		sql.append("t.date_create as NgayLap, ");
+		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, u.address as DiaChi, u.phone as SDT ");
+		sql.append("FROM thanhtoan t INNER JOIN user_db u ON t.user_id  = u.user_id ");
+		sql.append("INNER JOIN phone p ON t.phone_id = p.id ");
+		sql.append("where t.trang_thai = 0");
+		try {
+			Connection conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql.toString());
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				PayInf pay = new PayInf();
+				pay.setPhoneName(rss.getString("PhoneName"));
+				pay.setUserName(rss.getString("UserName"));
+				pay.setDateCreate(rss.getDate("NgayLap"));
+				pay.setNhaSanXuat(rss.getString("HangSanXuat"));
+				pay.setPrice(rss.getDouble("Gia"));
+				pay.setAddress(rss.getString("DiaChi"));
+				pay.setPhone(rss.getString("SDT"));
+				list.add(pay);
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+
+	}
+
 
 }

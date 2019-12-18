@@ -8,7 +8,7 @@
 <meta charset="utf-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Quản lý điện thoại</title>
+<title>Quản lý đơn hàng</title>
 <!-- plugins:css -->
 <link rel="stylesheet"
 	href="admin/vendors/mdi/css/materialdesignicons.min.css">
@@ -146,47 +146,26 @@
         </table>
        
       </div>
-      <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
-  </div>
-  <!-- container-scroller -->
-
-<!-- start script slider charts -->
-<script>
-function openPage(pageName,elmnt,color) {
-  var i, tabcontent, tablinks;
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-  tablinks = document.getElementsByClassName("tablink");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].style.backgroundColor = "";
-  }
-  document.getElementById(pageName).style.display = "block";
-  elmnt.style.backgroundColor = color;
-}
-
-// Get the element with id="defaultOpen" and click on it
-document.getElementById("defaultOpen").click();
-</script> 
-<!-- end script slider chát -->
-
-  <!-- plugins:js -->
-  <script src="vendors/base/vendor.bundle.base.js"></script>
-  <!-- endinject -->
-    <!-- Plugin js for this page-->
-    <script src="vendors/chart.js/Chart.min.js"></script>
-    <!-- End plugin js for this page-->
-  <!-- inject:js -->
-  <script src="js/off-canvas.js"></script>
-  <script src="js/hoverable-collapse.js"></script>
-  <script src="js/template.js"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <script src="js/chart.js"></script>
-  <!-- End custom js for this page-->
+      
+<!-- plugins:js -->
+	<script src="admin/vendors/base/vendor.bundle.base.js"></script>
+	<!-- endinject -->
+	<!-- Plugin js for this page-->
+	<script src="admin/vendors/chart.js/Chart.min.js"></script>
+	<script src="admin/vendors/datatables.net/jquery.dataTables.js"></script>
+	<script src="admin/vendors/datatables.net-bs4/dataTables.bootstrap4.js"></script>
+	<!-- End plugin js for this page-->
+	<!-- inject:js -->
+	<script src="admin/js/off-canvas.js"></script>
+	<script src="admin/js/hoverable-collapse.js"></script>
+	<script src="admin/js/template.js"></script>
+	<!-- endinject -->
+	<!-- Custom js for this page-->
+	<script src="admin/js/dashboard.js"></script>
+	<script src="admin/js/data-table.js"></script>
+	<script src="admin/js/jquery.dataTables.js"></script>
+	<script src="admin/js/dataTables.bootstrap4.js"></script>
+	<!-- End custom js for this page-->
 
 </body>
 

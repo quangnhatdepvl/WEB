@@ -104,16 +104,6 @@
 			</div>
 
 
-			<!-- content-wrapper ends -->
-			<!-- partial:partials/_footer.jsp -->
-
-			<!-- partial -->
-		</div>
-		<!-- main-panel ends -->
-	</div>
-	<!-- page-body-wrapper ends -->
-	</div>
-	<!-- container-scroller -->
 
 	<!-- plugins:js -->
 	<script src="admin/vendors/base/vendor.bundle.base.js"></script>

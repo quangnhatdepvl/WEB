@@ -93,9 +93,9 @@
 						<div class="collapse" id="ui-basic">
 							<ul class="nav flex-column sub-menu">
 								<li class="nav-item"><a class="nav-link"
-									href="sanphamdaban.jsp">Sản phẩm đã bán</a></li>
+									href="admin-san-pham-da-ban">Sản phẩm đã bán</a></li>
 								<li class="nav-item"><a class="nav-link"
-									href="sanphamconlai.jsp">Sản phẩm còn lại</a></li>
+									href="admin-san-pham-con-lai">Sản phẩm còn lại</a></li>
 							</ul>
 						</div></li>
 					<li class="nav-item"><a class="nav-link"

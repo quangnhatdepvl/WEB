@@ -56,7 +56,8 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<input class="input-with-status__input" type="text"
+						<label>Tên khách hàng:</label>
+							<input class="input-with-status__input" style="width: 982px" type="text"
 								placeholder="Tên" maxlength="64" name="name"
 								value="${user.user_fullname }">
 						</div>
@@ -66,7 +67,8 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<input class="input-with-status__input" type="text"
+							<label>Số điện thoại:</label>
+							<input class="input-with-status__input" style="width: 982px" type="text"
 								placeholder="Số điện thoại" name="phone" value="${user.phone }">
 						</div>
 					</div>
@@ -75,7 +77,8 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<input class="input-with-status__input" type="email"
+							<label>Địa chỉ email:</label>
+							<input class="input-with-status__input" style="width: 982px" type="email"
 								placeholder="Địa chỉ email" name="email" value="${user.email }">
 						</div>
 					</div>
@@ -85,7 +88,8 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<input class="input-with-status__input" type="text"
+							<label>Địa chỉ:</label>
+							<input class="input-with-status__input" style="width: 982px" type="text"
 								placeholder="Toà nhà, Tên Đường..." maxlength="128"
 								name="address" value="${user.address }">
 						</div>

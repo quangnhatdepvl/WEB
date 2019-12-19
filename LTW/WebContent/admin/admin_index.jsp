@@ -213,8 +213,7 @@
 							<div class="card">
 								<div class="card-body">
 									<p class="card-title">Lượng truy cập trang web</p>
-									<p class="mb-4">Với những bộ anime hot nhất thu người xem
-										đông đảo.</p>
+									<p class="mb-4">Với những chiếc điện thoại hot nhất trên thị trường.</p>
 									<div id="cash-deposits-chart-legend"
 										class="d-flex justify-content-center pt-3"></div>
 									<canvas id="cash-deposits-chart"></canvas>

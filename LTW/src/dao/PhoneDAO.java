@@ -350,7 +350,7 @@ public class PhoneDAO {
 		return result;
 	}
 
-	public ArrayList<PayInf> listPay() {
+	public ArrayList<PayInf> listPay(int trangThai) {
 		ArrayList<PayInf> list = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT p.phoneName as PhoneName, u.user_fullname as UserName, ");
@@ -358,10 +358,11 @@ public class PhoneDAO {
 		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, u.address as DiaChi, u.phone as SDT, t.id as Id  ");
 		sql.append("FROM thanhtoan t INNER JOIN user_db u ON t.user_id  = u.user_id ");
 		sql.append("INNER JOIN phone p ON t.phone_id = p.id ");
-		sql.append("where t.trang_thai = 0");
+		sql.append("where t.trang_thai = ?");
 		try {
 			Connection conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql.toString());
+			ps.setInt(1, trangThai);
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PayInf pay = new PayInf();
@@ -406,5 +407,28 @@ public class PhoneDAO {
 
 		return result;
 	}
+	
+	public boolean deletePay(int id) {
+		boolean result = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM thanhtoan WHERE id = ?");
+			ps.setInt(1, id);
+			int kq = ps.executeUpdate();
+			if (kq > 0) {
+				result = true;
+				conn.commit();
+			}
+		} catch (SQLException ex) {
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 
+		return result;
+	}
 }

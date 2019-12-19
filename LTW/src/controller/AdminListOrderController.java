@@ -37,13 +37,18 @@ public class AdminListOrderController extends HttpServlet {
 		// TODO Auto-generated method stub
 		PhoneDAO phDAO = new PhoneDAO();
 		String confirm = request.getParameter("confirm");
-		if (confirm != null) {
+		String delete = request.getParameter("delete");
+		if (confirm != null && delete == null) {
 			if (phDAO.confirm(Integer.parseInt(confirm))) {
-				response.sendRedirect(request.getContextPath()+"/admin-quan-ly-don-hang");
+				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-don-hang");
+			}
+		} else if (confirm == null && delete != null) {
+			if (phDAO.deletePay(Integer.parseInt(delete))) {
+				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-don-hang");
 			}
 		} else {
 
-			ArrayList<PayInf> listPay = phDAO.listPay();
+			ArrayList<PayInf> listPay = phDAO.listPay(0);
 			request.setAttribute("listPay", listPay);
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/quanlydonhang.jsp");
 			rd.forward(request, response);

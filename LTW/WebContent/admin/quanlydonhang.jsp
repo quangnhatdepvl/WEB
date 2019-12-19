@@ -88,6 +88,10 @@
 						<c:url value="admin-quan-ly-don-hang" var="confirm">
 							<c:param name="confirm" value="${list.id }" />
 						</c:url>
+						
+						<c:url value="admin-quan-ly-don-hang" var="delete">
+							<c:param name="delete" value="${list.id }" />
+						</c:url>
 						<!-- phần xóa  -->
 						<td class="center"><a href="${confirm }">
 								<button title="" type="button"
@@ -95,7 +99,7 @@
 									<fmt:message key="xacNhan" />
 
 								</button>
-						</a> <a href="">
+						</a> <a href="${delete }">
 								<button title=""
 									class="btn btn-xs btn-info btn-round text-center">
 									<fmt:message key="huy" />

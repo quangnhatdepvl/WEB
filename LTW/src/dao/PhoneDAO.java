@@ -326,7 +326,7 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?)");
+			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?,0)");
 			ps.setInt(1, pay.getUser_id());
 			ps.setDate(3, (java.sql.Date) pay.getDateCreate());
 			for (PhoneModel phone : pay.getListPhone()) {
@@ -349,14 +349,13 @@ public class PhoneDAO {
 
 		return result;
 	}
-	
-	
+
 	public ArrayList<PayInf> listPay() {
 		ArrayList<PayInf> list = new ArrayList<>();
 		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT p.phoneName as PhoneName, u.user_name as UserName, ");
-		sql.append("t.date_create as NgayLap, ");
-		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, u.address as DiaChi, u.phone as SDT ");
+		sql.append("SELECT p.phoneName as PhoneName, u.user_fullname as UserName, ");
+		sql.append("t.trang_thai as TrangThai,t.date_create as NgayLap, ");
+		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, u.address as DiaChi, u.phone as SDT, t.id as Id  ");
 		sql.append("FROM thanhtoan t INNER JOIN user_db u ON t.user_id  = u.user_id ");
 		sql.append("INNER JOIN phone p ON t.phone_id = p.id ");
 		sql.append("where t.trang_thai = 0");
@@ -366,6 +365,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PayInf pay = new PayInf();
+				pay.setId(rss.getInt("Id"));
 				pay.setPhoneName(rss.getString("PhoneName"));
 				pay.setUserName(rss.getString("UserName"));
 				pay.setDateCreate(rss.getDate("NgayLap"));
@@ -383,5 +383,28 @@ public class PhoneDAO {
 
 	}
 
+	public boolean confirm(int id) {
+		boolean result = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("update thanhtoan set trang_thai = 1 where id = ?");
+			ps.setInt(1, id);
+			int kq = ps.executeUpdate();
+			if (kq > 0) {
+				result = true;
+				conn.commit();
+			}
+		} catch (SQLException ex) {
+			try {
+				conn.rollback();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
 
 }

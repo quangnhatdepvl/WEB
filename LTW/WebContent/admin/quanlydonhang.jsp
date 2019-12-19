@@ -27,65 +27,87 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
-	<jsp:include page="header.jsp"/>
-      <!-- partial -->
-      <div class="col-xs-12">
-        <table id="datatable-buttons" class="table table-striped table-bordered dataTable no-footer" role="grid"
-          aria-describedby="datatable-buttons_info">
-          <thead>
-            <tr role="row">           
-              <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="SST: activate to sort column ascending" style="width: 50px;"><fmt:message key="stt"/></th>
-              <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Tên sản phẩm: activate to sort column ascending" style="width: 200px;"><fmt:message key="tenDienThoai"/></th>
-              <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Hãnh sản xuất: activate to sort column ascending" style="width: 200px;"><fmt:message key="nhaSanXuat"/></th>
-              <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Giá: activate to sort column ascending" style="width: 150px;"><fmt:message key="giaCaAdmin"/></th>
-				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Tên khách hàng: activate to sort column ascending" style="width: 200px;"><fmt:message key="tenKhachHang"/></th>
-				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="SDT: activate to sort column ascending" style="width: 300px;"><fmt:message key="sdt"/></th>
-				 <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Địa chỉ: activate to sort column ascending" style="width: 200px;"><fmt:message key="diaChi"/></th>
-              <th tabindex="0" aria-controls="datatable-buttons" rowspan="1" colspan="1"
-                aria-label="Thao tác: activate to sort column ascending" style="width: 150px;"><fmt:message key="thaoTac"/></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr role="row" class="odd">
-              <td></td>
-              <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
-			  <td></td>
-              <td></td>
+	<jsp:include page="header.jsp" />
+	<!-- partial -->
+	<div class="col-xs-12">
+		<table id="datatable-buttons"
+			class="table table-striped table-bordered dataTable no-footer"
+			role="grid" aria-describedby="datatable-buttons_info">
+			<thead>
+				<tr role="row">
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1" aria-label="SST: activate to sort column ascending"
+						style="width: 50px;"><fmt:message key="stt" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Tên sản phẩm: activate to sort column ascending"
+						style="width: 200px;"><fmt:message key="tenDienThoai" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Hãnh sản xuất: activate to sort column ascending"
+						style="width: 200px;"><fmt:message key="nhaSanXuat" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1" aria-label="Giá: activate to sort column ascending"
+						style="width: 150px;"><fmt:message key="giaCaAdmin" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Tên khách hàng: activate to sort column ascending"
+						style="width: 200px;"><fmt:message key="tenKhachHang" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1" aria-label="SDT: activate to sort column ascending"
+						style="width: 300px;"><fmt:message key="sdt" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Địa chỉ: activate to sort column ascending"
+						style="width: 200px;"><fmt:message key="diaChi" /></th>
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Thao tác: activate to sort column ascending"
+						style="width: 150px;"><fmt:message key="thaoTac" /></th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach items="${listPay}" var="list">
+					<tr role="row" class="odd">
+						<td>${list.id}</td>
+						<td>${list.phoneName}</td>
+						<td>${list.nhaSanXuat }</td>
+						<td><fmt:formatNumber type="number" maxFractionDigits="0"
+								value="${list.price}" /></td>
+						<td>${list.userName }</td>
+						<td>${list.phone }</td>
+						<td>${list.address }</td>
+						<c:url value="admin-quan-ly-don-hang" var="confirm">
+							<c:param name="confirm" value="${list.id }" />
+						</c:url>
+						<!-- phần xóa  -->
+						<td class="center">
+						<a href="${confirm }" data-toggle="modal"
+							data-target="#myModal1" style="display: inline-block">
+								<button title="" type="button"
+									class="btn btn-xs btn-danger btn-round text-center">
+									<fmt:message key="xacNhan" />
 
-              <!-- phần xóa  -->
-              <td class="center">
-                <a data-toggle="modal" data-target="#myModal1" style="display: inline-block">
-                  <button title="" type="button" class="btn btn-xs btn-danger btn-round text-center"><fmt:message key="xacNhan"/>
-                  
-                  </button></a>
-                <a href="">
-                  <button title="" class="btn btn-xs btn-info btn-round text-center"><fmt:message key="huy"/>             
-                  </button>
-                </a>
-              </td>
-              <!-- kết thúc phần xóa  -->
-            </tr>
-     
-              
-          </tbody>
-        </table>
-       
-      </div>
-      
-<!-- plugins:js -->
+								</button>
+						</a> <a href="">
+								<button title=""
+									class="btn btn-xs btn-info btn-round text-center">
+									<fmt:message key="huy" />
+								</button>
+						</a></td>
+						<!-- kết thúc phần xóa  -->
+					</tr>
+
+				</c:forEach>
+			</tbody>
+		</table>
+
+	</div>
+
+	<!-- plugins:js -->
 	<script src="admin/vendors/base/vendor.bundle.base.js"></script>
 	<!-- endinject -->
 	<!-- Plugin js for this page-->

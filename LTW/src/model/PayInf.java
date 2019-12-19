@@ -12,7 +12,7 @@ public class PayInf {
 	private double price;
 	private String address;
 	private String phone;
-	
+	private int id;
 	public PayInf() {
 		
 	}
@@ -86,6 +86,14 @@ public class PayInf {
 		return "PayInf [phoneName=" + phoneName + ", userName=" + userName + ", status=" + status + ", dateCreate="
 				+ dateCreate + ", nhaSanXuat=" + nhaSanXuat + ", price=" + price + ", address=" + address + ", phone="
 				+ phone + "]";
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 	
 }

@@ -63,6 +63,10 @@
 						colspan="1"
 						aria-label="Địa chỉ: activate to sort column ascending"
 						style="width: 200px;"><fmt:message key="diaChi" /></th>
+						<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+						colspan="1"
+						aria-label="Ngày tạo: activate to sort column ascending"
+						style="width: 200px;"><fmt:message key="ngayMua" /></th>
 					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 						colspan="1"
 						aria-label="Thao tác: activate to sort column ascending"
@@ -80,6 +84,7 @@
 						<td>${list.userName }</td>
 						<td>${list.phone }</td>
 						<td>${list.address }</td>
+						<td>${list.dateCreate }</td>
 						<c:url value="admin-quan-ly-don-hang" var="confirm">
 							<c:param name="confirm" value="${list.id }" />
 						</c:url>

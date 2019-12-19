@@ -84,9 +84,7 @@
 							<c:param name="confirm" value="${list.id }" />
 						</c:url>
 						<!-- phần xóa  -->
-						<td class="center">
-						<a href="${confirm }" data-toggle="modal"
-							data-target="#myModal1" style="display: inline-block">
+						<td class="center"><a href="${confirm }">
 								<button title="" type="button"
 									class="btn btn-xs btn-danger btn-round text-center">
 									<fmt:message key="xacNhan" />

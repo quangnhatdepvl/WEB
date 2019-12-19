@@ -27,69 +27,52 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
-	<jsp:include page="header.jsp"/>
-	
-	        <div class="col-lg-12 stretch-card" style = "width :14%">
-              <div class="card">
-                <div class="card-body">
-                   <div class="table-responsive pt-3" >
-                    <table class="table table-bordered" >
-                      <thead>
-                        <tr>
-                         
-                         <th style="width: 5%;"><fmt:message key="stt"/></th>
-                          	<th style="width: 15%;">
-                           <fmt:message key="tenKhachHang"/>
-                          </th>
-                         	<th style="width: 15%;">
-							<fmt:message key="sdt"/>
-                          </th>
-		<th style="width: 18%;">
-						<fmt:message key="diaChi"/>
-                          </th>
-						   <th style="width: 18%;">
-						<fmt:message key="tenDienThoai"/>
-                          </th>
-                           <th>
-						<fmt:message key="ngayMua"/>
-                          </th>
-						   
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="table-info" >
-                       
-                          <td>
-                            01
-                          </td>
-                          <td>
-							Nguyễn Văn A
-                          </td>
-                          <td>
-                           0912226362
-                          </td>
-						   <td>
-                           Thủ Đức, Hồ Chí Minh
-                          </td>
-				   <td>
-                          Iphone 8 plus
-                          </td>
-                          	   <td>
-                       25/11/1999
-                          </td>
-						 
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-           
-        
+	<jsp:include page="header.jsp" />
+
+	<div class="col-lg-12 stretch-card" style="width: 14%">
+		<div class="card">
+			<div class="card-body">
+				<div class="table-responsive pt-3">
+					<table class="table table-bordered">
+						<thead>
+
+							<tr>
+
+								<th style="width: 5%;"><fmt:message key="stt" /></th>
+								<th style="width: 15%;"><fmt:message key="tenKhachHang" />
+								</th>
+								<th style="width: 15%;"><fmt:message key="sdt" /></th>
+								<th style="width: 18%;"><fmt:message key="diaChi" /></th>
+								<th style="width: 18%;"><fmt:message key="tenDienThoai" />
+								</th>
+								<th><fmt:message key="ngayMua" /></th>
+
+							</tr>
+						</thead>
+						<tbody>
+							<c:forEach items="${listPay}" var="list">
+								<tr class="table-info">
+
+									<td>${list.id}</td>
+									<td>${list.userName}</td>
+									<td>${list.phone}</td>
+									<td>${list.address}</td>
+									<td>${list.phoneName}</td>
+									<td>${list.dateCreate}</td>
+
+								</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
 	<!-- plugins:js -->
 	<script src="admin/vendors/base/vendor.bundle.base.js"></script>
 	<!-- endinject -->

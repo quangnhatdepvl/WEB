@@ -45,15 +45,13 @@
 
 <body>
 	<fmt:setLocale value="${locale }" />
-
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
-
-	<c:url value="dang-ky" var="dangKy" />
-	<!-- End header area -->
 	<img src="img/dienthoai.jpg" style="width: 43%;">
 	<img src="img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">
+	<c:url value="dang-ky" var="dangKy" />
+	<!-- End header area -->
 
 	<form action="dang-nhap" method="post">
 		<div class="loginbox">
@@ -88,8 +86,6 @@
 	</form>
 
 
-
-	<!-- Latest jQuery form server -->
 	<script src="https://code.jquery.com/jquery.min.js"></script>
 
 	<!-- Bootstrap JS form CDN -->
@@ -107,6 +103,17 @@
 	<script src="user/js/main.js"></script>
 
 	<!-- Slider -->
+	<script>
+		// Get the modal
+		var modal = document.getElementById('id01');
+
+		// When the user clicks anywhere outside of the modal, close it
+		window.onclick = function(event) {
+			if (event.target == modal) {
+				modal.style.display = "none";
+			}
+		}
+	</script>
 	<script type="text/javascript" src="user/js/bxslider.min.js"></script>
 	<script type="text/javascript" src="user/js/script.slider.js"></script>
 </body>

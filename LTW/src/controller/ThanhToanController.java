@@ -2,6 +2,8 @@ package controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.PhoneDAO;
+import dao.UserDAO;
 import model.Pay;
 import model.PhoneModel;
 import model.UserModel;
@@ -50,27 +53,74 @@ public class ThanhToanController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		long millis = System.currentTimeMillis();
-		java.sql.Date dateCreate = new java.sql.Date(millis);
-		HttpSession session = request.getSession();
-		UserModel user = (UserModel) session.getAttribute("user");
-		ArrayList<PhoneModel> listPhone = (ArrayList<PhoneModel>) session.getAttribute("listPhone");
-		Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate);
-		PhoneDAO phDAO = new PhoneDAO();
-		if (listPhone != null) {
 
-			if (phDAO.thanhToan(pay)) {
-				response.sendRedirect(request.getContextPath() + "/trang-chu");
-				session.removeAttribute("listPhone");
-			} else {
-				response.sendRedirect(request.getContextPath() + "/thanh-toan");
-			}
+		String name = request.getParameter("name");
+		String phone = request.getParameter("phone");
+		String email = request.getParameter("email");
+		String address = request.getParameter("address");
+		String error = "";
+		if (checkPhone(phone) && validateName(name) && !address.isEmpty()) {
+			HttpSession session = request.getSession();
+			ArrayList<PhoneModel> listPhone = (ArrayList<PhoneModel>) session.getAttribute("listPhone");
+			UserModel user = (UserModel) session.getAttribute("user");
+			user.setAddress(address);
+			user.setEmail(email);
+			user.setPhone(phone);
+			user.setUser_fullname(name);
+			long millis = System.currentTimeMillis();
+			java.sql.Date dateCreate = new java.sql.Date(millis);
+			Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate);
+			PhoneDAO phDAO = new PhoneDAO();
+			UserDAO usDAO = new UserDAO();
+			if (listPhone == null) {
+				error = "Khong ton tai san pham";
+				error(request, response, error);
+			} else if (usDAO.updateUser(user) || listPhone != null) {
+				if (phDAO.thanhToan(pay)) {
+					response.sendRedirect(request.getContextPath() + "/trang-chu");
+					session.setAttribute("user", user);
+					session.removeAttribute("listPhone");
+				} else {
+					error = "Thanh toan that bai";
+					error(request, response, error);
+				}
+			} 
 		} else {
-			String error = "Thanh toan that bai";
-			request.setAttribute("error", error);
-			RequestDispatcher rd = request.getRequestDispatcher("user/thanhtoan.jsp");
-			rd.forward(request, response);
+			error = "Vui long nhap lai thong tin";
+			error(request, response, error);
 		}
+	}
+
+	private void error(HttpServletRequest request, HttpServletResponse response, String error)
+			throws ServletException, IOException {
+		request.setAttribute("error", error);
+		RequestDispatcher rd = request.getRequestDispatcher("user/thanhtoan.jsp");
+		rd.forward(request, response);
+	}
+
+	private boolean checkPhone(String phone) {
+		Pattern pattern = Pattern.compile("^[0-9]*$");
+		Matcher matcher = pattern.matcher(phone);
+		if (!matcher.matches()) {
+			return false;
+		} else if (phone.length() == 10) {
+			if (phone.substring(0, 1).equals("0")) {
+				return true;
+			} else {
+				return false;
+			}
+
+		}
+		return false;
+	}
+
+	private boolean validateName(String name) {
+		// p{L}là thuộc tính ký tự Unicode phù hợp với bất kỳ loại chữ nào từ bất kỳ
+		// ngôn ngữ nào
+		String regx = "^[\\p{L} .'-]+$";
+		Pattern pattern = Pattern.compile(regx, Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(name);
+		return matcher.find();
 
 	}
 

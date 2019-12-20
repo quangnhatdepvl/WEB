@@ -51,14 +51,14 @@
 		style="padding-left: 20%; /* padding: 7%; */ padding-right: 7%; padding-left: 7%;">
 		<h2 class="section-title"
 			style="margin-bottom: 20px; margin-top: 20px;">Thanh toán</h2>
-		<div class="main-container">
-			<form action="thanh-toan" method="post">
+		<form action="thanh-toan" method="post">
+			<div class="main-container">
+
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-						<label>Tên khách hàng:</label>
-							<input class="input-with-status__input" style="width: 982px" type="text"
-								placeholder="Tên" maxlength="64" name="name"
+							<label>Tên khách hàng:</label> <input style="width: 982px"
+								type="text" maxlength="64" name="name"
 								value="${user.user_fullname }">
 						</div>
 					</div>
@@ -67,9 +67,9 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Số điện thoại:</label>
-							<input class="input-with-status__input" style="width: 982px" type="text"
-								placeholder="Số điện thoại" name="phone" value="${user.phone }">
+							<label>Số điện thoại:</label> <input style="width: 982px"
+								type="text" placeholder="Số điện thoại" name="phone"
+								value="${user.phone }">
 						</div>
 					</div>
 				</div>
@@ -77,9 +77,9 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Địa chỉ email:</label>
-							<input class="input-with-status__input" style="width: 982px" type="email"
-								placeholder="Địa chỉ email" name="email" value="${user.email }">
+							<label>Địa chỉ email:</label> <input style="width: 982px"
+								type="email" placeholder="Địa chỉ email" name="email"
+								value="${user.email }">
 						</div>
 					</div>
 				</div>
@@ -88,93 +88,91 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Địa chỉ:</label>
-							<input class="input-with-status__input" style="width: 982px" type="text"
+							<label>Địa chỉ:</label> <input style="width: 982px" type="text"
 								placeholder="Toà nhà, Tên Đường..." maxlength="128"
 								name="address" value="${user.address }">
 						</div>
 					</div>
 				</div>
-			</form>
-		</div>
 
-		<!-- End slider area -->
-		<div class="checkout-product-ordered-list">
-			<div class="checkout-product-ordered-list__header-block">
-				<div class="checkout-product-ordered-list__headers">
-					<div
-						class="checkout-product-ordered-list__header checkout-product-ordered-list__header--product">
-						<div class="checkout-product-ordered-list__title">Sản phẩm</div>
-					</div>
-					<div
-						class="checkout-product-ordered-list__header checkout-product-ordered-list__header--variation"></div>
-					<div class="checkout-product-ordered-list__header">Số lượng</div>
-					<div
-						class="checkout-product-ordered-list__header checkout-product-ordered-list__header--subtotal">Thành
-						tiền</div>
-				</div>
 			</div>
-			<div class="checkout-product-ordered-list__content">
-				<div class="checkout-shop-order-group">
-					<div class="checkout-shop-order-group__orders">
-						<div class="checkout-product-ordered-list-item">
-							<div class="checkout-product-ordered-list-item-shop-info"></div>
 
-							<div class="checkout-product-ordered-list-item__items">
-								<c:set var="total" value="${0}" />
-								<c:forEach items="${listPhone}" var="phone">
-									<c:set var="total" value="${total +phone.price}" />
-									<div
-										class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
+			<!-- End slider area -->
+			<div class="checkout-product-ordered-list">
+				<div class="checkout-product-ordered-list__header-block">
+					<div class="checkout-product-ordered-list__headers">
+						<div
+							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--product">
+							<div class="checkout-product-ordered-list__title">Sản phẩm</div>
+						</div>
+						<div
+							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--variation"></div>
+						<div class="checkout-product-ordered-list__header">Số lượng</div>
+						<div
+							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--subtotal">Thành
+							tiền</div>
+					</div>
+				</div>
+				<div class="checkout-product-ordered-list__content">
+					<div class="checkout-shop-order-group">
+						<div class="checkout-shop-order-group__orders">
+							<div class="checkout-product-ordered-list-item">
+								<div class="checkout-product-ordered-list-item-shop-info"></div>
+
+								<div class="checkout-product-ordered-list-item__items">
+									<c:set var="total" value="${0}" />
+									<c:forEach items="${listPhone}" var="phone">
+										<c:set var="total" value="${total +phone.price}" />
 										<div
-											class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--product">
-											<img
-												class="checkout-product-ordered-list-item__product-image"
-												src="${phone.url_img}" width="40" height="40"> <span
-												class="checkout-product-ordered-list-item__product-info">
-												<span
-												class="checkout-product-ordered-list-item__product-name">${phone.name }</span>
-											</span>
+											class="checkout-product-ordered-list-item__item checkout-product-ordered-list-item__item--non-add-on">
+											<div
+												class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--product">
+												<img
+													class="checkout-product-ordered-list-item__product-image"
+													src="${phone.url_img}" width="40" height="40"> <span
+													class="checkout-product-ordered-list-item__product-info">
+													<span
+													class="checkout-product-ordered-list-item__product-name">${phone.name }</span>
+												</span>
+											</div>
+
+											<div
+												class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--variation"></div>
+											<div class="checkout-product-ordered-list-item__header">1</div>
+											<div
+												class="checkout-product-ordered-list-item__header  checkout-product-ordered-list-item__header--subtotal">
+												<fmt:formatNumber type="number" maxFractionDigits="0"
+													value="${phone.price}" />
+											</div>
 										</div>
+									</c:forEach>
 
-										<div
-											class="checkout-product-ordered-list-item__header checkout-product-ordered-list-item__header--variation"></div>
-										<div class="checkout-product-ordered-list-item__header">1</div>
-										<div
-											class="checkout-product-ordered-list-item__header  checkout-product-ordered-list-item__header--subtotal">
-											<fmt:formatNumber type="number" maxFractionDigits="0"
-												value="${phone.price}" />
-										</div>
-									</div>
-								</c:forEach>
+								</div>
+							</div>
+						</div>
 
+
+
+						<div class="_1pkbuI">
+							<div class="_1wd2xT">Tổng số tiền:</div>
+							<div class="ZwtlWT">
+								<fmt:formatNumber type="number" maxFractionDigits="0"
+									value="${total}" />
 							</div>
 						</div>
 					</div>
 
-
-
-					<div class="_1pkbuI">
-						<div class="_1wd2xT">Tổng số tiền:</div>
-						<div class="ZwtlWT">
-							<fmt:formatNumber type="number" maxFractionDigits="0"
-								value="${total}" />
-						</div>
-					</div>
 				</div>
-
 			</div>
-		</div>
-		<!-- phuongthuc -->
-		<div class="_1nqViI _3Rq9ya">
-			<form action="thanh-toan" method="post">
+			<!-- phuongthuc -->
+			<div class="_1nqViI _3Rq9ya">
+
 				<input type="submit" value="Đặt hàng">
 				<p>${error }
-			</form>
-		</div>
+			</div>
 
-		<!-- phuongthuc -->
-
+			<!-- phuongthuc -->
+		</form>
 	</div>
 </body>
 </html>

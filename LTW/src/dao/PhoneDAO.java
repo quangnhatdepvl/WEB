@@ -31,6 +31,7 @@ public class PhoneDAO {
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
 				phone.setId(rss.getInt("luotTruyCap"));
+
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {
@@ -63,12 +64,13 @@ public class PhoneDAO {
 				rss.updateRow();
 				conn.commit();
 				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 			}
 		} catch (SQLException e) {
 			try {
 				conn.rollback();
 			} catch (SQLException e1) {
-				// TODO Auto-generated catch block
+
 				e1.printStackTrace();
 			}
 		}
@@ -94,6 +96,7 @@ public class PhoneDAO {
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
 				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {
@@ -107,7 +110,7 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?) ");
+			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?,?,?) ");
 			ps.setInt(1, phone.getId());
 			ps.setString(2, phone.getName());
 			ps.setString(3, phone.getTypeTel());
@@ -115,6 +118,9 @@ public class PhoneDAO {
 			ps.setString(5, phone.getNhaSanXuat());
 			ps.setString(6, phone.getUrl_img());
 			ps.setDate(7, phone.getNgaySanXuat());
+			ps.setString(8, phone.getDescription());
+			ps.setInt(9, phone.getLuotTruyCap());
+			ps.setInt(10, phone.getSoLuong());
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
 				bl = true;
@@ -125,7 +131,7 @@ public class PhoneDAO {
 			try {
 				conn.rollback();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -167,7 +173,7 @@ public class PhoneDAO {
 				list.add(phone);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -192,7 +198,7 @@ public class PhoneDAO {
 				list.add(phone);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -252,7 +258,7 @@ public class PhoneDAO {
 				list.add(phone);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -278,7 +284,7 @@ public class PhoneDAO {
 				list.add(phone);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -314,7 +320,7 @@ public class PhoneDAO {
 				list.add(phone);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -342,7 +348,7 @@ public class PhoneDAO {
 			try {
 				conn.rollback();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
@@ -377,7 +383,7 @@ public class PhoneDAO {
 				list.add(pay);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		return list;
@@ -393,21 +399,25 @@ public class PhoneDAO {
 			ps.setInt(1, id);
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
-				result = true;
-				conn.commit();
+				int phoneId = getPhoneId(id);
+				if (soLuong(phoneId)) {
+					result = true;
+					conn.commit();
+				}
 			}
 		} catch (SQLException ex) {
 			try {
+				result = false;
 				conn.rollback();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
 
 		return result;
 	}
-	
+
 	public boolean deletePay(int id) {
 		boolean result = false;
 		Connection conn = null;
@@ -420,15 +430,72 @@ public class PhoneDAO {
 				result = true;
 				conn.commit();
 			}
+
 		} catch (SQLException ex) {
 			try {
 				conn.rollback();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
+
 				e.printStackTrace();
 			}
 		}
-
 		return result;
 	}
+
+	private int getPhoneId(int id) {
+		int phoneId = 0;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("select phone_id from thanhtoan where id = ?");
+			ps.setInt(1, id);
+			ResultSet rss = ps.executeQuery();
+			if (rss.next()) {
+				phoneId = rss.getInt("phone_id");
+			}
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+		}
+		return phoneId;
+	}
+
+	private boolean soLuong(int id) {
+		boolean bl = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			String sql = "select * from phone where id= ?";
+			PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
+					ResultSet.CONCUR_UPDATABLE);
+			ps.setInt(1, id);
+			ResultSet rss = ps.executeQuery();
+			if (rss.next()) {
+				int soLuong = (rss.getInt("soLuong") - 1);
+				rss.updateInt("soLuong", soLuong);
+				rss.updateRow();
+				conn.commit();
+				bl = true;
+			}
+		} catch (SQLException e) {
+			try {
+				bl = false;
+				conn.rollback();
+
+			} catch (SQLException e1) {
+
+				e1.printStackTrace();
+			}
+		}
+		return bl;
+	}
+
+	public static void main(String[] args) {
+		PhoneDAO p = new PhoneDAO();
+		if (p.confirm(1)) {
+			System.out.println("thanh cong");
+		} else {
+			System.out.println("zzxxz");
+		}
+	}
+
 }

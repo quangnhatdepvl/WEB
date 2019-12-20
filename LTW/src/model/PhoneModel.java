@@ -20,6 +20,7 @@ public class PhoneModel implements Serializable {
 	private Date ngaySanXuat;
 	private String description;
 	private int luotTruyCap;
+	private int soLuong;
 
 	
 	public PhoneModel() {
@@ -28,7 +29,7 @@ public class PhoneModel implements Serializable {
 
 
 	public PhoneModel(int id, String name, String typeTel, double price, String nhaSanXuat, String url_img,
-			Date ngaySanXuat, String description, int luotTruyCap) {
+			Date ngaySanXuat, String description, int luotTruyCap, int soLuong) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -39,6 +40,7 @@ public class PhoneModel implements Serializable {
 		this.ngaySanXuat = ngaySanXuat;
 		this.description = description;
 		this.luotTruyCap = luotTruyCap;
+		this.soLuong = soLuong;
 	}
 
 
@@ -132,11 +134,21 @@ public class PhoneModel implements Serializable {
 	}
 
 
+	public int getSoLuong() {
+		return soLuong;
+	}
+
+
+	public void setSoLuong(int soLuong) {
+		this.soLuong = soLuong;
+	}
+
+
 	@Override
 	public String toString() {
 		return "PhoneModel [id=" + id + ", name=" + name + ", typeTel=" + typeTel + ", price=" + price + ", nhaSanXuat="
 				+ nhaSanXuat + ", url_img=" + url_img + ", ngaySanXuat=" + ngaySanXuat + ", description=" + description
-				+ ", luotTruyCap=" + luotTruyCap + "]";
+				+ ", luotTruyCap=" + luotTruyCap + ", soLuong=" + soLuong + "]";
 	}
 	
 	

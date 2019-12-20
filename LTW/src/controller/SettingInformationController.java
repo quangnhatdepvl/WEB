@@ -54,7 +54,7 @@ public class SettingInformationController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
-		if (checkPhone(phone)) {
+		if (checkPhone(phone) || address != null || name != null) {
 			HttpSession session = request.getSession();
 			UserModel user = (UserModel) session.getAttribute("user");
 			user.setPhone(phone);

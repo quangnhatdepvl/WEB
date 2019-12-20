@@ -67,22 +67,6 @@
 					placeholder="<fmt:message key="label.cf"/>" autofocus="true"
 					style="width: 250px; hight: 30px; border: 2px solid black;">
 				<br>
-				    <input type="text" name="name"
-					class="form-control border border-success"
-					placeholder="Nhập họ và tên" autofocus="true"
-					style="width: 250px; hight: 30px; border: 2px solid black;">
-				<br>
-					<input type="text" name="sdt"
-					class="form-control border border-success"
-					placeholder="Nhập số điện thoại" autofocus="true"
-					style="width: 250px; hight: 30px; border: 2px solid black;">
-				<br>
-					<input type="text" name="email"
-					class="form-control border border-success"
-					placeholder="Nhập email" autofocus="true"
-					style="width: 250px; hight: 30px; border: 2px solid black;">
-				<br>
-
 			</div>
 			<input type="submit" class="btn10"
 				style="width: 200px; height: 50px; color: white; background-color: #ffce93;"

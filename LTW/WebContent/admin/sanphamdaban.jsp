@@ -27,73 +27,51 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
-	<jsp:include page="header.jsp"/>
-	
-	        <div class="col-lg-12 stretch-card" style = "width :14%">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title"><fmt:message key="bangThongKeDienThoaiDaBan"/></h4>
-                  <div class="table-responsive pt-3" >
-                    <table class="table table-bordered" >
-                      <thead>
-                        <tr>
-                         
-                          <th>
-						<fmt:message key="maDienThoai"/>
-                          </th>
-                          <th>
-                    <fmt:message key="tenDienThoai"/>
-                          </th>
-						  <th>
-						<fmt:message key="kieuDienThoai"/>
-                          </th>
-                          <th>
-							<fmt:message key="nhaSanXuat"/>
-                          </th>
-                          <th>
-              <fmt:message key="giaCaAdmin"/>
-                          </th>
-						      <th>
-                   <fmt:message key="soLuongAdmin"/>
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr class="table-info" >
-                       
-                          <td>
-                            01
-                          </td>
-                          <td>
-							Iphone 11 pro max
-                          </td>
-                          <td>
-                          Smart Phone
-                          </td>
-                          <td>
-                            Apple
-                          </td>
-						   <td>
-                           30,990,000 Vnd
-                          </td>
-				   <td>
-                           10 
-                          </td>
-						 
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
-        
-  
+	<jsp:include page="header.jsp" />
 
- <!-- plugins:js -->
+	<div class="col-lg-12 stretch-card" style="width: 14%">
+		<div class="card">
+			<div class="card-body">
+				<h4 class="card-title">
+					<fmt:message key="bangThongKeDienThoaiConLai" />
+				</h4>
+				<div class="table-responsive pt-3">
+					<table class="table table-bordered">
+						<thead>
+							<tr>
+								<th><fmt:message key="tenDienThoai" /></th>
+								<th><fmt:message key="kieuDienThoai" /></th>
+								<th><fmt:message key="nhaSanXuat" /></th>
+								<th><fmt:message key="giaCaAdmin" /></th>
+								<th>So luong con lai</th>
+								<th>So luong da ban</th>
+							</tr>
+						</thead>
+						<tbody>
+						<c:forEach items="${listKho}" var="list"> 
+							<tr class="table-info">
+								<td>${list.phone.name }</td>
+								<td>${list.phone.typeTel }</td>
+								<td>${list.phone.nhaSanXuat }</td>
+								<td>${list.phone.price }</td>
+								<td>${list.phone.soLuong }</td>
+								<td>${list.soLuongDaBan }</td>
+							</tr>
+							</c:forEach>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+
+	<!-- plugins:js -->
 	<script src="admin/vendors/base/vendor.bundle.base.js"></script>
 	<!-- endinject -->
 	<!-- Plugin js for this page-->

@@ -37,7 +37,7 @@ public class DetailsPhoneController extends HttpServlet {
 		
 		String id = request.getParameter("id");
 		PhoneDAO phDAO = new PhoneDAO();
-		PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
+		PhoneModel phone = phDAO.getPhoneById(Integer.parseInt(id));
 		request.setAttribute("phone", phone);
 		ArrayList<PhoneModel> listPhone =phDAO.sortByView(LIMIT);
 		request.setAttribute("listPhone",listPhone );

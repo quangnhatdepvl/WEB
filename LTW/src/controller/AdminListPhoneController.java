@@ -66,11 +66,11 @@ public class AdminListPhoneController extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/quanlydienthoai.jsp");
 			rd.forward(request, response);
 		} else if(delete != null && edit == null) {
-			if(phDAO.deletePhone(phDAO.getPhone(Integer.parseInt(delete)))) {
+			if(phDAO.deletePhone(phDAO.getPhoneById(Integer.parseInt(delete)))) {
 				response.sendRedirect(request.getContextPath() +"/admin-quan-ly-dien-thoai");
 			} 
 		} else if (delete == null && edit != null) {
-			PhoneModel phone = phDAO.getPhone(Integer.parseInt(edit));
+			PhoneModel phone = phDAO.getPhoneById(Integer.parseInt(edit));
 			request.setAttribute("phone", phone);
 			RequestDispatcher rd = request.getRequestDispatcher("admin/add.jsp");
 			rd.forward(request, response);

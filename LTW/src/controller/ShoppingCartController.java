@@ -54,13 +54,13 @@ public class ShoppingCartController extends HttpServlet {
 			rd.forward(request, response);
 		} else if (id != null && delete == null) {
 
-			PhoneModel phone = phDAO.getPhone(Integer.parseInt(id));
+			PhoneModel phone = phDAO.getPhoneById(Integer.parseInt(id));
 			listPhone.add(phone);
 			session.setAttribute("listPhone", listPhone);
 			response.sendRedirect("trang-chu");
 		} else if (id == null && delete != null) {
 
-			PhoneModel phone = phDAO.getPhone(Integer.parseInt(delete));
+			PhoneModel phone = phDAO.getPhoneById(Integer.parseInt(delete));
 			for (Iterator<PhoneModel> iterator = listPhone.iterator(); iterator.hasNext();) {
 				PhoneModel p = iterator.next();
 				if (p.getId() == phone.getId()) {

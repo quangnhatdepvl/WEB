@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.Kho;
 import model.Pay;
 import model.PayInf;
 import model.PhoneModel;
@@ -40,7 +41,7 @@ public class PhoneDAO {
 		return listPhone;
 	}
 
-	public PhoneModel getPhone(int id) {
+	public PhoneModel getPhoneById(int id) {
 		PhoneModel phone = new PhoneModel();
 		Connection conn = null;
 		try {
@@ -489,13 +490,56 @@ public class PhoneDAO {
 		return bl;
 	}
 
-	public static void main(String[] args) {
-		PhoneDAO p = new PhoneDAO();
-		if (p.confirm(1)) {
-			System.out.println("thanh cong");
-		} else {
-			System.out.println("zzxxz");
+	public ArrayList<Kho> getKho() {
+		ArrayList<Kho> listKho = new ArrayList<>();
+		try {
+			Connection conn = DbUtils.getConnection();
+			String sql = "select p.id, p.phoneName,p.price, p.typePhone, p.soLuong, p.nhaSanXuat , count(*) as daBan"
+					+ " from phone p inner join thanhtoan t on t.phone_id = p.id  where t.trang_thai = 1   group by phone_id";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setSoLuong(rss.getInt("soLuong"));
+				Kho kho = new Kho();
+				kho.setSoLuongDaBan(rss.getInt("daBan"));
+				kho.setPhone(phone);
+				listKho.add(kho);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
+		return listKho;
 	}
-
+	
+	public ArrayList<PhoneModel> getPhoneBySoLuong(){
+		ArrayList<PhoneModel> listPhone = new ArrayList<>();
+		try {
+			Connection conn = DbUtils.getConnection();
+			String sql = "select * from phone where soLuong > 0";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("id"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setUrl_img(rss.getString("img_url"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				phone.setDescription(rss.getString("des"));
+				phone.setSoLuong(rss.getInt("soLuong"));
+				listPhone.add(phone);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return listPhone;
+	}
 }

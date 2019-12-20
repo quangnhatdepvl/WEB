@@ -22,7 +22,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String DATA_DIRECTORY = "D:\\LTW\\WEB\\LTW\\WebContent\\user\\img";
+	private static final String DATA_DIRECTORY = "D:\\LTW\\WEB\\LTW\\WebContent\\img";
 	private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
 	private static final int MAX_REQUEST_SIZE = 1024 * 1024;
 

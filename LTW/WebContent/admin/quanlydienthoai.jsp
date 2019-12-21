@@ -75,15 +75,14 @@
 								value="${phone.price}" /></td>
 						<!-- phần xóa  -->
 						<c:url value="admin-quan-ly-dien-thoai" var="delete">
-									<c:param name="delete" value="${phone.id}" />
-								</c:url>
-						
+							<c:param name="delete" value="${phone.id}" />
+						</c:url>
+
 						<td class="center"><a href="${delete }">
 								<button title="<fmt:message key="btnXoa"/> " type="button"
 									class="btn btn-xs btn-danger btn-round text-center">
 									<i class="ace-icon fa fa-trash-o"></i>
-								</button> 
-								<c:url value="admin-quan-ly-dien-thoai" var="edit">
+								</button> <c:url value="admin-quan-ly-dien-thoai" var="edit">
 									<c:param name="edit" value="${phone.id}" />
 								</c:url>
 						</a> <a href="${edit}">
@@ -97,7 +96,11 @@
 				</c:forEach>
 			</tbody>
 		</table>
-		<a href="add.jsp"><button type="button"
+
+		<c:url value="admin-quan-ly-dien-thoai" var="add">
+			<c:param name="add" value="add" />
+		</c:url>
+		<a href="${add }"><button type="button"
 				class="btn btn-white btn-warning btn-round"
 				style="margin-right: 5px; position: absolute; right: 20px;">
 				<i class="ace-icon fa fa-plus-circle bigger-120 blue"></i> Thêm

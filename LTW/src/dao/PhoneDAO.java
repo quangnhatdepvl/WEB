@@ -156,6 +156,37 @@ public class PhoneDAO {
 		return bl;
 	}
 
+	public boolean updatePhone(int id, String typePhone, String nhaSanXuat, double price, String des) {
+		boolean result = false;
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn
+					.prepareStatement("update phone set typePhone = ?, nhaSanXuat = ?, price = ?,des= ? where id = ?");
+			ps.setString(1, typePhone);
+			ps.setString(2, nhaSanXuat);
+			ps.setDouble(3, price);
+			ps.setString(4, des);
+			ps.setInt(5, id);
+			int kq = ps.executeUpdate();
+			if (kq > 0) {
+				result = true;
+				conn.commit();
+
+			}
+		} catch (SQLException ex) {
+			try {
+				result = false;
+				conn.rollback();
+			} catch (SQLException e) {
+
+				e.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+
 	public ArrayList<PhoneModel> sortByPrice(int limit) {
 		ArrayList<PhoneModel> list = new ArrayList<>();
 		String sql = "SELECT  DISTINCT * FROM phone ORDER BY price desc LIMIT ?";
@@ -516,8 +547,8 @@ public class PhoneDAO {
 		}
 		return listKho;
 	}
-	
-	public ArrayList<PhoneModel> getPhoneBySoLuong(){
+
+	public ArrayList<PhoneModel> getPhoneBySoLuong() {
 		ArrayList<PhoneModel> listPhone = new ArrayList<>();
 		try {
 			Connection conn = DbUtils.getConnection();

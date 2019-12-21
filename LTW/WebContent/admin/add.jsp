@@ -60,7 +60,7 @@
 									   <label>Ngày sản xuất</label>
 									  <input type="date" name="price" value="${phone.ngaySanXuat }">
 									    <label>Số lượng</label>
-									  <input type="text" name="price" value="${phone.soLuong }">
+									  <input type="number" name="price" value="${phone.soLuong }">
 									  
 
 

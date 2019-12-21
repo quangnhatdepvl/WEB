@@ -112,7 +112,7 @@ public class PhoneDAO {
 		try {
 			conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?,?,?) ");
-			ps.setInt(1, phone.getId());
+			ps.setInt(1,0);
 			ps.setString(2, phone.getName());
 			ps.setString(3, phone.getTypeTel());
 			ps.setDouble(4, phone.getPrice());

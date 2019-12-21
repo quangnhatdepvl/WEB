@@ -122,6 +122,12 @@ public class AdminListPhoneController extends HttpServlet {
 
 			// Parse the request
 			List<FileItem> uploadItems = null;
+			String name = "";
+			String typePhone = "";
+			String nhaSanXuat = "";
+			String price ="";
+			String img = "";
+			String des = "";
 			try {
 				HashMap<String, String> capitalCities = new HashMap<String, String>();
 				uploadItems = upload.parseRequest(request);

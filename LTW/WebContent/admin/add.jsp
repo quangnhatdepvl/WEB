@@ -59,6 +59,9 @@
 									  <input type="text" name="price" value="${phone.price }">
 									   <label>Ngày sản xuất</label>
 									  <input type="date" name="price" value="${phone.ngaySanXuat }">
+									    <label>Số lượng</label>
+									  <input type="date" name="price" value="${phone.soLuong }">
+									  
 
 
 								<label>Hình ảnh</label>

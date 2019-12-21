@@ -120,7 +120,7 @@ public class PhoneDAO {
 			ps.setString(6, phone.getUrl_img());
 			ps.setDate(7, phone.getNgaySanXuat());
 			ps.setString(8, phone.getDescription());
-			ps.setInt(9, phone.getLuotTruyCap());
+			ps.setInt(9, 0);
 			ps.setInt(10, phone.getSoLuong());
 			int kq = ps.executeUpdate();
 			if (kq > 0) {

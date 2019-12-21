@@ -5,10 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import model.PhoneModel;
 import model.Role;
 import model.UserModel;
 import utils.DbUtils;
@@ -17,26 +14,34 @@ public class UserDAO {
 
 	public boolean register(String username, String password) {
 		boolean bl = false;
-		Connection conn = DbUtils.getConnection();
-		try {
-			String sql = "insert into user_db (user_name, user_password,role_id) values (?,?,?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, username);
-			ps.setString(2, password);
-			ps.setInt(3, 2);
-			if (ps.executeUpdate() > 0) {
-				bl = true;
-				conn.commit();
-			}
-		} catch (SQLException ex) {
-			try {
-				conn.rollback();
-			} catch (SQLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		ArrayList<String> listUser =  getUser();
+		for (String user : listUser) {
+			if(user.equalsIgnoreCase(username)) {
+				bl = false;
+				break;
+			} else {
+				Connection conn = DbUtils.getConnection();
+				try {
+					String sql = "insert into user_db (user_name, user_password,role_id) values (?,?,?)";
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setString(1, username);
+					ps.setString(2, password);
+					ps.setInt(3, 2);
+					if (ps.executeUpdate() > 0) {
+						bl = true;
+						conn.commit();
+					}
+				} catch (SQLException ex) {
+					try {
+						conn.rollback();
+					} catch (SQLException e) {
+						bl = false;
+					}
 
+				}
+			}
 		}
+		
 		return bl;
 	}
 
@@ -75,7 +80,7 @@ public class UserDAO {
 		return user;
 
 	}
-	
+
 	public boolean updateUser(UserModel user) {
 		boolean result = false;
 		Connection conn = null;
@@ -103,7 +108,24 @@ public class UserDAO {
 		}
 		return result;
 	}
-	
+
+	public ArrayList<String> getUser() {
+		Connection conn = null;
+		ArrayList<String> listUser = new ArrayList<>();
+		
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement("select user_name from user_db");
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				String result = rss.getString("user_name");
+				listUser.add(result);
+			}
+		} catch (SQLException ex) {
+
+		}
+		return listUser;
+	}
 	
 	
 }

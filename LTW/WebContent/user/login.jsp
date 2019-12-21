@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<html lang="en">
+<html>
 <head>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,7 +33,6 @@
 <link rel="stylesheet" href="user/css/responsive.css">
 <link rel="stylesheet" href="user/css/login.css">
 
-
 <!-- jsp5 shim and Respond.js for IE8 support of jsp5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
@@ -47,6 +45,7 @@
 	<fmt:setLocale value="${locale }" />
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
+	
 	<img src="img/dienthoai.jpg" style="width: 43%;">
 	<img src="img/anh.jpg"
 		style="position: relative; left: -172px; top: 2px; width: 29%">

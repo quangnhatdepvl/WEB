@@ -159,22 +159,22 @@ public class PhoneDAO {
 		return bl;
 	}
 
-	public boolean updatePhone(int id, String typePhone, String nhaSanXuat, double price, String des,
-			String ngaySanXuat, String soLuong) {
+	public boolean updatePhone(PhoneModel phone) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement("update phone set typePhone = ?, "
-					+ "nhaSanXuat = ?, price = ?,des= ?, ngaySanXuat = ?, soLuong = ? where id = ?");
-			ps.setString(1, typePhone);
-			ps.setString(2, nhaSanXuat);
-			ps.setDouble(3, price);
-			ps.setString(4, des);
-			Date date = Date.valueOf(ngaySanXuat);
-			ps.setDate(5, date);
-			ps.setInt(6, Integer.parseInt(soLuong));
-			ps.setInt(7, id);
+					+ "nhaSanXuat = ?, price = ?,des= ?, ngaySanXuat = ?, soLuong = ?, img_url = ? where id = ?");
+			ps.setString(1, phone.getTypeTel());
+			ps.setString(2, phone.getNhaSanXuat());
+			ps.setDouble(3, phone.getPrice());
+			ps.setString(4, phone.getDescription());
+			ps.setDate(5, phone.getNgaySanXuat());
+			ps.setInt(6, phone.getSoLuong());
+			ps.setString(7, phone.getUrl_img());
+			ps.setInt(8, phone.getId());
+			
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
 				result = true;
@@ -183,7 +183,6 @@ public class PhoneDAO {
 			}
 		} catch (SQLException ex) {
 			try {
-				result = false;
 				conn.rollback();
 			} catch (SQLException e) {
 				result = false;

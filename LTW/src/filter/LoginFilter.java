@@ -15,15 +15,15 @@ import javax.servlet.http.HttpSession;
 import model.UserModel;
 
 /**
- * Servlet Filter implementation class ShoppingCartFilter
+ * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(urlPatterns = { "/shopping-cart", "/thanh-toan", "/sua-thong-tin", "/dang-xuat" })
-public class ShoppingCartFilter implements Filter {
+@WebFilter(urlPatterns = {"/dang-nhap","/dang-ky"})
+public class LoginFilter implements Filter {
 
 	/**
 	 * Default constructor.
 	 */
-	public ShoppingCartFilter() {
+	public LoginFilter() {
 		// TODO Auto-generated constructor stub
 	}
 
@@ -39,6 +39,7 @@ public class ShoppingCartFilter implements Filter {
 	 */
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
 			throws IOException, ServletException {
+
 		HttpServletRequest req = (HttpServletRequest) request;
 		HttpServletResponse res = (HttpServletResponse) response;
 		HttpSession session = req.getSession();
@@ -48,11 +49,10 @@ public class ShoppingCartFilter implements Filter {
 			userLogin = user.getUser_name();
 		}
 		if (userLogin != null) {
-			chain.doFilter(request, response);
+			res.sendRedirect("trang-chu");
 		} else {
-			res.sendRedirect("dang-nhap");
+			chain.doFilter(request, response);
 		}
-
 	}
 
 	/**

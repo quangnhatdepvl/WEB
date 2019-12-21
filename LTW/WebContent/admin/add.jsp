@@ -38,11 +38,8 @@
 						<div class="card-body">
 
 							<form action="admin-quan-ly-dien-thoai" method="post"
-								<c:if test="${phone.id == null }">
-										enctype="multipart/form-data"
-									</c:if>>
-
-
+										enctype="multipart/form-data">
+									
 								<div class="">
 									<label style="width: 130px;">Tên điện thoại</label> <input
 										type="text" name="name" value="${phone.name }"
@@ -79,7 +76,8 @@
 										<input type="file" name="img" accept="image/">
 									</c:when>
 									<c:otherwise>
-										<img src="${phone.url_img }">
+										<img src="${phone.url_img }" style="width: 150px;height: 150px;">
+										<label>Đổi hình ảnh</label><input type="file" name="img" accept="image/">
 									</c:otherwise>
 								</c:choose>
 

@@ -93,134 +93,122 @@ public class AdminListPhoneController extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		request.setCharacterEncoding("UTF-8");
 		response.setCharacterEncoding("UTF-8");
-		String id = request.getParameter("id");
 		PhoneDAO phDAO = new PhoneDAO();
-		
-		if (id != null) {
-			String typePhone = request.getParameter("typePhone");
-			String price = request.getParameter("price");
-			String nhaSanXuat = request.getParameter("nhaSanXuat");
-			String des = request.getParameter("des");
-			String soLuong = request.getParameter("soLuong");
-			String date = request.getParameter("date");
-			if (phDAO.updatePhone(Integer.parseInt(id), typePhone, nhaSanXuat, Double.parseDouble(price), des, date,
-					soLuong)) {
-				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-dien-thoai");
-			} else {
-				String error = "Loi nhap lieu";
-				request.setAttribute("error", error);
-				RequestDispatcher rd = request.getRequestDispatcher("admin-quan-ly-dien-thoai");
-				rd.forward(request, response);
+		FileItemFactory factory = new DiskFileItemFactory();
+		// Set factory constraints
+		// factory.setSizeThreshold(yourMaxMemorySize);
+		// factory.setRepository(yourTempDirectory);
+		// Create a new file upload handler
+		ServletFileUpload upload = new ServletFileUpload(factory);
+		// upload.setSizeMax(yourMaxRequestSize);
+		// Parse the request
+		List<FileItem> uploadItems = null;
+		String name = "";
+		String typePhone = "";
+		String nhaSanXuat = "";
+		String price = "";
+		String ngaySanXuat = "";
+		String soLuong = "";
+		String img = "";
+		String des = "";
+		String error = "";
+		String id = "";
+		try {
+			HashMap<String, String> data = new HashMap<String, String>();
+			uploadItems = upload.parseRequest(request);
+			for (FileItem uploadItem : uploadItems) {
+				if (uploadItem.isFormField()) {
+					String fieldName = uploadItem.getFieldName();
+					String value = uploadItem.getString();
+					data.put(fieldName, value);
+
+				} else {
+					String fieldName = uploadItem.getFieldName();
+					String fileName = new File(uploadItem.getName()).getName();
+					String filePath = DATA_DIRECTORY + File.separator + fileName;
+					String path = "img/" + fileName;
+					File uploadedFile = new File(filePath);
+					data.put(fieldName, path);
+					// saves the file to upload director
+					uploadItem.write(uploadedFile);
+
+				}
 			}
-		} else {
-			FileItemFactory factory = new DiskFileItemFactory();
 
-			// Set factory constraints
-			// factory.setSizeThreshold(yourMaxMemorySize);
-			// factory.setRepository(yourTempDirectory);
-
-			// Create a new file upload handler
-			ServletFileUpload upload = new ServletFileUpload(factory);
-			// upload.setSizeMax(yourMaxRequestSize);
-
-			// Parse the request
-			List<FileItem> uploadItems = null;
-			String name = "";
-			String typePhone = "";
-			String nhaSanXuat = "";
-			String price = "";
-			String ngaySanXuat = "";
-			String soLuong = "";
-			String img = "";
-			String des = "";
-			String error="";
-			try {
-				HashMap<String, String> capitalCities = new HashMap<String, String>();
-				uploadItems = upload.parseRequest(request);
-				for (FileItem uploadItem : uploadItems) {
-					if (uploadItem.isFormField()) {
-						String fieldName = uploadItem.getFieldName();
-						String value = uploadItem.getString();
-						capitalCities.put(fieldName, value);
-
-					} else {
-						String fieldName = uploadItem.getFieldName();
-						String fileName = new File(uploadItem.getName()).getName();
-						String filePath = DATA_DIRECTORY + File.separator + fileName;
-						String path ="img/" + fileName;
-						File uploadedFile = new File(filePath);
-						capitalCities.put(fieldName, path);
-						// saves the file to upload director
-						uploadItem.write(uploadedFile);
-						
-					}
+			for (String fieldName : data.keySet()) {
+				switch (fieldName) {
+				case "name":
+					name = data.get(fieldName);
+					break;
+				case "typePhone":
+					typePhone = data.get(fieldName);
+					break;
+				case "nhaSanXuat":
+					nhaSanXuat = data.get(fieldName);
+					break;
+				case "price":
+					price = data.get(fieldName);
+					break;
+				case "des":
+					des = data.get(fieldName);
+					break;
+				case "soLuong":
+					soLuong = data.get(fieldName);
+					break;
+				case "ngaySanXuat":
+					ngaySanXuat = data.get(fieldName);
+					break;
+				case "img":
+					img = data.get(fieldName);
+					break;
+				case "id":
+					id = data.get(fieldName);
+					break;
+				default:
+					throw new IllegalArgumentException("Unexpected value: " + fieldName);
 				}
+			}
 
-				for (String fieldName : capitalCities.keySet()) {
-					switch (fieldName) {
-					case "name":
-						name = capitalCities.get(fieldName);
-						break;
-					case "typePhone":
-						typePhone = capitalCities.get(fieldName);
-						break;
-					case "nhaSanXuat":
-						nhaSanXuat = capitalCities.get(fieldName);
-						break;
-					case "price":
-						price = capitalCities.get(fieldName);
-						break;
-					case "des":
-						des = capitalCities.get(fieldName);
-						break;
-					case "soLuong":
-						soLuong = capitalCities.get(fieldName);
-						break;
-					case "ngaySanXuat":
-						ngaySanXuat = capitalCities.get(fieldName);
-						break;
-					case "img":
-						img = capitalCities.get(fieldName);
-						break;
-					case "id":
-						break;
-					default:
-						throw new IllegalArgumentException("Unexpected value: " + fieldName);
-					}
-				}
-
-				PhoneModel phone = new PhoneModel();
-				phone.setDescription(des);
-				Date date = Date.valueOf(ngaySanXuat);
-				phone.setName(name);
-				phone.setTypeTel(typePhone);
-				phone.setPrice(Double.parseDouble(price));
-				phone.setNhaSanXuat(nhaSanXuat);
-				phone.setUrl_img(img);
-				phone.setNgaySanXuat(date);
-				phone.setDescription(des);
-				phone.setSoLuong(Integer.parseInt(soLuong));
-				if(phDAO.savePhone(phone)) {
-					response.sendRedirect(request.getContextPath() +"/admin-quan-ly-dien-thoai");
+			PhoneModel phone = new PhoneModel();
+			phone.setDescription(des);
+			Date date = Date.valueOf(ngaySanXuat);
+			phone.setName(name);
+			phone.setTypeTel(typePhone);
+			phone.setPrice(Double.parseDouble(price));
+			phone.setNhaSanXuat(nhaSanXuat);
+			phone.setUrl_img(img);
+			phone.setNgaySanXuat(date);
+			phone.setDescription(des);
+			phone.setSoLuong(Integer.parseInt(soLuong));
+			if (id.isBlank()) {
+				if (phDAO.savePhone(phone)) {
+					response.sendRedirect(request.getContextPath() + "/admin-quan-ly-dien-thoai");
 				} else {
 					error = "Loi nhap du lieu";
-					error(request, response,error);
+					error(request, response, error);
 				}
-				
-			} catch (Exception ex) {
-				
-				request.setAttribute("error", "Loi nhap du lieu");
-				RequestDispatcher rd = request.getRequestDispatcher("admin/add.jsp");
-				rd.forward(request, response);
-			} 
+			} else {
+				phone.setId(Integer.parseInt(id));
+				if (phDAO.updatePhone(phone)) {
+					response.sendRedirect(request.getContextPath() + "/admin-quan-ly-dien-thoai");
+				} else {
+					error = "Loi nhap du lieu";
+					error(request, response, error);
+				}
+			}
+
+		} catch (Exception ex) {
+			request.setAttribute("error", "Loi nhap du lieu");
+			RequestDispatcher rd = request.getRequestDispatcher("admin/add.jsp");
+			rd.forward(request, response);
 		}
 
 	}
 
-	private void error(HttpServletRequest request, HttpServletResponse response,String error) throws ServletException, IOException {
+	private void error(HttpServletRequest request, HttpServletResponse response, String error)
+			throws ServletException, IOException {
 		request.setAttribute("error", error);
 		RequestDispatcher rd = request.getRequestDispatcher("/admin-quan-ly-dien-thoai");
 		rd.forward(request, response);

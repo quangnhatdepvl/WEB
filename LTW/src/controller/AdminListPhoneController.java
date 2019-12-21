@@ -3,6 +3,8 @@ package controller;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.StandardCopyOption;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -96,12 +98,16 @@ public class AdminListPhoneController extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		String id = request.getParameter("id");
 		PhoneDAO phDAO = new PhoneDAO();
+		
 		if (id != null) {
 			String typePhone = request.getParameter("typePhone");
 			String price = request.getParameter("price");
 			String nhaSanXuat = request.getParameter("nhaSanXuat");
 			String des = request.getParameter("des");
-			if (phDAO.updatePhone(Integer.parseInt(id), typePhone, nhaSanXuat, Double.parseDouble(price), des)) {
+			String soLuong = request.getParameter("soLuong");
+			String date = request.getParameter("date");
+			if (phDAO.updatePhone(Integer.parseInt(id), typePhone, nhaSanXuat, Double.parseDouble(price), des, date,
+					soLuong)) {
 				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-dien-thoai");
 			} else {
 				String error = "Loi nhap lieu";
@@ -125,7 +131,9 @@ public class AdminListPhoneController extends HttpServlet {
 			String name = "";
 			String typePhone = "";
 			String nhaSanXuat = "";
-			String price ="";
+			String price = "";
+			String ngaySanXuat = "";
+			String soLuong = "";
 			String img = "";
 			String des = "";
 			try {
@@ -136,19 +144,71 @@ public class AdminListPhoneController extends HttpServlet {
 						String fieldName = uploadItem.getFieldName();
 						String value = uploadItem.getString();
 						capitalCities.put(fieldName, value);
-					
+
 					} else {
 						String fieldName = uploadItem.getFieldName();
 						String fileName = new File(uploadItem.getName()).getName();
 						String filePath = DATA_DIRECTORY + File.separator + fileName;
 						File uploadedFile = new File(filePath);
-						capitalCities.put(fieldName, filePath);			
+						capitalCities.put(fieldName, filePath);
 						// saves the file to upload director
 						uploadItem.write(uploadedFile);
 					}
 				}
-				System.out.println(capitalCities);
 
+				for (String fieldName : capitalCities.keySet()) {
+					switch (fieldName) {
+					case "name":
+						name = capitalCities.get(fieldName);
+						break;
+					case "typePhone":
+						typePhone = capitalCities.get(fieldName);
+						break;
+					case "nhaSanXuat":
+						nhaSanXuat = capitalCities.get(fieldName);
+						break;
+					case "price":
+						price = capitalCities.get(fieldName);
+						break;
+					case "des":
+						des = capitalCities.get(fieldName);
+						break;
+					case "soLuong":
+						soLuong = capitalCities.get(fieldName);
+						break;
+					case "ngaySanXuat":
+						ngaySanXuat = capitalCities.get(fieldName);
+						break;
+					case "img":
+						img = capitalCities.get(fieldName);
+						break;
+					case "id":
+						break;
+					default:
+						throw new IllegalArgumentException("Unexpected value: " + fieldName);
+					}
+				}
+
+				PhoneModel phone = new PhoneModel();
+				phone.setDescription(des);
+				Date date = Date.valueOf(ngaySanXuat);
+				phone.setName(name);
+				phone.setTypeTel(typePhone);
+				phone.setPrice(Double.parseDouble(price));
+				phone.setNhaSanXuat(nhaSanXuat);
+				phone.setUrl_img(img);
+				phone.setNgaySanXuat(date);
+				phone.setDescription(des);
+				phone.setSoLuong(Integer.parseInt(soLuong));
+				if(phDAO.savePhone(phone)) {
+					response.sendRedirect(request.getContextPath() +"/admin-quan-ly-don-hang");
+				} else {
+					String error = "Loi nhap lieu";
+					request.setAttribute("error", error);
+					RequestDispatcher rd = request.getRequestDispatcher("/admin-quan-ly-don-hang?add=add");
+					rd.forward(request, response);
+				}
+				
 			} catch (FileUploadException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

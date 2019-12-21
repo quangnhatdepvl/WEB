@@ -41,7 +41,7 @@
 </head>
 
 <body>
-<fmt:setLocale value="${locale }" />
+	<fmt:setLocale value="${locale }" />
 
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
@@ -51,7 +51,9 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="product-bit-title text-center">
-						<h2><fmt:message key="shoppingCart"/></h2>
+						<h2>
+							<fmt:message key="shoppingCart" />
+						</h2>
 					</div>
 				</div>
 			</div>
@@ -70,7 +72,9 @@
 					<div class="single-sidebar" style="border-right: outset;">
 
 						<!-- Lấy dữ liệu lên. Phân loại bằng thương hiệu. Lấy top 4 lượt xem cao nhất-->
-						<h2 class="sidebar-title"><fmt:message key="product"/></h2>
+						<h2 class="sidebar-title">
+							<fmt:message key="product" />
+						</h2>
 						<c:forEach items="${listPhoneView}" var="phone">
 							<div class="thubmnail-recent">
 
@@ -82,7 +86,8 @@
 								</h2>
 								<div class="product-sidebar-price">
 									<p style="color: red">
-										<fmt:message key="price"/>:
+										<fmt:message key="price" />
+										:
 										<fmt:formatNumber type="number" maxFractionDigits="0"
 											value="${phone.price}" />
 										vnd
@@ -103,10 +108,11 @@
 										<tr>
 											<th class="product-remove">&nbsp;</th>
 											<th class="product-thumbnail">&nbsp;</th>
-											<th class="product-name"><fmt:message key="tenSanPham"/></th>
-											<th class="product-price"><fmt:message key="giaCa"/></th>
-											<th class="product-quantity"><fmt:message key="soluong"/></th>
-											<th class="product-subtotal"><fmt:message key="thanhTien"/></th>
+											<th class="product-name"><fmt:message key="tenSanPham" /></th>
+											<th class="product-price"><fmt:message key="giaCa" /></th>
+											<th class="product-quantity"><fmt:message key="soluong" /></th>
+											<th class="product-subtotal"><fmt:message
+													key="thanhTien" /></th>
 										</tr>
 									</thead>
 									<tbody>
@@ -121,10 +127,9 @@
 												<td class="product-remove"><a title="Remove this item"
 													class="remove" href="${cart}">×</a></td>
 
-												<td class="product-thumbnail"><a
-													href="#"><img 
+												<td class="product-thumbnail"><a href="#"><img
 														alt="poster_1_up" class="shop_thumbnail"
-														src="${phone2.url_img}" ></a></td>
+														src="${phone2.url_img}"></a></td>
 
 												<td class="product-name"><a
 													href="${pageContext.request.contextPath }/chi-tiet-san-pham?id=${phone2.id }">${phone2.name }</a></td>
@@ -150,7 +155,8 @@
 
 								</table>
 								<p style="color: red">
-								<fmt:message key="tongGia"/>:
+									<fmt:message key="tongGia" />
+									:
 									<fmt:formatNumber type="number" maxFractionDigits="0"
 										value="${total}" />
 									vnd
@@ -159,8 +165,8 @@
 
 							<div class="cart-collaterals">
 
-								<a href="${pageContext.request.contextPath }/thanh-toan"><button style="width: 16%; padding-left: 14px;">Thanh
-									toán</button></a>
+								<a href="${pageContext.request.contextPath }/thanh-toan"><button
+										style="width: 16%; padding-left: 14px;"><fmt:message key="thanhToan"/></button></a>
 
 							</div>
 						</div>

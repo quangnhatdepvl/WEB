@@ -161,12 +161,10 @@
 										<div class="tab-content">
 											<div role="tabpanel" class="tab-pane fade in active"
 												id="home">
-												<h4>Mô tả</h4>
 												<hr>
 												<p>${phone.description }</p>
 											</div>
 											<div role="tabpanel" class="tab-pane fade" id="profile">
-												<h4>Thông số kĩ thuật</h4>
 												<hr>
 												<li>Vi xử lý <b>A13 Bionic</b> tiến trình 7mm (được
 													đánh giá là con chip di động mạnh mẽ nhất thời điểm ra

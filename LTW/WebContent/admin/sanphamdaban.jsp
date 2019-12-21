@@ -46,20 +46,22 @@
 								<th><fmt:message key="kieuDienThoai" /></th>
 								<th><fmt:message key="nhaSanXuat" /></th>
 								<th><fmt:message key="giaCaAdmin" /></th>
-								<th>So luong con lai</th>
-								<th>So luong da ban</th>
+								<th><fmt:message key="conLai" /></th>
+								<th><fmt:message key="daBan" /></th>
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach items="${listKho}" var="list"> 
-							<tr class="table-info">
-								<td>${list.phone.name }</td>
-								<td>${list.phone.typeTel }</td>
-								<td>${list.phone.nhaSanXuat }</td>
-								<td>${list.phone.price }</td>
-								<td>${list.phone.soLuong }</td>
-								<td>${list.soLuongDaBan }</td>
-							</tr>
+							<c:forEach items="${listKho}" var="list">
+								<tr class="table-info">
+									<td>${list.phone.name }</td>
+									<td>${list.phone.typeTel }</td>
+									<td>${list.phone.nhaSanXuat }</td>
+									<td><fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${list.phone.price }" /></td>
+								<td>	<fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${list.phone.soLuong }" /></td>
+									<td>${list.soLuongDaBan }</td>
+								</tr>
 							</c:forEach>
 						</tbody>
 					</table>

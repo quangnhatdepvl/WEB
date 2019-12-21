@@ -53,7 +53,7 @@
 
 			<div class="panel panel-primary">
 				<div class="panel-heading">
-					<h3 class="panel-title">Thay đổi thông tin tài khoản</h3>
+					<h3 class="panel-title"><fmt:message key="thayDoiThongTin" /></h3>
 				</div>
 				<div class="panel-body">
 					<div class="bao">
@@ -61,7 +61,7 @@
 						<div class="bao1">
 							<form action="sua-thong-tin" method="post">
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Tên của bạn: </label>
+									<label class="col-sm-3 control-label"><fmt:message key="tenCuaBan" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
 											placeholder="Tên của bạn" name="name" value="${user.user_fullname }">
@@ -70,7 +70,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Số điện thoại: </label>
+									<label class="col-sm-3 control-label"><fmt:message key="sdt" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
 											placeholder="Số điện thoại" name="phone" value="${user.phone }">
@@ -78,7 +78,7 @@
 									<div class="clear"></div>
 								</div>
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Email: </label>
+									<label class="col-sm-3 control-label"><fmt:message key="email" />: </label>
 									<div class="col-sm-9">
 										<input type="email" class="form-control"
 											placeholder="Nhập email" name="email" value="${user.email }">
@@ -87,7 +87,7 @@
 								</div>
 
 								<div class="form-group">
-									<label class="col-sm-3 control-label">Địa chỉ: </label>
+									<label class="col-sm-3 control-label"><fmt:message key="diaChi" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
 											placeholder="Nhập địa chỉ nhà bạn" name="address" value="${user.address }">
@@ -97,7 +97,7 @@
 
 								<div class="form-group">
 									<input class="btn btn-success" name="btn" type="submit"
-										value="Cập nhật">
+										value="<fmt:message key="capNhat" />">
 								</div>
 								<p>${error}</p>
 							</form>

@@ -50,15 +50,17 @@
 	<div class="container"
 		style="padding-left: 20%; /* padding: 7%; */ padding-right: 7%; padding-left: 7%;">
 		<h2 class="section-title"
-			style="margin-bottom: 20px; margin-top: 20px;">Thanh toán</h2>
+			style="margin-bottom: 20px; margin-top: 20px;">
+			<fmt:message key="thanhToan" />
+		</h2>
 		<form action="thanh-toan" method="post">
 			<div class="main-container">
 
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Tên khách hàng:</label> <input style="width: 982px"
-								type="text" maxlength="64" name="name"
+							<label><fmt:message key="tenKhachHang" />:</label> <input
+								style="width: 982px" type="text" maxlength="64" name="name"
 								value="${user.user_fullname }">
 						</div>
 					</div>
@@ -67,9 +69,9 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Số điện thoại:</label> <input style="width: 982px"
-								type="text" placeholder="Số điện thoại" name="phone"
-								value="${user.phone }">
+							<label><fmt:message key="sdt" />:</label> <input
+								style="width: 982px" type="text" placeholder="Số điện thoại"
+								name="phone" value="${user.phone }">
 						</div>
 					</div>
 				</div>
@@ -77,9 +79,9 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Địa chỉ email:</label> <input style="width: 982px"
-								type="email" placeholder="Địa chỉ email" name="email"
-								value="${user.email }">
+							<label><fmt:message key="email" />:</label> <input
+								style="width: 982px" type="email" placeholder="Địa chỉ email"
+								name="email" value="${user.email }">
 						</div>
 					</div>
 				</div>
@@ -88,7 +90,8 @@
 				<div class="address-modal__form_input">
 					<div class="input-with-status">
 						<div class="input-with-status__wrapper">
-							<label>Địa chỉ:</label> <input style="width: 982px" type="text"
+							<label><fmt:message key="diaChi" />:</label> <input
+								style="width: 982px" type="text"
 								placeholder="Toà nhà, Tên Đường..." maxlength="128"
 								name="address" value="${user.address }">
 						</div>
@@ -103,14 +106,18 @@
 					<div class="checkout-product-ordered-list__headers">
 						<div
 							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--product">
-							<div class="checkout-product-ordered-list__title">Sản phẩm</div>
+							<div class="checkout-product-ordered-list__title">
+								<fmt:message key="tenSanPham" />
+							</div>
 						</div>
 						<div
 							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--variation"></div>
-						<div class="checkout-product-ordered-list__header">Số lượng</div>
+						<div class="checkout-product-ordered-list__header">
+							<fmt:message key="soluong" />
+						</div>
 						<div
-							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--subtotal">Thành
-							tiền</div>
+							class="checkout-product-ordered-list__header checkout-product-ordered-list__header--subtotal"><fmt:message key="thanhTien"/>
+							</div>
 					</div>
 				</div>
 				<div class="checkout-product-ordered-list__content">
@@ -154,7 +161,7 @@
 
 
 						<div class="_1pkbuI">
-							<div class="_1wd2xT">Tổng số tiền:</div>
+							<div class="_1wd2xT"><fmt:message key="tongSoTien"/></div>
 							<div class="ZwtlWT">
 								<fmt:formatNumber type="number" maxFractionDigits="0"
 									value="${total}" />
@@ -167,7 +174,7 @@
 			<!-- phuongthuc -->
 			<div class="_1nqViI _3Rq9ya">
 
-				<input type="submit" value="Đặt hàng">
+				<input type="submit" value="<fmt:message key="thanhToan"/>">
 				<p>${error }
 			</div>
 

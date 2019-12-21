@@ -46,20 +46,21 @@
 								<th><fmt:message key="kieuDienThoai" /></th>
 								<th><fmt:message key="nhaSanXuat" /></th>
 								<th><fmt:message key="giaCaAdmin" /></th>
-								<th>So luong con lai</th>
-							
+								<th><fmt:message key="conLai" /></th>
+
 							</tr>
 						</thead>
 						<tbody>
-						<c:forEach items="${listPhone}" var="list"> 
-							<tr class="table-info">
-								<td>${list.name }</td>
-								<td>${list.typeTel }</td>
-								<td>${list.nhaSanXuat }</td>
-								<td>${list.price }</td>
-								<td>${list.soLuong }</td>
-								
-							</tr>
+							<c:forEach items="${listPhone}" var="list">
+								<tr class="table-info">
+									<td>${list.name }</td>
+									<td>${list.typeTel }</td>
+									<td>${list.nhaSanXuat }</td>
+									<td><fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${list.price }" /></td>
+									<td>${list.soLuong }</td>
+
+								</tr>
 							</c:forEach>
 						</tbody>
 					</table>

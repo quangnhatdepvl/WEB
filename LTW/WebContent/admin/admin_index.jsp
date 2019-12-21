@@ -208,31 +208,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col-md-7 grid-margin stretch-card">
-							<div class="card">
-								<div class="card-body">
-									<p class="card-title">Lượng truy cập trang web</p>
-									<p class="mb-4">Với những chiếc điện thoại hot nhất trên thị trường.</p>
-									<div id="cash-deposits-chart-legend"
-										class="d-flex justify-content-center pt-3"></div>
-									<canvas id="cash-deposits-chart"></canvas>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-5 grid-margin stretch-card">
-							<div class="card">
-								<div class="card-body">
-									<p class="card-title">Doanh thu</p>
-									<h1>$ 500000</h1>
-									<h5>Tổng doanh thu qua các năm.</h5>
-									<div id="total-sales-chart-legend"></div>
-								</div>
-								<canvas id="total-sales-chart"></canvas>
-							</div>
-						</div>
-					</div>
-
+					
 				</div>
 				<!-- content-wrapper ends -->
 				<!-- partial:partials/_footer.jsp -->

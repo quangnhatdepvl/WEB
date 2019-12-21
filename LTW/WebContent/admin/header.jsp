@@ -11,7 +11,7 @@
 			<div class="navbar-brand-wrapper d-flex justify-content-center">
 				<div
 					class="navbar-brand-inner-wrapper d-flex justify-content-between align-items-center w-100">
-					<a class="navbar-brand brand-logo" href="admin_index.jsp"><img
+					<a class="navbar-brand brand-logo" href="admin-trang-chu"><img
 						src="img/logo.png" alt="logo" /></a>
 					<button class="navbar-toggler navbar-toggler align-self-center"
 						type="button" data-toggle="minimize">
@@ -43,7 +43,7 @@
 							aria-labelledby="profileDropdown">
 							<a class="dropdown-item"> <i
 								class="mdi mdi-settings text-primary"></i> <fmt:message key="caiDatTaiKhoan"/>
-							</a> <a class="dropdown-item"> <i
+							</a> <a class="dropdown-item" href = "${pageContext.request.contextPath }/dang-xuat"> <i
 								class="mdi mdi-logout text-primary"></i> <fmt:message key="dangXuat"/>
 							</a>
 						</div></li>

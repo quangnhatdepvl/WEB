@@ -45,46 +45,46 @@
 										type="text" name="name" value="${phone.name }"
 										<c:if test="${phone.id != null }">
 										readonly="readonly"
-									</c:if>>
+									</c:if> required >
 								</div>
 								<div class="">
 									<label style="width: 130px;">Loại điện thoại</label> <input
 										type="text" name="typePhone" value="${phone.typeTel }"
-										placeholder="">
+										placeholder=""required >
 								</div>
 								<div class="">
 									<label style="width: 130px;">Nhà sản xuất</label> <input
-										type="text" name="nhaSanXuat" value="${phone.nhaSanXuat }">
+										type="text" name="nhaSanXuat" value="${phone.nhaSanXuat }"required >
 								</div>
 								<div class="">
 									<label style="width: 130px;">Giá</label> <input type="text"
-										name="price" value="${phone.price }">
+										name="price" value="${phone.price }"required >
 								</div>
 								<div class="">
 									<label style="width: 130px;">Ngày sản xuất</label> <input
-										type="date" name="ngaySanXuat" value="${phone.ngaySanXuat }">
+										type="date" name="ngaySanXuat" value="${phone.ngaySanXuat }"required >
 								</div>
 								<div class="">
 									<label style="width: 130px;">Số lượng</label> <input
-										type="number" name="soLuong" value="${phone.soLuong }">
+										type="number" name="soLuong" value="${phone.soLuong }"required >
 								</div>
 
 
 								<label>Hình ảnh</label>
 								<c:choose>
 									<c:when test="${phone.url_img == null }">
-										<input type="file" name="img" accept="image/">
+										<input type="file" name="img" accept="image/"required >
 									</c:when>
 									<c:otherwise>
 										<img src="${phone.url_img }" style="width: 150px;height: 150px;">
-										<label>Đổi hình ảnh</label><input type="file" name="img" value="${phone.url_img }" accept="image/">
+										<label>Đổi hình ảnh</label><input type="file" name="img" value="${phone.url_img }" accept="image/"required >
 									</c:otherwise>
 								</c:choose>
 
 
 
 								<br> <label>Miêu tả</label>
-								<textarea class="form-control" id="noiDung" name="des" rows="4">${phone.description }</textarea>
+								<textarea class="form-control" id="noiDung" name="des" rows="4"required >${phone.description }</textarea>
 
 								<input type="submit"
 									<c:choose>

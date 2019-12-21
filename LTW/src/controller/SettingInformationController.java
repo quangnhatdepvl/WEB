@@ -54,7 +54,8 @@ public class SettingInformationController extends HttpServlet {
 		String phone = request.getParameter("phone");
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
-		if (checkPhone(phone) || address != null || name != null) {
+		String error = "";
+		if (checkPhone(phone) && address != null && name != null) {
 			HttpSession session = request.getSession();
 			UserModel user = (UserModel) session.getAttribute("user");
 			user.setPhone(phone);
@@ -64,20 +65,22 @@ public class SettingInformationController extends HttpServlet {
 			UserDAO usDAO = new UserDAO();
 			if (usDAO.updateUser(user)) {
 				session.setAttribute("user", user);
-				response.sendRedirect(request.getContextPath() + "/sua-thong-tin");
+				error = "Cap nhat thanh cong";
+				error(request, response, error);
 			} else {
-				error(request, response);
+				error = "Loi nhap lieu";
+				error(request, response,error);
 
 			}
 		} else {
-			error(request, response);
+			error = "Loi nhap lieu";
+			error(request, response,error);
 		}
 
 	}
 
-	private void error(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String error = "Loi nhap lieu";
-		request.setAttribute("error", error);
+	private void error(HttpServletRequest request, HttpServletResponse response,String error) throws ServletException, IOException {
+			request.setAttribute("error", error);
 		RequestDispatcher rd = request.getRequestDispatcher("user/chinhsuathongtin.jsp");
 		rd.forward(request, response);
 	}

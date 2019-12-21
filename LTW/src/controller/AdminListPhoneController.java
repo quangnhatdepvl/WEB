@@ -136,6 +136,7 @@ public class AdminListPhoneController extends HttpServlet {
 			String soLuong = "";
 			String img = "";
 			String des = "";
+			String error="";
 			try {
 				HashMap<String, String> capitalCities = new HashMap<String, String>();
 				uploadItems = upload.parseRequest(request);
@@ -149,10 +150,12 @@ public class AdminListPhoneController extends HttpServlet {
 						String fieldName = uploadItem.getFieldName();
 						String fileName = new File(uploadItem.getName()).getName();
 						String filePath = DATA_DIRECTORY + File.separator + fileName;
+						String path ="img/" + fileName;
 						File uploadedFile = new File(filePath);
-						capitalCities.put(fieldName, filePath);
+						capitalCities.put(fieldName, path);
 						// saves the file to upload director
 						uploadItem.write(uploadedFile);
+						
 					}
 				}
 
@@ -201,23 +204,26 @@ public class AdminListPhoneController extends HttpServlet {
 				phone.setDescription(des);
 				phone.setSoLuong(Integer.parseInt(soLuong));
 				if(phDAO.savePhone(phone)) {
-					response.sendRedirect(request.getContextPath() +"/admin-quan-ly-don-hang");
+					response.sendRedirect(request.getContextPath() +"/admin-quan-ly-dien-thoai");
 				} else {
-					String error = "Loi nhap lieu";
-					request.setAttribute("error", error);
-					RequestDispatcher rd = request.getRequestDispatcher("/admin-quan-ly-don-hang?add=add");
-					rd.forward(request, response);
+					error = "Loi nhap du lieu";
+					error(request, response,error);
 				}
 				
-			} catch (FileUploadException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			} catch (Exception ex) {
+				
+				request.setAttribute("error", "Loi nhap du lieu");
+				RequestDispatcher rd = request.getRequestDispatcher("admin/add.jsp");
+				rd.forward(request, response);
+			} 
 		}
 
+	}
+
+	private void error(HttpServletRequest request, HttpServletResponse response,String error) throws ServletException, IOException {
+		request.setAttribute("error", error);
+		RequestDispatcher rd = request.getRequestDispatcher("/admin-quan-ly-dien-thoai");
+		rd.forward(request, response);
 	}
 
 }

@@ -10,11 +10,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FilenameUtils;
 
 /**
  * Servlet implementation class Test
@@ -22,7 +24,6 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 @WebServlet("/Test")
 public class Test extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private static final String DATA_DIRECTORY = "D:\\LTW\\WEB\\LTW\\WebContent\\img";
 	private static final int MAX_MEMORY_SIZE = 1024 * 1024 * 2;
 	private static final int MAX_REQUEST_SIZE = 1024 * 1024;
 
@@ -79,10 +80,13 @@ public class Test extends HttpServlet {
 	                FileItem item = (FileItem) iter.next();
 
 	                if (!item.isFormField()) {
+	                	  String fieldName = item.getFieldName();
+	                      String fileName1 = FilenameUtils.getName(item.getName());
 	                    String fileName = new File(item.getName()).getName();
-	                    String filePath = DATA_DIRECTORY + File.separator + fileName;
+	                    String DATA_DIRECTORY = request.getServletContext().getRealPath("");
+	                    String filePath = DATA_DIRECTORY + File.separator + "img/"+fileName;
 	                    File uploadedFile = new File(filePath);
-	                    System.out.println(filePath);
+	                 
 	                    // saves the file to upload directory
 	                    item.write(uploadedFile);
 	                }
@@ -96,4 +100,6 @@ public class Test extends HttpServlet {
 	            throw new ServletException(ex);
 	        }
 	}
+	
+
 }

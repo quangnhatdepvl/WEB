@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<img src="user\img\aaaaaaaaaaaaaaaaaaa.jpg">
+<img src="img\Koala.jpg">
 </body>
 </html>

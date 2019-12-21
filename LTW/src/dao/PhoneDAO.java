@@ -171,7 +171,7 @@ public class PhoneDAO {
 			ps.setString(2, nhaSanXuat);
 			ps.setDouble(3, price);
 			ps.setString(4, des);
-			Date date = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(ngaySanXuat);
+			Date date = Date.valueOf(ngaySanXuat);
 			ps.setDate(5, date);
 			ps.setInt(6, Integer.parseInt(soLuong));
 			ps.setInt(7, id);
@@ -188,9 +188,6 @@ public class PhoneDAO {
 			} catch (SQLException e) {
 				result = false;
 			}
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			result = false;
 		}
 
 		return result;

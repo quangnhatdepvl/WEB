@@ -100,6 +100,8 @@
 
 								<input type="hidden" name="id" value="${phone.id }">
 								<button class="btn btn-light">Cancel</button>
+								
+								<p style="color:red">${error }</p>
 							</form>
 						</div>
 					</div>

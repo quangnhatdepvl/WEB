@@ -24,15 +24,15 @@ DROP TABLE IF EXISTS `phone`;
  SET character_set_client = utf8mb4 ;
 CREATE TABLE `phone` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
-  `phoneName` varchar(255) DEFAULT NULL,
-  `typePhone` varchar(255) DEFAULT NULL,
-  `price` double(255,2) DEFAULT NULL,
-  `nhaSanXuat` varchar(255) DEFAULT NULL,
-  `img_url` varchar(255) DEFAULT NULL,
-  `ngaySanXuat` date DEFAULT NULL,
-  `des` longtext,
-  `luotTruyCap` int(255) DEFAULT NULL,
-  `soLuong` int(11) DEFAULT NULL,
+  `phoneName` varchar(255)  NOT NULL,
+  `typePhone` varchar(255)  NOT NULL,
+  `price` double(255,2)  NOT NULL,
+  `nhaSanXuat` varchar(255)  NOT NULL,
+  `img_url` varchar(255)  NOT NULL,
+  `ngaySanXuat` date  NOT NULL,
+  `des` longtext NOT NULL,
+  `luotTruyCap` int(255)  NULL,
+  `soLuong` int(11)  NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;

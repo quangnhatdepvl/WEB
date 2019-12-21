@@ -17,7 +17,7 @@ import model.UserModel;
 /**
  * Servlet Filter implementation class LoginFilter
  */
-@WebFilter(urlPatterns = {"/dang-nhap","/dang-ky"})
+@WebFilter(urlPatterns = {"/dang-nhap", "/dang-ky"})
 public class LoginFilter implements Filter {
 
 	/**

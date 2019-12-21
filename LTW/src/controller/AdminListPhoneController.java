@@ -105,16 +105,16 @@ public class AdminListPhoneController extends HttpServlet {
 		// upload.setSizeMax(yourMaxRequestSize);
 		// Parse the request
 		List<FileItem> uploadItems = null;
-		String name = "";
-		String typePhone = "";
-		String nhaSanXuat = "";
-		String price = "";
-		String ngaySanXuat = "";
-		String soLuong = "";
-		String img = "";
-		String des = "";
-		String error = "";
-		String id = "";
+		String name = null;
+		String typePhone = null;
+		String nhaSanXuat = null;
+		String price = null;
+		String ngaySanXuat = null;
+		String soLuong = null;
+		String img = null;
+		String des = null;
+		String error = null;
+		String id = null;
 		try {
 			HashMap<String, String> data = new HashMap<String, String>();
 			uploadItems = upload.parseRequest(request);
@@ -123,7 +123,7 @@ public class AdminListPhoneController extends HttpServlet {
 					String fieldName = uploadItem.getFieldName();
 					String value = uploadItem.getString();
 					data.put(fieldName, value);
-
+					System.out.println(data);
 				} else {
 					String fieldName = uploadItem.getFieldName();
 					String fileName = new File(uploadItem.getName()).getName();
@@ -132,7 +132,9 @@ public class AdminListPhoneController extends HttpServlet {
 					File uploadedFile = new File(filePath);
 					data.put(fieldName, path);
 					// saves the file to upload director
-					uploadItem.write(uploadedFile);
+					if (!fileName.isEmpty()) {
+						uploadItem.write(uploadedFile);
+					} 
 
 				}
 			}
@@ -173,13 +175,13 @@ public class AdminListPhoneController extends HttpServlet {
 
 			PhoneModel phone = new PhoneModel();
 			phone.setDescription(des);
-			Date date = Date.valueOf(ngaySanXuat);
+			
 			phone.setName(name);
 			phone.setTypeTel(typePhone);
 			phone.setPrice(Double.parseDouble(price));
 			phone.setNhaSanXuat(nhaSanXuat);
 			phone.setUrl_img(img);
-			phone.setNgaySanXuat(date);
+			phone.setNgaySanXuat( Date.valueOf(ngaySanXuat));
 			phone.setDescription(des);
 			phone.setSoLuong(Integer.parseInt(soLuong));
 			if (id.isBlank()) {

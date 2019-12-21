@@ -77,7 +77,7 @@
 									</c:when>
 									<c:otherwise>
 										<img src="${phone.url_img }" style="width: 150px;height: 150px;">
-										<label>Đổi hình ảnh</label><input type="file" name="img" accept="image/">
+										<label>Đổi hình ảnh</label><input type="file" name="img" value="${phone.url_img }" accept="image/">
 									</c:otherwise>
 								</c:choose>
 

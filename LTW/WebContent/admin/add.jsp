@@ -65,11 +65,11 @@
 								</div>
 								<div class="">
 									<label style="width: 130px;">Ngày sản xuất</label> <input
-										type="date" name="price" value="${phone.ngaySanXuat }">
+										type="date" name="ngaySanXuat" value="${phone.ngaySanXuat }">
 								</div>
 								<div class="">
 									<label style="width: 130px;">Số lượng</label> <input
-										type="number" name="price" value="${phone.soLuong }">
+										type="number" name="soLuong" value="${phone.soLuong }">
 								</div>
 
 

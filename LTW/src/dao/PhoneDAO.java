@@ -1,9 +1,12 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import model.Kho;
@@ -31,7 +34,7 @@ public class PhoneDAO {
 				phone.setUrl_img(rss.getString("img_url"));
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
-				phone.setId(rss.getInt("luotTruyCap"));
+				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
 
 				listPhone.add(phone);
 			}
@@ -112,7 +115,7 @@ public class PhoneDAO {
 		try {
 			conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?,?,?) ");
-			ps.setInt(1,0);
+			ps.setInt(1, 0);
 			ps.setString(2, phone.getName());
 			ps.setString(3, phone.getTypeTel());
 			ps.setDouble(4, phone.getPrice());
@@ -156,18 +159,22 @@ public class PhoneDAO {
 		return bl;
 	}
 
-	public boolean updatePhone(int id, String typePhone, String nhaSanXuat, double price, String des) {
+	public boolean updatePhone(int id, String typePhone, String nhaSanXuat, double price, String des,
+			String ngaySanXuat, String soLuong) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn
-					.prepareStatement("update phone set typePhone = ?, nhaSanXuat = ?, price = ?,des= ? where id = ?");
+			PreparedStatement ps = conn.prepareStatement("update phone set typePhone = ?, "
+					+ "nhaSanXuat = ?, price = ?,des= ?, ngaySanXuat = ?, soLuong = ? where id = ?");
 			ps.setString(1, typePhone);
 			ps.setString(2, nhaSanXuat);
 			ps.setDouble(3, price);
 			ps.setString(4, des);
-			ps.setInt(5, id);
+			Date date = (Date) new SimpleDateFormat("yyyy/MM/dd").parse(ngaySanXuat);
+			ps.setDate(5, date);
+			ps.setInt(6, Integer.parseInt(soLuong));
+			ps.setInt(7, id);
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
 				result = true;
@@ -179,9 +186,11 @@ public class PhoneDAO {
 				result = false;
 				conn.rollback();
 			} catch (SQLException e) {
-
-				e.printStackTrace();
+				result = false;
 			}
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			result = false;
 		}
 
 		return result;

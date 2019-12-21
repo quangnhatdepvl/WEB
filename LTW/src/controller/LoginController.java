@@ -61,7 +61,6 @@ public class LoginController extends HttpServlet {
 		} else {
 			ArrayList<Role> roles = user.getRoles();
 			HttpSession session = request.getSession(true);
-
 			for (Role role : roles) {
 				session.setAttribute("user", user);
 				if (role.getRole_name().equals("ROLE_ADMIN")) {

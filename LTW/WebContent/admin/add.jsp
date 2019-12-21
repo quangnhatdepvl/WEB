@@ -38,30 +38,39 @@
 						<div class="card-body">
 
 							<form action="admin-quan-ly-dien-thoai" method="post"
-								 <c:if test="${phone.id == null }">
+								<c:if test="${phone.id == null }">
 										enctype="multipart/form-data"
 									</c:if>>
-								
 
-								<label>Tên điện thoại</label>
-								 <input	type="text" name="name"	value="${phone.name }" 
-								 <c:if test="${phone.id != null }">
+
+								<div class="">
+									<label style="width: 130px;">Tên điện thoại</label> <input
+										type="text" name="name" value="${phone.name }"
+										<c:if test="${phone.id != null }">
 										readonly="readonly"
-									</c:if> > 
-									<label for="exampleInputEmail3">Loại
-									điện thoại</label> 
-									<input type="text" 
-									name="typePhone" value="${phone.typeTel }" placeholder="">
-								<label >Nhà sản xuất</label> <input
-									type="text" class="form-control" name="nhaSanXuat"
-									value="${phone.nhaSanXuat }">
-									 <label>Giá</label>
-									  <input type="text" name="price" value="${phone.price }">
-									   <label>Ngày sản xuất</label>
-									  <input type="date" name="price" value="${phone.ngaySanXuat }">
-									    <label>Số lượng</label>
-									  <input type="number" name="price" value="${phone.soLuong }">
-									  
+									</c:if>>
+								</div>
+								<div class="">
+									<label style="width: 130px;">Loại điện thoại</label> <input
+										type="text" name="typePhone" value="${phone.typeTel }"
+										placeholder="">
+								</div>
+								<div class="">
+									<label style="width: 130px;">Nhà sản xuất</label> <input
+										type="text" name="nhaSanXuat" value="${phone.nhaSanXuat }">
+								</div>
+								<div class="">
+									<label style="width: 130px;">Giá</label> <input type="text"
+										name="price" value="${phone.price }">
+								</div>
+								<div class="">
+									<label style="width: 130px;">Ngày sản xuất</label> <input
+										type="date" name="price" value="${phone.ngaySanXuat }">
+								</div>
+								<div class="">
+									<label style="width: 130px;">Số lượng</label> <input
+										type="number" name="price" value="${phone.soLuong }">
+								</div>
 
 
 								<label>Hình ảnh</label>
@@ -88,7 +97,7 @@
 											value="Sửa"
 									</c:otherwise>
 								</c:choose>>
-								
+
 								<input type="hidden" name="id" value="${phone.id }">
 								<button class="btn btn-light">Cancel</button>
 							</form>

@@ -14,7 +14,7 @@ import dao.UserDAO;
 /**
  * Servlet implementation class RegisterController
  */
-@WebServlet(urlPatterns = {"/dang-ky"})
+@WebServlet(urlPatterns = { "/dang-ky" })
 public class RegisterController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -47,20 +47,26 @@ public class RegisterController extends HttpServlet {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		String confirm = request.getParameter("confirm");
-		String name = request.getParameter("name");
-		String sdt = request.getParameter("sdt");
-		String email = request.getParameter("email");
+		String error = "";
 		UserDAO usDAO = new UserDAO();
 		if (password.equals(confirm)) {
 			if (usDAO.register(username, password)) {
 				response.sendRedirect("dang-nhap");
-			}			
+			} else {
+				error = "Tai khoan da ton tai";
+				error(request, response, error);
+			}
 		} else {
-			String error = "Tai khoan dang ky khong thanh cong";
-			request.setAttribute("error", error);
-			RequestDispatcher rd = request.getRequestDispatcher("/user/register.jsp");
-			rd.forward(request, response);
+			error = "Tai khoan dang ky khong thanh cong";
+			error(request, response, error);
 		}
+	}
+
+	private void error(HttpServletRequest request, HttpServletResponse response, String error)
+			throws ServletException, IOException {
+		request.setAttribute("error", error);
+		RequestDispatcher rd = request.getRequestDispatcher("/user/register.jsp");
+		rd.forward(request, response);
 	}
 
 }

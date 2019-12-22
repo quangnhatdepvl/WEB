@@ -115,7 +115,7 @@ public class UserDAO {
 		return result;
 	}
 
-	public ArrayList<String> getUser() {
+	private ArrayList<String> getUser() {
 		Connection conn = null;
 		ArrayList<String> listUser = new ArrayList<>();
 		

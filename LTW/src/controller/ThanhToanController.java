@@ -69,7 +69,7 @@ public class ThanhToanController extends HttpServlet {
 			user.setUser_fullname(name);
 			long millis = System.currentTimeMillis();
 			java.sql.Date dateCreate = new java.sql.Date(millis);
-			Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate);
+			Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate,address,phone);
 			PhoneDAO phDAO = new PhoneDAO();
 			UserDAO usDAO = new UserDAO();
 			if (listPhone == null) {

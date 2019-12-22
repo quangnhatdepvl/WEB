@@ -10,21 +10,25 @@ public class Pay {
 	private ArrayList<PhoneModel> listPhone;
 	private boolean status;
 	private Date dateCreate;
-	
+	private String address;
+	private String phone;
 	public Pay() {
 		
 	}
 
-	
-	public Pay(int user_id, ArrayList<PhoneModel> listPhone, boolean status, Date dateCreate) {
+
+
+	public Pay(int user_id, ArrayList<PhoneModel> listPhone, boolean status, Date dateCreate, String address,
+			String phone) {
 		super();
-		
 		this.user_id = user_id;
 		this.listPhone = listPhone;
 		this.status = status;
-	
 		this.dateCreate = dateCreate;
+		this.address = address;
+		this.phone = phone;
 	}
+
 
 
 	public int getUser_id() {
@@ -57,6 +61,26 @@ public class Pay {
 
 	public void setDateCreate(Date dateCreate) {
 		this.dateCreate = dateCreate;
+	}
+
+
+	public String getAddress() {
+		return address;
+	}
+
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+
+	public String getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 

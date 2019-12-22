@@ -369,9 +369,11 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?,0)");
+			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?,0,?,?)");
 			ps.setInt(1, pay.getUser_id());
 			ps.setDate(3, (java.sql.Date) pay.getDateCreate());
+			ps.setString(4, pay.getAddress());
+			ps.setString(5, pay.getPhone());
 			for (PhoneModel phone : pay.getListPhone()) {
 				ps.setInt(2, phone.getId());
 				int kq = ps.executeUpdate();
@@ -398,7 +400,7 @@ public class PhoneDAO {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT p.phoneName as PhoneName, u.user_fullname as UserName, ");
 		sql.append("t.trang_thai as TrangThai,t.date_create as NgayLap, ");
-		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, u.address as DiaChi, u.phone as SDT, t.id as Id  ");
+		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, t.address as DiaChi, t.phone as SDT, t.id as Id  ");
 		sql.append("FROM thanhtoan t INNER JOIN user_db u ON t.user_id  = u.user_id ");
 		sql.append("INNER JOIN phone p ON t.phone_id = p.id ");
 		sql.append("where t.trang_thai = ?");

@@ -40,7 +40,7 @@
 							<div class="d-flex justify-content-between flex-wrap">
 								<div class="d-flex align-items-end flex-wrap">
 									<div class="mr-md-3 mr-xl-5">
-										<h2>Xin chào bạn,</h2>
+										<h2>Xin chào ${user.user_name }</h2>
 
 									</div>
 
@@ -99,7 +99,7 @@
 													<div class="d-flex flex-column justify-content-around">
 														<small class="mb-1 text-muted">Doanh thu trong
 															tuần</small>
-														<h5 class="mr-2 mb-0">$2000</h5>
+														<h5 class="mr-2 mb-0"></h5>
 													</div>
 												</div>
 												<div

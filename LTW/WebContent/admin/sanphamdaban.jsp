@@ -31,6 +31,7 @@
 
 	<fmt:setBundle basename="language/messages" />
 	<jsp:include page="header.jsp" />
+	<c:set var="totalAdmin" value="${0}" scope="session" />
 
 	<div class="col-lg-12 stretch-card" style="width: 14%">
 		<div class="card">
@@ -51,20 +52,26 @@
 							</tr>
 						</thead>
 						<tbody>
+							
 							<c:forEach items="${listKho}" var="list">
+								<c:set var="totalAdmin"
+									value="${totalAdmin + list.soLuongDaBan*list.phone.price}" />
 								<tr class="table-info">
 									<td>${list.phone.name }</td>
 									<td>${list.phone.typeTel }</td>
 									<td>${list.phone.nhaSanXuat }</td>
 									<td><fmt:formatNumber type="number" maxFractionDigits="0"
-										value="${list.phone.price }" /></td>
-								<td>	<fmt:formatNumber type="number" maxFractionDigits="0"
-										value="${list.phone.soLuong }" /></td>
+											value="${list.phone.price }" /></td>
+									<td><fmt:formatNumber type="number" maxFractionDigits="0"
+											value="${list.phone.soLuong }" /></td>
 									<td>${list.soLuongDaBan }</td>
 								</tr>
 							</c:forEach>
 						</tbody>
 					</table>
+					<p><fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${totalAdmin}" /></p>
+
 				</div>
 			</div>
 		</div>

@@ -97,7 +97,7 @@
 								</c:choose>>
 
 								<input type="hidden" name="id" value="${phone.id }">
-								<button class="btn btn-light">Cancel</button>
+								<a href="${pageContext.request.contextPath }/admin-quan-ly-dien-thoai"><button class="btn btn-light">Cancel</button></a>
 								
 								<p style="color:red">${error }</p>
 							</form>

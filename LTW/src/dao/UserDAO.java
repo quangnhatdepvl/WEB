@@ -12,6 +12,11 @@ import utils.DbUtils;
 
 public class UserDAO {
 
+	
+	public static void main(String[] args) {
+		UserDAO s = new UserDAO();
+		System.out.println(s.register("zxczxczx", "123123"));
+	}
 	public boolean register(String username, String password) {
 		boolean bl = false;
 		ArrayList<String> listUser =  getUser();
@@ -30,6 +35,7 @@ public class UserDAO {
 					if (ps.executeUpdate() > 0) {
 						bl = true;
 						conn.commit();
+						break;
 					}
 				} catch (SQLException ex) {
 					try {

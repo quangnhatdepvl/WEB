@@ -69,8 +69,14 @@
 							</c:forEach>
 						</tbody>
 					</table>
-					<p><fmt:formatNumber type="number" maxFractionDigits="0"
-										value="${totalAdmin}" /></p>
+			<div class="_1pkbuI">
+							<div class="_1wd2xT"><fmt:message key="tongSoTien"/>: <fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${totalAdmin}" /> vnd</div>
+							
+									
+							
+						</div>
+				
 
 				</div>
 			</div>

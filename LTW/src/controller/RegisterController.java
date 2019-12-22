@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -49,7 +51,7 @@ public class RegisterController extends HttpServlet {
 		String confirm = request.getParameter("confirm");
 		String error = "";
 		UserDAO usDAO = new UserDAO();
-		if (password.equals(confirm)) {
+		if (password.equals(confirm) && validateName(username)) {
 			if (usDAO.register(username, password)) {
 				response.sendRedirect("dang-nhap");
 			} else {
@@ -57,7 +59,11 @@ public class RegisterController extends HttpServlet {
 				error(request, response, error);
 			}
 		} else {
-			error = "Tai khoan dang ky khong thanh cong";
+			if (!validateName(username)) {
+				error = "Ten dang nhap toi thieu 6 ki tu va khong co khoang trang";
+			} else if (!password.equals(confirm)) {
+				error = "Mat khau khong trung khop";
+			}
 			error(request, response, error);
 		}
 	}
@@ -69,4 +75,13 @@ public class RegisterController extends HttpServlet {
 		rd.forward(request, response);
 	}
 
+	private boolean validateName(String name) {
+		// p{L}là thuộc tính ký tự Unicode phù hợp với bất kỳ loại chữ nào từ bất kỳ
+		// ngôn ngữ nào
+		String regx = "^([A-Za-z_][A-Za-z0-9_]*){6,30}$";
+		Pattern pattern = Pattern.compile(regx, Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(name);
+		return matcher.find();
+
+	}
 }

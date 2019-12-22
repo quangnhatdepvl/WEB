@@ -55,7 +55,7 @@ public class SettingInformationController extends HttpServlet {
 		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		String error = "";
-		if (checkPhone(phone) && address != null && name != null) {
+		if (validateName(name) && checkPhone(phone) && address != null && name != null) {
 			HttpSession session = request.getSession();
 			UserModel user = (UserModel) session.getAttribute("user");
 			user.setPhone(phone);
@@ -99,6 +99,15 @@ public class SettingInformationController extends HttpServlet {
 
 		}
 		return false;
+	}
+	private boolean validateName(String name) {
+		// p{L}là thuộc tính ký tự Unicode phù hợp với bất kỳ loại chữ nào từ bất kỳ
+		// ngôn ngữ nào
+		String regx = "^[\\p{L} .'-]+$";
+		Pattern pattern = Pattern.compile(regx, Pattern.CASE_INSENSITIVE);
+		Matcher matcher = pattern.matcher(name);
+		return matcher.find();
+
 	}
 
 }

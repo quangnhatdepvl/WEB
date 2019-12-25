@@ -1,12 +1,9 @@
 package dao;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 import model.Kho;
@@ -35,7 +32,7 @@ public class PhoneDAO {
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
 				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
-
+				phone.setSoLuong(rss.getInt("soLuong"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {
@@ -100,7 +97,7 @@ public class PhoneDAO {
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
 				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
-
+				phone.setSoLuong(rss.getInt("soLuong"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {
@@ -136,7 +133,7 @@ public class PhoneDAO {
 				conn.rollback();
 			} catch (SQLException e) {
 
-				e.printStackTrace();
+				bl = false;
 			}
 		}
 		return bl;
@@ -207,6 +204,7 @@ public class PhoneDAO {
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
 				phone.setUrl_img(rss.getString("img_url"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 				list.add(phone);
 			}
 		} catch (SQLException e) {
@@ -232,6 +230,7 @@ public class PhoneDAO {
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
 				phone.setUrl_img(rss.getString("img_url"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 				list.add(phone);
 			}
 		} catch (SQLException e) {
@@ -292,6 +291,7 @@ public class PhoneDAO {
 				phone.setPrice(rss.getDouble("price"));
 				phone.setUrl_img(rss.getString("img_url"));
 				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 				list.add(phone);
 			}
 		} catch (SQLException e) {
@@ -318,6 +318,7 @@ public class PhoneDAO {
 				phone.setPrice(rss.getDouble("price"));
 				phone.setUrl_img(rss.getString("img_url"));
 //				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 				list.add(phone);
 			}
 		} catch (SQLException e) {
@@ -354,6 +355,7 @@ public class PhoneDAO {
 				phone.setDescription(rss.getString("des"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				phone.setSoLuong(rss.getInt("soLuong"));
 				list.add(phone);
 			}
 		} catch (SQLException e) {

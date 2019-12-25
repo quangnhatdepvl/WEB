@@ -134,11 +134,15 @@
 										</c:url>
 										<a href="${add }">
 											<button class="add_to_cart_button" type="button"
-												style="margin-top: 10px;">
+												style="margin-top: 10px;"
+												<c:if test="${phone.soLuong <= 0}"> disabled
+												</c:if>>
 												<fmt:message key="themVaoGioHang" />
 											</button>
 										</a>
-
+										<c:if test="${phone.soLuong <= 0}"><p>San pham hien tai da het
+										</p>
+												</c:if>
 									</form>
 
 									<div class="product-inner-category">

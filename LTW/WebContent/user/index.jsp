@@ -115,7 +115,6 @@
 												value="${phone.price}" />
 											vnd
 										</p>
-
 									</div>
 								</div>
 							</c:forEach>

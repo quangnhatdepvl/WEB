@@ -43,12 +43,13 @@ public class AdminListOrderController extends HttpServlet {
 				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-don-hang");
 			}
 		} else if (confirm == null && delete != null) {
-			if (phDAO.deletePay(Integer.parseInt(delete))) {
+			if (phDAO.deleteBookPhone(Integer.parseInt(delete))) {
 				response.sendRedirect(request.getContextPath() + "/admin-quan-ly-don-hang");
 			}
 		} else {
 
 			ArrayList<BookPhone> listPay = phDAO.getListBookPhone(0);
+			
 			request.setAttribute("listPay", listPay);
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/quanlydonhang.jsp");
 			rd.forward(request, response);

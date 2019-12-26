@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <html>
 <head>
 
@@ -73,43 +74,53 @@
 						style="width: 150px;"><fmt:message key="thaoTac" /></th>
 				</tr>
 			</thead>
+
 			<tbody>
-				<c:forEach items="${listPay}" var="list">
-					<c:forEach items="${list.listPhone}" var="listPhone">
-						<tr role="row" class="odd">
-							<td>${list.id}</td>
-							<td>${listPhone.name}</td>
-							<td>${listPhone.nhaSanXuat }</td>
-							<td><fmt:formatNumber type="number" maxFractionDigits="0"
-									value="${listPhone.price}" /></td>
-							<td>${list.customer.name }</td>
-							<td>${list.phone }</td>
-							<td>${list.address }</td>
-							<td>${list.dateCreate }</td>
-							<c:url value="admin-quan-ly-don-hang" var="confirm">
-								<c:param name="confirm" value="${list.id }" />
-							</c:url>
 
-							<c:url value="admin-quan-ly-don-hang" var="delete">
-								<c:param name="delete" value="${list.id }" />
-							</c:url>
-							<!-- phần xóa  -->
-							<td class="center"><a href="${confirm }">
-									<button title="" type="button"
-										class="btn btn-xs btn-danger btn-round text-center">
-										<fmt:message key="xacNhan" />
+				<c:forEach begin="0" end="${fn:length(listPay)}" var="i">
+					<c:choose>
+						<c:when test="${listPay[i].id  == null}">
+						
+						</c:when>
+						<c:otherwise>
+							<tr role="row" class="odd">
+								<td>${listPay[i].id}</td>
 
-									</button>
-							</a> <a href="${delete }">
-									<button title=""
-										class="btn btn-xs btn-info btn-round text-center">
-										<fmt:message key="huy" />
-									</button>
-							</a></td>
-							<!-- kết thúc phần xóa  -->
-						</tr>
-					</c:forEach>
+								<td>${listPay[i].listPhone[i].name}</td>
+								<td>${listPay[i].listPhone[i].nhaSanXuat }</td>
+								<td><fmt:formatNumber type="number" maxFractionDigits="0"
+										value="${listPay[i].listPhone[i].price}" /></td>
+								<td>${list[i].customer.name }</td>
+
+								<td>${listPay[i].phone }</td>
+								<td>${listPay[i].address }</td>
+								<td>${listPay[i].dateCreate }</td>
+								<c:url value="admin-quan-ly-don-hang" var="confirm">
+									<c:param name="confirm" value="${listPay[i].id }" />
+								</c:url>
+
+								<c:url value="admin-quan-ly-don-hang" var="delete">
+									<c:param name="delete" value="${listPay[i].id }" />
+								</c:url>
+								<!-- phần xóa  -->
+								<td class="center"><a href="${confirm }">
+										<button title="" type="button"
+											class="btn btn-xs btn-danger btn-round text-center">
+											<fmt:message key="xacNhan" />
+
+										</button>
+								</a> <a href="${delete }">
+										<button title=""
+											class="btn btn-xs btn-info btn-round text-center">
+											<fmt:message key="huy" />
+										</button>
+								</a></td>
+								<!-- kết thúc phần xóa  -->
+							</tr>
+						</c:otherwise>
+					</c:choose>
 				</c:forEach>
+
 			</tbody>
 		</table>
 

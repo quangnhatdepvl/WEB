@@ -405,6 +405,10 @@ public class PhoneDAO {
 
 		return result;
 	}
+	public static void main(String[] args) {
+		PhoneDAO p = new PhoneDAO();
+		System.out.println(p.getListBookPhone(0));
+	}
 
 	public ArrayList<BookPhone> getListBookPhone(int trangThai) {
 		ArrayList<BookPhone> lisBookPhones = new ArrayList<>();
@@ -452,12 +456,12 @@ public class PhoneDAO {
 		return lisBookPhones;
 	}
 
-	public boolean deletePay(int id) {
+	public boolean deleteBookPhone(int id) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("DELETE FROM thanhtoan WHERE id = ?");
+			PreparedStatement ps = conn.prepareStatement("DELETE FROM thanhtoan WHERE idThanhToan = ?");
 			ps.setInt(1, id);
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
@@ -523,10 +527,7 @@ public class PhoneDAO {
 		return bl;
 	}
 
-	public static void main(String[] args) {
-		PhoneDAO p = new PhoneDAO();
-		System.out.println(p.getKho());
-	}
+
 
 	public ArrayList<Kho> getKho() {
 		ArrayList<Kho> listKho = new ArrayList<>();

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.UserDAO;
+import model.Customer;
 import model.UserModel;
 
 /**
@@ -58,29 +59,32 @@ public class SettingInformationController extends HttpServlet {
 		if (validateName(name) && checkPhone(phone) && address != null && name != null) {
 			HttpSession session = request.getSession();
 			UserModel user = (UserModel) session.getAttribute("user");
-			user.setPhone(phone);
-			user.setAddress(address);
-			user.setEmail(email);
-			user.setUser_fullname(name);
+			Customer customer = user.getCustomer();
+			customer.setAddress(address);
+			customer.setEmail(email);
+			customer.setPhone(phone);
+			customer.setName(name);
+			user.setCustomer(customer);
 			UserDAO usDAO = new UserDAO();
-			if (usDAO.updateUser(user)) {
+			if (usDAO.updateUser(customer)) {
 				session.setAttribute("user", user);
 				error = "Cap nhat thanh cong";
 				error(request, response, error);
 			} else {
 				error = "Loi nhap lieu";
-				error(request, response,error);
+				error(request, response, error);
 
 			}
 		} else {
 			error = "Loi nhap lieu";
-			error(request, response,error);
+			error(request, response, error);
 		}
 
 	}
 
-	private void error(HttpServletRequest request, HttpServletResponse response,String error) throws ServletException, IOException {
-			request.setAttribute("error", error);
+	private void error(HttpServletRequest request, HttpServletResponse response, String error)
+			throws ServletException, IOException {
+		request.setAttribute("error", error);
 		RequestDispatcher rd = request.getRequestDispatcher("user/chinhsuathongtin.jsp");
 		rd.forward(request, response);
 	}
@@ -100,6 +104,7 @@ public class SettingInformationController extends HttpServlet {
 		}
 		return false;
 	}
+
 	private boolean validateName(String name) {
 		// p{L}là thuộc tính ký tự Unicode phù hợp với bất kỳ loại chữ nào từ bất kỳ
 		// ngôn ngữ nào

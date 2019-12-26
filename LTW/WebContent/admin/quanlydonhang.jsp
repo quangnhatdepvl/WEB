@@ -63,7 +63,7 @@
 						colspan="1"
 						aria-label="Địa chỉ: activate to sort column ascending"
 						style="width: 200px;"><fmt:message key="diaChi" /></th>
-						<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
+					<th tabindex="0" aria-controls="datatable-buttons" rowspan="1"
 						colspan="1"
 						aria-label="Ngày tạo: activate to sort column ascending"
 						style="width: 200px;"><fmt:message key="ngayMua" /></th>
@@ -75,39 +75,40 @@
 			</thead>
 			<tbody>
 				<c:forEach items="${listPay}" var="list">
-					<tr role="row" class="odd">
-						<td>${list.id}</td>
-						<td>${list.phoneName}</td>
-						<td>${list.nhaSanXuat }</td>
-						<td><fmt:formatNumber type="number" maxFractionDigits="0"
-								value="${list.price}" /></td>
-						<td>${list.userName }</td>
-						<td>${list.phone }</td>
-						<td>${list.address }</td>
-						<td>${list.dateCreate }</td>
-						<c:url value="admin-quan-ly-don-hang" var="confirm">
-							<c:param name="confirm" value="${list.id }" />
-						</c:url>
-						
-						<c:url value="admin-quan-ly-don-hang" var="delete">
-							<c:param name="delete" value="${list.id }" />
-						</c:url>
-						<!-- phần xóa  -->
-						<td class="center"><a href="${confirm }">
-								<button title="" type="button"
-									class="btn btn-xs btn-danger btn-round text-center">
-									<fmt:message key="xacNhan" />
+					<c:forEach items="${list.listPhone}" var="listPhone">
+						<tr role="row" class="odd">
+							<td>${list.id}</td>
+							<td>${listPhone.name}</td>
+							<td>${listPhone.nhaSanXuat }</td>
+							<td><fmt:formatNumber type="number" maxFractionDigits="0"
+									value="${listPhone.price}" /></td>
+							<td>${list.customer.name }</td>
+							<td>${list.phone }</td>
+							<td>${list.address }</td>
+							<td>${list.dateCreate }</td>
+							<c:url value="admin-quan-ly-don-hang" var="confirm">
+								<c:param name="confirm" value="${list.id }" />
+							</c:url>
 
-								</button>
-						</a> <a href="${delete }">
-								<button title=""
-									class="btn btn-xs btn-info btn-round text-center">
-									<fmt:message key="huy" />
-								</button>
-						</a></td>
-						<!-- kết thúc phần xóa  -->
-					</tr>
+							<c:url value="admin-quan-ly-don-hang" var="delete">
+								<c:param name="delete" value="${list.id }" />
+							</c:url>
+							<!-- phần xóa  -->
+							<td class="center"><a href="${confirm }">
+									<button title="" type="button"
+										class="btn btn-xs btn-danger btn-round text-center">
+										<fmt:message key="xacNhan" />
 
+									</button>
+							</a> <a href="${delete }">
+									<button title=""
+										class="btn btn-xs btn-info btn-round text-center">
+										<fmt:message key="huy" />
+									</button>
+							</a></td>
+							<!-- kết thúc phần xóa  -->
+						</tr>
+					</c:forEach>
 				</c:forEach>
 			</tbody>
 		</table>

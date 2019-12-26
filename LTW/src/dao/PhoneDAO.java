@@ -6,9 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.BookPhone;
+import model.Customer;
 import model.Kho;
-import model.Pay;
-import model.PayInf;
 import model.PhoneModel;
 import utils.DbUtils;
 
@@ -23,7 +23,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
@@ -46,13 +46,13 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			String sql = "select * from phone where id= ?";
+			String sql = "select * from phone where idPhone= ?";
 			PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_UPDATABLE);
 			ps.setInt(1, id);
 			ResultSet rss = ps.executeQuery();
 			if (rss.next()) {
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
@@ -88,7 +88,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
@@ -162,7 +162,7 @@ public class PhoneDAO {
 		try {
 			conn = DbUtils.getConnection();
 			PreparedStatement ps = conn.prepareStatement("update phone set typePhone = ?, "
-					+ "nhaSanXuat = ?, price = ?,des= ?, ngaySanXuat = ?, soLuong = ?, img_url = ? where id = ?");
+					+ "nhaSanXuat = ?, price = ?,des= ?, ngaySanXuat = ?, soLuong = ?, img_url = ? where idPhone = ?");
 			ps.setString(1, phone.getTypeTel());
 			ps.setString(2, phone.getNhaSanXuat());
 			ps.setDouble(3, phone.getPrice());
@@ -171,7 +171,7 @@ public class PhoneDAO {
 			ps.setInt(6, phone.getSoLuong());
 			ps.setString(7, phone.getUrl_img());
 			ps.setInt(8, phone.getId());
-			
+
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
 				result = true;
@@ -199,7 +199,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
@@ -225,7 +225,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
@@ -239,23 +239,6 @@ public class PhoneDAO {
 		}
 		return list;
 
-	}
-
-	public int getCountNhaSanXuat(String nhaSanXuat) {
-		int total = 0;
-		String sql = "select count(*) as total from phone where nhaSanXuat = ?";
-		try {
-			Connection conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, nhaSanXuat);
-			ResultSet rss = ps.executeQuery();
-			if (rss.next()) {
-				total = rss.getInt("total");
-			}
-		} catch (SQLException e) {
-
-		}
-		return total;
 	}
 
 	public int getCountPhone() {
@@ -285,7 +268,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
@@ -312,7 +295,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
@@ -346,7 +329,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
 				phone.setPrice(rss.getDouble("price"));
@@ -366,13 +349,14 @@ public class PhoneDAO {
 
 	}
 
-	public boolean thanhToan(Pay pay) {
+	public boolean thanhToan(BookPhone pay) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into thanhtoan value (?,?,0,?,0,?,?)");
-			ps.setInt(1, pay.getUser_id());
+			PreparedStatement ps = conn.prepareStatement(
+					"insert into thanhtoan(customerId,phone_id,trang_thai,date_create,address,phone) value (?,?,0,?,?,?)");
+			ps.setInt(1, pay.getCustomer().getCustomerId());
 			ps.setDate(3, (java.sql.Date) pay.getDateCreate());
 			ps.setString(4, pay.getAddress());
 			ps.setString(5, pay.getPhone());
@@ -397,46 +381,12 @@ public class PhoneDAO {
 		return result;
 	}
 
-	public ArrayList<PayInf> listPay(int trangThai) {
-		ArrayList<PayInf> list = new ArrayList<>();
-		StringBuilder sql = new StringBuilder();
-		sql.append("SELECT p.phoneName as PhoneName, u.user_fullname as UserName, ");
-		sql.append("t.trang_thai as TrangThai,t.date_create as NgayLap, ");
-		sql.append("p.nhaSanXuat as HangSanXuat, p.price as Gia, t.address as DiaChi, t.phone as SDT, t.id as Id  ");
-		sql.append("FROM thanhtoan t INNER JOIN user_db u ON t.user_id  = u.user_id ");
-		sql.append("INNER JOIN phone p ON t.phone_id = p.id ");
-		sql.append("where t.trang_thai = ?");
-		try {
-			Connection conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql.toString());
-			ps.setInt(1, trangThai);
-			ResultSet rss = ps.executeQuery();
-			while (rss.next()) {
-				PayInf pay = new PayInf();
-				pay.setId(rss.getInt("Id"));
-				pay.setPhoneName(rss.getString("PhoneName"));
-				pay.setUserName(rss.getString("UserName"));
-				pay.setDateCreate(rss.getDate("NgayLap"));
-				pay.setNhaSanXuat(rss.getString("HangSanXuat"));
-				pay.setPrice(rss.getDouble("Gia"));
-				pay.setAddress(rss.getString("DiaChi"));
-				pay.setPhone(rss.getString("SDT"));
-				list.add(pay);
-			}
-		} catch (SQLException e) {
-
-			e.printStackTrace();
-		}
-		return list;
-
-	}
-
 	public boolean confirm(int id) {
 		boolean result = false;
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("update thanhtoan set trang_thai = 1 where id = ?");
+			PreparedStatement ps = conn.prepareStatement("update thanhtoan set trang_thai = 1 where idThanhToan = ?");
 			ps.setInt(1, id);
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
@@ -448,15 +398,59 @@ public class PhoneDAO {
 			}
 		} catch (SQLException ex) {
 			try {
-				result = false;
 				conn.rollback();
 			} catch (SQLException e) {
-
-				e.printStackTrace();
+				result = false;
 			}
 		}
 
 		return result;
+	}
+
+	public ArrayList<BookPhone> getListBookPhone(int trangThai) {
+		ArrayList<BookPhone> lisBookPhones = new ArrayList<>();
+		ArrayList<PhoneModel> listPhone = new ArrayList<>();
+		Connection conn = null;
+		try {
+			conn = DbUtils.getConnection();
+			PreparedStatement ps = conn.prepareStatement(
+					"select * from thanhtoan as t inner join customer as c on c.idcustomer = t.customerId"
+							+ " inner join phone as p on t.phone_id = p.idPhone " + " where trang_thai = ?");
+			ps.setInt(1, trangThai);
+			ResultSet rss = ps.executeQuery();
+			while (rss.next()) {
+				BookPhone bookPhone = new BookPhone();
+				Customer customer = new Customer();
+				customer.setCustomerId(rss.getInt("idcustomer"));
+				customer.setName(rss.getString("customer_name"));
+				customer.setAddress(rss.getString("customer_address"));
+				customer.setEmail(rss.getString("customer_email"));
+				customer.setPhone(rss.getString("customer_phone"));
+				bookPhone.setCustomer(customer);
+				bookPhone.setDateCreate(rss.getDate("date_create"));
+				bookPhone.setAddress(rss.getString("address"));
+				bookPhone.setPhone(rss.getString("phone"));
+				bookPhone.setId(rss.getInt("idThanhToan"));
+				bookPhone.setStatus(rss.getBoolean("trang_thai"));
+				PhoneModel phone = new PhoneModel();
+				phone.setId(rss.getInt("idPhone"));
+				phone.setName(rss.getString("phoneName"));
+				phone.setTypeTel(rss.getString("typePhone"));
+				phone.setPrice(rss.getDouble("price"));
+				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setUrl_img(rss.getString("img_url"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
+				phone.setDescription(rss.getString("des"));
+				phone.setLuotTruyCap(rss.getInt("luotTruyCap"));
+				phone.setSoLuong(rss.getInt("soLuong"));
+				listPhone.add(phone);
+				bookPhone.setListPhone(listPhone);
+				lisBookPhones.add(bookPhone);
+			}
+		} catch (SQLException ex) {
+
+		}
+		return lisBookPhones;
 	}
 
 	public boolean deletePay(int id) {
@@ -488,7 +482,7 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("select phone_id from thanhtoan where id = ?");
+			PreparedStatement ps = conn.prepareStatement("select phone_id from thanhtoan where idThanhToan = ?");
 			ps.setInt(1, id);
 			ResultSet rss = ps.executeQuery();
 			if (rss.next()) {
@@ -505,7 +499,7 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			String sql = "select * from phone where id= ?";
+			String sql = "select * from phone where idPhone= ?";
 			PreparedStatement ps = conn.prepareStatement(sql, ResultSet.TYPE_SCROLL_INSENSITIVE,
 					ResultSet.CONCUR_UPDATABLE);
 			ps.setInt(1, id);
@@ -530,21 +524,27 @@ public class PhoneDAO {
 		return bl;
 	}
 
+	public static void main(String[] args) {
+		PhoneDAO p = new PhoneDAO();
+		System.out.println(p.getKho());
+	}
+
 	public ArrayList<Kho> getKho() {
 		ArrayList<Kho> listKho = new ArrayList<>();
 		try {
 			Connection conn = DbUtils.getConnection();
-			String sql = "select p.id, p.phoneName,p.price, p.typePhone, p.soLuong, p.nhaSanXuat , count(*) as daBan"
-					+ " from phone p inner join thanhtoan t on t.phone_id = p.id  where t.trang_thai = 1   group by phone_id";
+			String sql = "select * , count(*) as daBan"
+					+ " from phone p inner join thanhtoan t on t.phone_id = p.idPhone  where t.trang_thai = 1   group by phone_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
 				phone.setNhaSanXuat(rss.getString("nhaSanXuat"));
+				phone.setDescription(rss.getString("des"));
 				phone.setSoLuong(rss.getInt("soLuong"));
 				Kho kho = new Kho();
 				kho.setSoLuongDaBan(rss.getInt("daBan"));
@@ -566,7 +566,7 @@ public class PhoneDAO {
 			ResultSet rss = ps.executeQuery();
 			while (rss.next()) {
 				PhoneModel phone = new PhoneModel();
-				phone.setId(rss.getInt("id"));
+				phone.setId(rss.getInt("idPhone"));
 				phone.setName(rss.getString("phoneName"));
 				phone.setTypeTel(rss.getString("typePhone"));
 				phone.setPrice(rss.getDouble("price"));
@@ -575,6 +575,7 @@ public class PhoneDAO {
 				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				phone.setDescription(rss.getString("des"));
 				phone.setSoLuong(rss.getInt("soLuong"));
+				phone.setNgaySanXuat(rss.getDate("ngaySanXuat"));
 				listPhone.add(phone);
 			}
 		} catch (SQLException e) {

@@ -12,7 +12,8 @@ public class DbUtils {
 	        try {
 	            //"jdbc:sqlserver://localhost;databaseName=EMPDB;user=sa;password=sa";
 	            Class.forName("com.mysql.cj.jdbc.Driver");
-	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/ltw", "root", "root");
+	            
+	            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/banhang", "root", "root");
 	            conn.setAutoCommit(false);
 	        } catch (SQLException ex) {
 	            Logger.getLogger(DbUtils.class.getName()).log(Level.SEVERE, null, ex);

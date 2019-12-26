@@ -53,17 +53,19 @@
 							</tr>
 						</thead>
 						<tbody>
-							<c:forEach items="${listPay}" var="list">
+							<c:forEach items="${listBookPhone}" var="list">
+								<c:forEach items="${list.listPhone}" var="listPhone">
 								<tr class="table-info">
 
-									<td>${list.id}</td>
-									<td>${list.userName}</td>
-									<td>${list.phone}</td>
-									<td>${list.address}</td>
-									<td>${list.phoneName}</td>
+									<td>${list.customer.customerId}</td>
+									<td>${list.customer.name}</td>
+									<td>${list.customer.phone}</td>
+									<td>${list.customer.address}</td>
+									<td>${listPhone.name }</td>
 									<td>${list.dateCreate}</td>
 
 								</tr>
+								</c:forEach>
 							</c:forEach>
 						</tbody>
 					</table>

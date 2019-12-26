@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import dao.PhoneDAO;
-import dao.UserDAO;
-import model.Pay;
+import model.BookPhone;
+import model.Customer;
 import model.PhoneModel;
 import model.UserModel;
 
@@ -56,26 +56,22 @@ public class ThanhToanController extends HttpServlet {
 
 		String name = request.getParameter("name");
 		String phone = request.getParameter("phone");
-		String email = request.getParameter("email");
 		String address = request.getParameter("address");
 		String error = "";
 		if (checkPhone(phone) && validateName(name) && !address.isEmpty()) {
 			HttpSession session = request.getSession();
 			ArrayList<PhoneModel> listPhone = (ArrayList<PhoneModel>) session.getAttribute("listPhone");
 			UserModel user = (UserModel) session.getAttribute("user");
-			user.setAddress(address);
-			user.setEmail(email);
-			user.setPhone(phone);
-			user.setUser_fullname(name);
+			Customer customer = user.getCustomer();
 			long millis = System.currentTimeMillis();
+			
 			java.sql.Date dateCreate = new java.sql.Date(millis);
-			Pay pay = new Pay(user.getUser_id(), listPhone, false, dateCreate,address,phone);
+			BookPhone pay = new BookPhone(customer, listPhone, false, dateCreate,address,phone,0);
 			PhoneDAO phDAO = new PhoneDAO();
-			UserDAO usDAO = new UserDAO();
 			if (listPhone == null) {
 				error = "Khong ton tai san pham";
 				error(request, response, error);
-			} else if (usDAO.updateUser(user) || listPhone != null) {
+			} else if (listPhone != null) {
 				if (phDAO.thanhToan(pay)) {
 					response.sendRedirect(request.getContextPath() + "/trang-chu");
 					session.setAttribute("user", user);

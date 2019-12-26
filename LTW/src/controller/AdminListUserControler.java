@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PhoneDAO;
-import model.PayInf;
+import model.BookPhone;
 
 /**
  * Servlet implementation class AdminListUserControler
@@ -36,8 +36,8 @@ public class AdminListUserControler extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		PhoneDAO phDAO = new PhoneDAO();
-		ArrayList<PayInf> listPay = phDAO.listPay(1);
-		request.setAttribute("listPay", listPay);
+		ArrayList<BookPhone> listBookPhone = phDAO.getListBookPhone(1); 
+		request.setAttribute("listBookPhone", listBookPhone);
 		RequestDispatcher rd = request.getRequestDispatcher("/admin/quanlykhachhang.jsp");
 		rd.forward(request, response);
 	}

@@ -61,7 +61,7 @@
 						<div class="input-with-status__wrapper">
 							<label><fmt:message key="tenKhachHang" />:</label> <input
 								style="width: 982px" type="text" maxlength="64" name="name"
-								value="${user.user_fullname }">
+								value="${user.customer.name }">
 						</div>
 					</div>
 				</div>
@@ -71,7 +71,7 @@
 						<div class="input-with-status__wrapper">
 							<label><fmt:message key="sdt" />:</label> <input
 								style="width: 982px" type="text" placeholder="Số điện thoại"
-								name="phone" value="${user.phone }">
+								name="phone" value="${user.customer.phone }">
 						</div>
 					</div>
 				</div>
@@ -81,7 +81,7 @@
 						<div class="input-with-status__wrapper">
 							<label><fmt:message key="email" />:</label> <input
 								style="width: 982px" type="email" placeholder="Địa chỉ email"
-								name="email" value="${user.email }">
+								name="email" value="${user.customer.email }">
 						</div>
 					</div>
 				</div>
@@ -93,7 +93,7 @@
 							<label><fmt:message key="diaChi" />:</label> <input
 								style="width: 982px" type="text"
 								placeholder="Toà nhà, Tên Đường..." maxlength="128"
-								name="address" value="${user.address }">
+								name="address" value="${user.customer.address }">
 						</div>
 					</div>
 				</div>

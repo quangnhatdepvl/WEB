@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import dao.PhoneDAO;
-import model.PayInf;
+import model.BookPhone;
 
 /**
  * Servlet implementation class AdminListOrderController
@@ -48,7 +48,7 @@ public class AdminListOrderController extends HttpServlet {
 			}
 		} else {
 
-			ArrayList<PayInf> listPay = phDAO.listPay(0);
+			ArrayList<BookPhone> listPay = phDAO.getListBookPhone(0);
 			request.setAttribute("listPay", listPay);
 			RequestDispatcher rd = request.getRequestDispatcher("/admin/quanlydonhang.jsp");
 			rd.forward(request, response);

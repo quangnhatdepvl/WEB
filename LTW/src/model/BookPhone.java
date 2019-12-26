@@ -1,42 +1,42 @@
 package model;
 
+import java.sql.Date;
 import java.util.ArrayList;
-import java.util.Date;
 
-public class Pay {
+
+public class BookPhone {
 
 	
-	private int user_id;
+	private Customer customer;
 	private ArrayList<PhoneModel> listPhone;
 	private boolean status;
 	private Date dateCreate;
 	private String address;
 	private String phone;
-	public Pay() {
+	private int id;
+	
+	public BookPhone() {
 		
 	}
 
-
-
-	public Pay(int user_id, ArrayList<PhoneModel> listPhone, boolean status, Date dateCreate, String address,
-			String phone) {
+	public BookPhone(Customer customer, ArrayList<PhoneModel> listPhone, boolean status, Date dateCreate,
+			String address, String phone, int id) {
 		super();
-		this.user_id = user_id;
+		this.customer = customer;
 		this.listPhone = listPhone;
 		this.status = status;
 		this.dateCreate = dateCreate;
 		this.address = address;
 		this.phone = phone;
+		this.id = id;
 	}
 
-
-
-	public int getUser_id() {
-		return user_id;
+	public Customer getCustomer() {
+		return customer;
 	}
 
-	public void setUser_id(int user_id) {
-		this.user_id = user_id;
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
 	}
 
 	public ArrayList<PhoneModel> getListPhone() {
@@ -63,28 +63,37 @@ public class Pay {
 		this.dateCreate = dateCreate;
 	}
 
-
 	public String getAddress() {
 		return address;
 	}
-
 
 	public void setAddress(String address) {
 		this.address = address;
 	}
 
-
 	public String getPhone() {
 		return phone;
 	}
-
 
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
 
+	public int getId() {
+		return id;
+	}
 
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	@Override
+	public String toString() {
+		return "BookPhone [customer=" + customer + ", listPhone=" + listPhone + ", status=" + status + ", dateCreate="
+				+ dateCreate + ", address=" + address + ", phone=" + phone + ", id=" + id + "]";
+	}
 	
-	
+
+
 	
 }

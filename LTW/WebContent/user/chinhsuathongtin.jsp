@@ -64,7 +64,7 @@
 									<label class="col-sm-3 control-label"><fmt:message key="tenCuaBan" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
-											placeholder="Tên của bạn" name="name" value="${user.user_fullname }">
+											placeholder="Tên của bạn" name="name" value="${user.customer.name }">
 									</div>
 								
 								</div>
@@ -73,7 +73,7 @@
 									<label class="col-sm-3 control-label"><fmt:message key="sdt" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
-											placeholder="Số điện thoại" name="phone" value="${user.phone }">
+											placeholder="Số điện thoại" name="phone" value="${user.customer.phone }">
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -81,7 +81,7 @@
 									<label class="col-sm-3 control-label"><fmt:message key="email" />: </label>
 									<div class="col-sm-9">
 										<input type="email" class="form-control"
-											placeholder="Nhập email" name="email" value="${user.email }">
+											placeholder="Nhập email" name="email" value="${user.customer.email }">
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -90,7 +90,7 @@
 									<label class="col-sm-3 control-label"><fmt:message key="diaChi" />: </label>
 									<div class="col-sm-9">
 										<input type="text" class="form-control"
-											placeholder="Nhập địa chỉ nhà bạn" name="address" value="${user.address }">
+											placeholder="Nhập địa chỉ nhà bạn" name="address" value="${user.customer.address }">
 									</div>
 									<div class="clear"></div>
 								</div>

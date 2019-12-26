@@ -111,17 +111,16 @@ public class PhoneDAO {
 		Connection conn = null;
 		try {
 			conn = DbUtils.getConnection();
-			PreparedStatement ps = conn.prepareStatement("insert into phone value (?,?,?,?,?,?,?,?,?,?) ");
-			ps.setInt(1, 0);
-			ps.setString(2, phone.getName());
-			ps.setString(3, phone.getTypeTel());
-			ps.setDouble(4, phone.getPrice());
-			ps.setString(5, phone.getNhaSanXuat());
-			ps.setString(6, phone.getUrl_img());
-			ps.setDate(7, phone.getNgaySanXuat());
-			ps.setString(8, phone.getDescription());
-			ps.setInt(9, 0);
-			ps.setInt(10, phone.getSoLuong());
+			PreparedStatement ps = conn.prepareStatement(
+					"insert into phone(phoneName,typePhone,price,nhaSanXuat,img_url,ngaySanXuat,des,soLuong) value (?,?,?,?,?,?,?,?) ");
+			ps.setString(1, phone.getName());
+			ps.setString(2, phone.getTypeTel());
+			ps.setDouble(3, phone.getPrice());
+			ps.setString(4, phone.getNhaSanXuat());
+			ps.setString(5, phone.getUrl_img());
+			ps.setDate(6, phone.getNgaySanXuat());
+			ps.setString(7, phone.getDescription());
+			ps.setInt(8, phone.getSoLuong());
 			int kq = ps.executeUpdate();
 			if (kq > 0) {
 				bl = true;
